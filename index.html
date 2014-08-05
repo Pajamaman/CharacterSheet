@@ -1,0 +1,1055 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Character Sheet</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            input[readonly] {
+                background-color: #eee;
+            }
+            table {
+                margin: 1em 0;
+            }
+            th {
+                padding: 0.25em;
+            }
+            td.number, td.number input {
+                text-align: center;
+                width: 4em;
+            }
+            .center {
+                text-align: center;
+            }
+            .invert {
+                background-color: black;
+                color: white;
+            }
+            .small {
+                font-size: 0.75em;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr class="small">
+                <th>Abilities</th>
+                <th>Ability Score</th>
+                <th>Ability Modifier</th>
+                <th>Temporary Score</th>
+                <th>Temporary Modifier</th>
+            </tr>
+            <tr>
+                <th class="invert">STR</th>
+                <td class="number"><input data-mapping="abilities.strength.score" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.strength.tempScore" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.strength.tempMod" readonly="readonly" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">DEX</th>
+                <td class="number"><input data-mapping="abilities.dexterity.score" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.dexterity.tempScore" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.dexterity.tempMod" readonly="readonly" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">CON</th>
+                <td class="number"><input data-mapping="abilities.constitution.score" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.constitution.tempScore" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.constitution.tempMod" readonly="readonly" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">INT</th>
+                <td class="number"><input data-mapping="abilities.intelligence.score" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.intelligence.tempScore" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.intelligence.tempMod" readonly="readonly" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">WIS</th>
+                <td class="number"><input data-mapping="abilities.wisdom.score" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.wisdom.tempScore" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.wisdom.tempMod" readonly="readonly" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">CHA</th>
+                <td class="number"><input data-mapping="abilities.charisma.score" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.charisma.tempScore" type="text" /></td>
+                <td class="number"><input data-mapping="abilities.charisma.tempMod" readonly="readonly" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th></th>
+                <th>Maximum HP</th>
+                <th>Current HP</th>
+                <th>Nonlethal Damage</th>
+            </tr>
+            <tr>
+                <th class="invert">HP</th>
+                <td class="number"><input data-mapping="hitPoints.max" type="text" /></td>
+                <td class="number"><input data-mapping="hitPoints.current" type="text" /></td>
+                <td class="number"><input data-mapping="hitPoints.nonlethalDamage" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th></th>
+                <th>Total</th>
+                <th></th>
+                <th>Armor Bonus</th>
+                <th></th>
+                <th>Shield Bonus</th>
+                <th></th>
+                <th>Dexterity Modifier</th>
+                <th></th>
+                <th>Size Modifier</th>
+                <th></th>
+                <th>Natural Armor</th>
+                <th></th>
+                <th>Deflection Modifier</th>
+                <th></th>
+                <th>Misc. Modifier</th>
+            </tr>
+            <tr>
+                <th class="invert">AC</th>
+                <td class="number"><input data-mapping="armorClass.total" readonly="readonly" type="text" /></th>
+                <td>= <span data-mapping="armorClass.baseArmor"></span> +</td>
+                <td class="number"><input data-mapping="armorClass.armorBonus" type="text" /></th>
+                <td>+</td>
+                <td class="number"><input data-mapping="armorClass.shieldBonus" type="text" /></th>
+                <td>+</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></th>
+                <td>+</td>
+                <td class="number"><input data-mapping="armorClass.sizeMod" type="text" /></th>
+                <td>+</td>
+                <td class="number"><input data-mapping="armorClass.naturalArmor" type="text" /></th>
+                <td>+</td>
+                <td class="number"><input data-mapping="armorClass.deflectionMod" type="text" /></th>
+                <td>+</td>
+                <td class="number"><input data-mapping="armorClass.miscMod" type="text" /></th>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th></th>
+                <th>Total</th>
+                <th></th>
+                <th>AC</th>
+                <th></th>
+                <th>Armor Bonus</th>
+                <th></th>
+                <th>Shield Bonus</th>
+                <th></th>
+                <th>Natural Armor</th>
+            </tr>
+            <tr>
+                <th class="invert">TOUCH</th>
+                <td class="number"><input data-mapping="armorClass.touch" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="armorClass.total" readonly="readonly" type="text" /></td>
+                <td>-</td>
+                <td class="number"><input data-mapping="armorClass.armorBonus" readonly="readonly" type="text" /></td>
+                <td>-</td>
+                <td class="number"><input data-mapping="armorClass.shieldBonus" readonly="readonly" type="text" /></td>
+                <td>-</td>
+                <td class="number"><input data-mapping="armorClass.naturalArmor" readonly="readonly" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th></th>
+                <th>Total</th>
+                <th></th>
+                <th>AC</th>
+                <th></th>
+                <th>Dexterity Modifier</th>
+            </tr>
+            <tr>
+                <th class="invert">FLAT-FOOTED</th>
+                <td class="number"><input data-mapping="armorClass.flatFooted" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="armorClass.total" readonly="readonly" type="text" /></td>
+                <td>-</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th></th>
+                <th>Total</th>
+                <th></th>
+                <th>Dexterity Modifier</th>
+                <th></th>
+                <th>Misc. Modifier</th>
+            </tr>
+            <tr>
+                <th class="invert">INITIATIVE</th>
+                <td class="number"><input data-mapping="initiative.total" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="initiative.miscMod" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th>Saving Throws</th>
+                <th>Total</th>
+                <th></th>
+                <th>Base Save</th>
+                <th></th>
+                <th>Ability Modifier</th>
+                <th></th>
+                <th>Magic Modifier</th>
+                <th></th>
+                <th>Misc. Modifier</th>
+                <th></th>
+                <th>Temporary Modifier</th>
+            </tr>
+            <tr>
+                <th class="invert">FORTITUDE</th>
+                <td class="number"><input data-mapping="savingThrows.fortitude.total" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="savingThrows.fortitude.baseSave" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.fortitude.magicMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.fortitude.miscMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.fortitude.tempMod" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">REFLEX</th>
+                <td class="number"><input data-mapping="savingThrows.reflex.total" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="savingThrows.reflex.baseSave" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.reflex.magicMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.reflex.miscMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.reflex.tempMod" type="text" /></td>
+            </tr>
+            <tr>
+                <th class="invert">WILL</th>
+                <td class="number"><input data-mapping="savingThrows.will.total" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="savingThrows.will.baseSave" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.will.magicMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.will.miscMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="savingThrows.will.tempMod" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th class="invert">SPEED</th>
+                <td class="number"><input data-mapping="speed" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th class="invert">BASE ATTACK BONUS</th>
+                <td class="number"><input data-mapping="baseAttackBonus" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th class="invert">SPELL RESISTANCE</th>
+                <td class="number"><input data-mapping="spellResistance" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="small">
+                <th></th>
+                <th>Total</th>
+                <th></th>
+                <th>Base Attack Bonus</th>
+                <th></th>
+                <th>Strength Modifier</th>
+                <th></th>
+                <th>Size Modifier</th>
+                <th></th>
+                <th>Misc. Modifier</th>
+            </tr>
+            <tr>
+                <th class="invert">GRAPPLE</th>
+                <td class="number"><input data-mapping="grapple.total" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="baseAttackBonus" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="grapple.sizeMod" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="grapple.miscMod" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th class="invert" colspan="10">SKILLS</th>
+            </tr>
+            <tr class="small">
+                <th>Class Skill</th>
+                <th>Skill Name</th>
+                <th>Key Ability</th>
+                <th>Skill Modifier</th>
+                <th></th>
+                <th>Ability Modifier</th>
+                <th></th>
+                <th>Ranks</th>
+                <th></th>
+                <th>Misc. Modifier</th>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.appraise.classSkill" type="checkbox" /></td>
+                <td class="small">Appraise</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.appraise.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.appraise.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.appraise.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.balance.classSkill" type="checkbox" /></td>
+                <td class="small">Balance</td>
+                <td class="center small">DEX *</td>
+                <td class="number"><input data-mapping="skills.balance.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.balance.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.balance.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.bluff.classSkill" type="checkbox" /></td>
+                <td class="small">Bluff</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.bluff.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.bluff.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.bluff.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.climb.classSkill" type="checkbox" /></td>
+                <td class="small">Climb</td>
+                <td class="center small">STR *</td>
+                <td class="number"><input data-mapping="skills.climb.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.climb.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.climb.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.concentration.classSkill" type="checkbox" /></td>
+                <td class="small">Concentration</td>
+                <td class="center small">CON</td>
+                <td class="number"><input data-mapping="skills.concentration.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.concentration.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.concentration.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.craft1.classSkill" type="checkbox" /></td>
+                <td class="small">Craft __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.craft1.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.craft1.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.craft1.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.craft2.classSkill" type="checkbox" /></td>
+                <td class="small">Craft __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.craft2.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.craft2.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.craft2.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.craft3.classSkill" type="checkbox" /></td>
+                <td class="small">Craft __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.craft3.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.craft3.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.craft3.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.decipherScript.classSkill" type="checkbox" /></td>
+                <td class="small">Decipher Script</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.decipherScript.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.decipherScript.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.decipherScript.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.diplomacy.classSkill" type="checkbox" /></td>
+                <td class="small">Diplomacy</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.diplomacy.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.diplomacy.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.diplomacy.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.disableDevice.classSkill" type="checkbox" /></td>
+                <td class="small">Disable Device</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.disableDevice.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.disableDevice.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.disableDevice.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.disguise.classSkill" type="checkbox" /></td>
+                <td class="small">Disguise</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.disguise.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.disguise.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.disguise.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.escapeArtist.classSkill" type="checkbox" /></td>
+                <td class="small">Escape Artist</td>
+                <td class="center small">DEX *</td>
+                <td class="number"><input data-mapping="skills.escapeArtist.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.escapeArtist.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.escapeArtist.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.forgery.classSkill" type="checkbox" /></td>
+                <td class="small">Forgery</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.forgery.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.forgery.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.forgery.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.gatherInformation.classSkill" type="checkbox" /></td>
+                <td class="small">Gather Information</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.gatherInformation.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.gatherInformation.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.gatherInformation.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.handleAnimal.classSkill" type="checkbox" /></td>
+                <td class="small">Handle Animal</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.handleAnimal.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.handleAnimal.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.handleAnimal.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.heal.classSkill" type="checkbox" /></td>
+                <td class="small">Heal</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.heal.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.heal.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.heal.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.hide.classSkill" type="checkbox" /></td>
+                <td class="small">Hide</td>
+                <td class="center small">DEX *</td>
+                <td class="number"><input data-mapping="skills.hide.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.hide.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.hide.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.intimidate.classSkill" type="checkbox" /></td>
+                <td class="small">Intimidate</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.intimidate.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.intimidate.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.intimidate.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.jump.classSkill" type="checkbox" /></td>
+                <td class="small">Jump</td>
+                <td class="center small">STR *</td>
+                <td class="number"><input data-mapping="skills.jump.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.jump.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.jump.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.knowledge1.classSkill" type="checkbox" /></td>
+                <td class="small">Knowledge __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.knowledge1.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge1.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge1.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.knowledge2.classSkill" type="checkbox" /></td>
+                <td class="small">Knowledge __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.knowledge2.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge2.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge2.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.knowledge3.classSkill" type="checkbox" /></td>
+                <td class="small">Knowledge __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.knowledge3.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge3.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge3.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.knowledge4.classSkill" type="checkbox" /></td>
+                <td class="small">Knowledge __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.knowledge4.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge4.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge4.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.knowledge5.classSkill" type="checkbox" /></td>
+                <td class="small">Knowledge __________</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.knowledge5.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge5.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.knowledge5.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.listen.classSkill" type="checkbox" /></td>
+                <td class="small">Listen</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.listen.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.listen.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.listen.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.moveSilently.classSkill" type="checkbox" /></td>
+                <td class="small">Move Silently</td>
+                <td class="center small">DEX *</td>
+                <td class="number"><input data-mapping="skills.moveSilently.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.moveSilently.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.moveSilently.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.openLock.classSkill" type="checkbox" /></td>
+                <td class="small">Open Lock</td>
+                <td class="center small">DEX</td>
+                <td class="number"><input data-mapping="skills.openLock.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.openLock.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.openLock.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.perform1.classSkill" type="checkbox" /></td>
+                <td class="small">Perform __________</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.perform1.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.perform1.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.perform1.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.perform2.classSkill" type="checkbox" /></td>
+                <td class="small">Perform __________</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.perform2.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.perform2.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.perform2.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.perform3.classSkill" type="checkbox" /></td>
+                <td class="small">Perform __________</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.perform3.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.perform3.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.perform3.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.profession1.classSkill" type="checkbox" /></td>
+                <td class="small">Profession __________</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.profession1.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.profession1.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.profession1.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.profession2.classSkill" type="checkbox" /></td>
+                <td class="small">Profession __________</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.profession2.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.profession2.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.profession2.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.ride.classSkill" type="checkbox" /></td>
+                <td class="small">Ride</td>
+                <td class="center small">DEX</td>
+                <td class="number"><input data-mapping="skills.ride.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.ride.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.ride.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.search.classSkill" type="checkbox" /></td>
+                <td class="small">Search</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.search.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.search.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.search.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.senseMotive.classSkill" type="checkbox" /></td>
+                <td class="small">Sense Motive</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.senseMotive.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.senseMotive.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.senseMotive.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.sleightOfHand.classSkill" type="checkbox" /></td>
+                <td class="small">Sleight of Hand</td>
+                <td class="center small">DEX *</td>
+                <td class="number"><input data-mapping="skills.sleightOfHand.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.sleightOfHand.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.sleightOfHand.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.spellcraft.classSkill" type="checkbox" /></td>
+                <td class="small">Spellcraft</td>
+                <td class="center small">INT</td>
+                <td class="number"><input data-mapping="skills.spellcraft.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.spellcraft.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.spellcraft.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.spot.classSkill" type="checkbox" /></td>
+                <td class="small">Spot</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.spot.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.spot.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.spot.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.survival.classSkill" type="checkbox" /></td>
+                <td class="small">Survival</td>
+                <td class="center small">WIS</td>
+                <td class="number"><input data-mapping="skills.survival.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.survival.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.survival.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.swim.classSkill" type="checkbox" /></td>
+                <td class="small">Swim</td>
+                <td class="center small">STR *</td>
+                <td class="number"><input data-mapping="skills.swim.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.swim.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.swim.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.tumble.classSkill" type="checkbox" /></td>
+                <td class="small">Tumble</td>
+                <td class="center small">DEX *</td>
+                <td class="number"><input data-mapping="skills.tumble.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.tumble.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.tumble.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.useMagicDevice.classSkill" type="checkbox" /></td>
+                <td class="small">Use Magic Device</td>
+                <td class="center small">CHA</td>
+                <td class="number"><input data-mapping="skills.useMagicDevice.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.useMagicDevice.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.useMagicDevice.miscMod" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="center"><input data-mapping="skills.useRope.classSkill" type="checkbox" /></td>
+                <td class="small">Use Rope</td>
+                <td class="center small">DEX</td>
+                <td class="number"><input data-mapping="skills.useRope.skillMod" readonly="readonly" type="text" /></td>
+                <td>=</td>
+                <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.useRope.ranks" type="text" /></td>
+                <td>+</td>
+                <td class="number"><input data-mapping="skills.useRope.miscMod" type="text" /></td>
+            </tr>
+        </table>
+        <script src="js/KO-1.0.14.js"></script>
+        <script>
+            (function () {
+                var character = {
+                    abilities: {
+                        strength: { score: 0, mod: 0, tempScore: 0, tempMod: 0 },
+                        dexterity: { score: 0, mod: 0, tempScore: 0, tempMod: 0 },
+                        constitution: { score: 0, mod: 0, tempScore: 0, tempMod: 0 },
+                        intelligence: { score: 0, mod: 0, tempScore: 0, tempMod: 0 },
+                        wisdom: { score: 0, mod: 0, tempScore: 0, tempMod: 0 },
+                        charisma: { score: 0, mod: 0, tempScore: 0, tempMod: 0 }
+                    },
+                    hitPoints: { max: 0, current: 0, nonlethalDamage: 0 },
+                    armorClass: { total: 10, baseArmor: 10, armorBonus: 0, shieldBonus: 0, sizeMod: 0, naturalArmor: 0, deflectionMod: 0, miscMod: 0, touch: 10, flatFooted: 10 },
+                    initiative: { total: 0, miscMod: 0 },
+                    savingThrows: {
+                        fortitude: { total: 0, baseSave: 0, magicMod: 0, miscMod: 0, tempMod: 0 },
+                        reflex: { total: 0, baseSave: 0, magicMod: 0, miscMod: 0, tempMod: 0 },
+                        will: { total: 0, baseSave: 0, magicMod: 0, miscMod: 0, tempMod: 0 }
+                    },
+                    speed: 0,
+                    baseAttackBonus: 0,
+                    spellResistance: 0,
+                    grapple: { total: 0, sizeMod: 0, miscMod: 0 },
+                    skills: {
+                        appraise: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        balance: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        bluff: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        climb: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        concentration: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        craft1: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        craft2: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        craft3: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        decipherScript: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        diplomacy: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        disableDevice: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        disguise: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        escapeArtist: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        forgery: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        gatherInformation: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        handleAnimal: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        heal: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        hide: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        intimidate: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        jump: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge1: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge2: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge3: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge4: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge5: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        listen: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        moveSilently: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        openLock: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        perform1: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        perform2: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        perform3: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        profession1: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        profession2: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        ride: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        search: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        senseMotive: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        sleightOfHand: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        spellcraft: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        spot: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        survival: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        swim: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        tumble: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        useMagicDevice: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 },
+                        useRope: { classSkill: false, skillMod: 0, ranks: 0, miscMod: 0 }
+                    }
+                };
+                
+                function getAbilityMod(score) {
+                    return Math.floor((score - 10) / 2);
+                }
+                
+                KO.bind(character);
+                
+                KO.listen(function (value) {
+                    character.abilities.strength.mod = getAbilityMod(value);
+                }, 'abilities.strength.score');
+                
+                KO.listen(function (value) {
+                    character.abilities.dexterity.mod = getAbilityMod(value);
+                }, 'abilities.dexterity.score');
+                
+                KO.listen(function (value) {
+                    character.abilities.constitution.mod = getAbilityMod(value);
+                }, 'abilities.constitution.score');
+                
+                KO.listen(function (value) {
+                    character.abilities.intelligence.mod = getAbilityMod(value);
+                }, 'abilities.intelligence.score');
+                
+                KO.listen(function (value) {
+                    character.abilities.wisdom.mod = getAbilityMod(value);
+                }, 'abilities.wisdom.score');
+                
+                KO.listen(function (value) {
+                    character.abilities.charisma.mod = getAbilityMod(value);
+                }, 'abilities.charisma.score');
+                
+                KO.listen(function (value) {
+                    character.abilities.strength.tempMod = getAbilityMod(value);
+                }, 'abilities.strength.tempScore');
+                
+                KO.listen(function (value) {
+                    character.abilities.dexterity.tempMod = getAbilityMod(value);
+                }, 'abilities.dexterity.tempScore');
+                
+                KO.listen(function (value) {
+                    character.abilities.constitution.tempMod = getAbilityMod(value);
+                }, 'abilities.constitution.tempScore');
+                
+                KO.listen(function (value) {
+                    character.abilities.intelligence.tempMod = getAbilityMod(value);
+                }, 'abilities.intelligence.tempScore');
+                
+                KO.listen(function (value) {
+                    character.abilities.wisdom.tempMod = getAbilityMod(value);
+                }, 'abilities.wisdom.tempScore');
+                
+                KO.listen(function (value) {
+                    character.abilities.charisma.tempMod = getAbilityMod(value);
+                }, 'abilities.charisma.tempScore');
+                
+                KO.listen(function () {
+                    character.armorClass.total = character.armorClass.baseArmor +
+                                                 character.armorClass.armorBonus +
+                                                 character.armorClass.shieldBonus +
+                                                 character.abilities.dexterity.mod +
+                                                 character.armorClass.sizeMod +
+                                                 character.armorClass.naturalArmor +
+                                                 character.armorClass.deflectionMod +
+                                                 character.armorClass.miscMod;
+                }, 'armorClass.armorBonus',
+                   'armorClass.shieldBonus',
+                   'abilities.dexterity.mod',
+                   'armorClass.sizeMod',
+                   'armorClass.naturalArmor',
+                   'armorClass.deflectionMod',
+                   'armorClass.miscMod');
+                
+                KO.listen(function () {
+                    character.armorClass.touch = character.armorClass.total -
+                                                 character.armorClass.armorBonus -
+                                                 character.armorClass.shieldBonus -
+                                                 character.armorClass.naturalArmor;
+                }, 'armorClass.total',
+                   'armorClass.armorBonus',
+                   'armorClass.shieldBonus',
+                   'armorClass.naturalArmor');
+                
+                KO.listen(function () {
+                    character.armorClass.flatFooted = character.armorClass.total -
+                                                      character.abilities.dexterity.mod;
+                }, 'armorClass.total',
+                   'character.abilities.dexterity.mod');
+                
+                KO.listen(function () {
+                    character.savingThrows.fortitude.total = character.savingThrows.fortitude.baseSave +
+                                                             character.abilities.constitution.mod +
+                                                             character.savingThrows.fortitude.magicMod +
+                                                             character.savingThrows.fortitude.miscMod +
+                                                             character.savingThrows.fortitude.tempMod;
+                }, 'savingThrows.fortitude.baseSave', 
+                   'abilities.constitution.mod',
+                   'savingThrows.fortitude.magicMod',
+                   'savingThrows.fortitude.miscMod',
+                   'savingThrows.fortitude.tempMod');
+                
+                KO.listen(function () {
+                    character.savingThrows.reflex.total = character.savingThrows.reflex.baseSave +
+                                                          character.abilities.dexterity.mod +
+                                                          character.savingThrows.reflex.magicMod +
+                                                          character.savingThrows.reflex.miscMod +
+                                                          character.savingThrows.reflex.tempMod;
+                }, 'savingThrows.reflex.baseSave', 
+                   'abilities.dexterity.mod',
+                   'savingThrows.reflex.magicMod',
+                   'savingThrows.reflex.miscMod',
+                   'savingThrows.reflex.tempMod');
+                
+                KO.listen(function () {
+                    character.savingThrows.will.total = character.savingThrows.will.baseSave +
+                                                        character.abilities.wisdom.mod +
+                                                        character.savingThrows.will.magicMod +
+                                                        character.savingThrows.will.miscMod +
+                                                        character.savingThrows.will.tempMod;
+                }, 'savingThrows.will.baseSave', 
+                   'abilities.wisdom.mod',
+                   'savingThrows.will.magicMod',
+                   'savingThrows.will.miscMod',
+                   'savingThrows.will.tempMod');
+                
+                KO.listen(function () {
+                    character.grapple.total = character.baseAttackBonus +
+                                              character.abilities.strength.mod +
+                                              character.grapple.sizeMod +
+                                              character.grapple.miscMod;
+                }, 'baseAttackBonus',
+                   'abilities.strength.mod',
+                   'grapple.sizeMod',
+                   'grapple.miscMod');
+            })();
+        </script>
+    </body>
+</html>
