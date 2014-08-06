@@ -851,7 +851,7 @@
                 <td class="small" colspan="10">* Armor check penalty, if any, applies. (Double penalty for Swim.)</td>
             </tr>
         </table>
-        <script src="js/KO-1.0.14.js"></script>
+        <script src="js/KO-1.0.15.js"></script>
         <script>
             (function () {
                 var character = {
@@ -986,29 +986,29 @@
                                                  character.armorClass.naturalArmor +
                                                  character.armorClass.deflectionMod +
                                                  character.armorClass.miscMod;
-                }, 'armorClass.armorBonus',
-                   'armorClass.shieldBonus',
-                   'abilities.dexterity.mod',
-                   'armorClass.sizeMod',
-                   'armorClass.naturalArmor',
-                   'armorClass.deflectionMod',
-                   'armorClass.miscMod');
+                }, ['armorClass.armorBonus',
+                    'armorClass.shieldBonus',
+                    'abilities.dexterity.mod',
+                    'armorClass.sizeMod',
+                    'armorClass.naturalArmor',
+                    'armorClass.deflectionMod',
+                    'armorClass.miscMod']);
                 
                 KO.listen(function () {
                     character.armorClass.touch = character.armorClass.total -
                                                  character.armorClass.armorBonus -
                                                  character.armorClass.shieldBonus -
                                                  character.armorClass.naturalArmor;
-                }, 'armorClass.total',
-                   'armorClass.armorBonus',
-                   'armorClass.shieldBonus',
-                   'armorClass.naturalArmor');
+                }, ['armorClass.total',
+                    'armorClass.armorBonus',
+                    'armorClass.shieldBonus',
+                    'armorClass.naturalArmor']);
                 
                 KO.listen(function () {
                     character.armorClass.flatFooted = character.armorClass.total -
                                                       character.abilities.dexterity.mod;
-                }, 'armorClass.total',
-                   'character.abilities.dexterity.mod');
+                }, ['armorClass.total',
+                    'character.abilities.dexterity.mod']);
                 
                 KO.listen(function () {
                     character.savingThrows.fortitude.total = character.savingThrows.fortitude.baseSave +
@@ -1016,11 +1016,11 @@
                                                              character.savingThrows.fortitude.magicMod +
                                                              character.savingThrows.fortitude.miscMod +
                                                              character.savingThrows.fortitude.tempMod;
-                }, 'savingThrows.fortitude.baseSave', 
-                   'abilities.constitution.mod',
-                   'savingThrows.fortitude.magicMod',
-                   'savingThrows.fortitude.miscMod',
-                   'savingThrows.fortitude.tempMod');
+                }, ['savingThrows.fortitude.baseSave', 
+                    'abilities.constitution.mod',
+                    'savingThrows.fortitude.magicMod',
+                    'savingThrows.fortitude.miscMod',
+                    'savingThrows.fortitude.tempMod']);
                 
                 KO.listen(function () {
                     character.savingThrows.reflex.total = character.savingThrows.reflex.baseSave +
@@ -1028,11 +1028,11 @@
                                                           character.savingThrows.reflex.magicMod +
                                                           character.savingThrows.reflex.miscMod +
                                                           character.savingThrows.reflex.tempMod;
-                }, 'savingThrows.reflex.baseSave', 
-                   'abilities.dexterity.mod',
-                   'savingThrows.reflex.magicMod',
-                   'savingThrows.reflex.miscMod',
-                   'savingThrows.reflex.tempMod');
+                }, ['savingThrows.reflex.baseSave', 
+                    'abilities.dexterity.mod',
+                    'savingThrows.reflex.magicMod',
+                    'savingThrows.reflex.miscMod',
+                    'savingThrows.reflex.tempMod']);
                 
                 KO.listen(function () {
                     character.savingThrows.will.total = character.savingThrows.will.baseSave +
@@ -1040,21 +1040,29 @@
                                                         character.savingThrows.will.magicMod +
                                                         character.savingThrows.will.miscMod +
                                                         character.savingThrows.will.tempMod;
-                }, 'savingThrows.will.baseSave', 
-                   'abilities.wisdom.mod',
-                   'savingThrows.will.magicMod',
-                   'savingThrows.will.miscMod',
-                   'savingThrows.will.tempMod');
+                }, ['savingThrows.will.baseSave', 
+                    'abilities.wisdom.mod',
+                    'savingThrows.will.magicMod',
+                    'savingThrows.will.miscMod',
+                    'savingThrows.will.tempMod']);
                 
                 KO.listen(function () {
                     character.grapple.total = character.baseAttackBonus +
                                               character.abilities.strength.mod +
                                               character.grapple.sizeMod +
                                               character.grapple.miscMod;
-                }, 'baseAttackBonus',
-                   'abilities.strength.mod',
-                   'grapple.sizeMod',
-                   'grapple.miscMod');
+                }, ['baseAttackBonus',
+                    'abilities.strength.mod',
+                    'grapple.sizeMod',
+                    'grapple.miscMod']);
+                
+                KO.listen(function (value, mapping, match) {
+                    var skill = match[1];
+                    
+                    character.skills[skill].skillMod = //add key ability modifier
+                                                       character.skills[skill].ranks +
+                                                       character.skills[skill].miscMod;
+                }, /skills\.(.*)\.(?:ranks|miscMod)/);
             })();
         </script>
     </body>
