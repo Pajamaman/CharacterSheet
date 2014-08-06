@@ -929,63 +929,56 @@
                 
                 KO.bind(character);
                 
-                KO.listen(function (value) {
-                    character.abilities.strength.mod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.strength.mod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.strength.score');
                 
-                KO.listen(function (value) {
-                    character.abilities.dexterity.mod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.dexterity.mod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.dexterity.score');
                 
-                KO.listen(function (value) {
-                    character.abilities.constitution.mod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.constitution.mod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.constitution.score');
                 
-                KO.listen(function (value) {
-                    character.abilities.intelligence.mod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.intelligence.mod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.intelligence.score');
                 
-                KO.listen(function (value) {
-                    character.abilities.wisdom.mod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.wisdom.mod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.wisdom.score');
                 
-                KO.listen(function (value) {
-                    character.abilities.charisma.mod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.charisma.mod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.charisma.score');
                 
-                KO.listen(function (value) {
-                    character.abilities.strength.tempMod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.strength.tempMod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.strength.tempScore');
                 
-                KO.listen(function (value) {
-                    character.abilities.dexterity.tempMod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.dexterity.tempMod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.dexterity.tempScore');
                 
-                KO.listen(function (value) {
-                    character.abilities.constitution.tempMod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.constitution.tempMod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.constitution.tempScore');
                 
-                KO.listen(function (value) {
-                    character.abilities.intelligence.tempMod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.intelligence.tempMod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.intelligence.tempScore');
                 
-                KO.listen(function (value) {
-                    character.abilities.wisdom.tempMod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.wisdom.tempMod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.wisdom.tempScore');
                 
-                KO.listen(function (value) {
-                    character.abilities.charisma.tempMod = getAbilityMod(value);
+                KO.listen(function (event) {
+                    character.abilities.charisma.tempMod = getAbilityMod(event.detail.newValue);
                 }, 'abilities.charisma.tempScore');
                 
-                KO.listen(function () {
-                    character.armorClass.total = character.armorClass.baseArmor +
-                                                 character.armorClass.armorBonus +
-                                                 character.armorClass.shieldBonus +
-                                                 character.abilities.dexterity.mod +
-                                                 character.armorClass.sizeMod +
-                                                 character.armorClass.naturalArmor +
-                                                 character.armorClass.deflectionMod +
-                                                 character.armorClass.miscMod;
+                KO.listen(function (event) {
+                    character.armorClass.total = character.armorClass.total - event.detail.oldValue + event.detail.newValue;
                 }, ['armorClass.armorBonus',
                     'armorClass.shieldBonus',
                     'abilities.dexterity.mod',
@@ -994,59 +987,43 @@
                     'armorClass.deflectionMod',
                     'armorClass.miscMod']);
                 
-                KO.listen(function () {
-                    character.armorClass.touch = character.armorClass.total -
-                                                 character.armorClass.armorBonus -
-                                                 character.armorClass.shieldBonus -
-                                                 character.armorClass.naturalArmor;
+                KO.listen(function (event) {
+                    character.armorClass.touch = character.armorClass.touch - event.detail.oldValue + event.detail.newValue;
                 }, ['armorClass.total',
                     'armorClass.armorBonus',
                     'armorClass.shieldBonus',
                     'armorClass.naturalArmor']);
                 
-                KO.listen(function () {
-                    character.armorClass.flatFooted = character.armorClass.total -
-                                                      character.abilities.dexterity.mod;
+                KO.listen(function (event) {
+                    character.armorClass.flatFooted = character.armorClass.flatFooted - event.detail.oldValue + event.detail.newValue;
                 }, ['armorClass.total',
                     'character.abilities.dexterity.mod']);
                 
-                KO.listen(function () {
-                    character.savingThrows.fortitude.total = character.savingThrows.fortitude.baseSave +
-                                                             character.abilities.constitution.mod +
-                                                             character.savingThrows.fortitude.magicMod +
-                                                             character.savingThrows.fortitude.miscMod +
-                                                             character.savingThrows.fortitude.tempMod;
-                }, ['savingThrows.fortitude.baseSave', 
+                KO.listen(function (event) {
+                    character.savingThrows.fortitude.total = character.savingThrows.fortitude.total - event.detail.oldValue + event.detail.newValue;
+                }, ['savingThrows.fortitude.baseSave',
                     'abilities.constitution.mod',
                     'savingThrows.fortitude.magicMod',
                     'savingThrows.fortitude.miscMod',
                     'savingThrows.fortitude.tempMod']);
                 
-                KO.listen(function () {
-                    character.savingThrows.reflex.total = character.savingThrows.reflex.baseSave +
-                                                          character.abilities.dexterity.mod +
-                                                          character.savingThrows.reflex.magicMod +
-                                                          character.savingThrows.reflex.miscMod +
-                                                          character.savingThrows.reflex.tempMod;
-                }, ['savingThrows.reflex.baseSave', 
+                KO.listen(function (event) {
+                    character.savingThrows.reflex.total = character.savingThrows.reflex.total - event.detail.oldValue + event.detail.newValue;
+                }, ['savingThrows.reflex.baseSave',
                     'abilities.dexterity.mod',
                     'savingThrows.reflex.magicMod',
                     'savingThrows.reflex.miscMod',
                     'savingThrows.reflex.tempMod']);
                 
-                KO.listen(function () {
-                    character.savingThrows.will.total = character.savingThrows.will.baseSave +
-                                                        character.abilities.wisdom.mod +
-                                                        character.savingThrows.will.magicMod +
-                                                        character.savingThrows.will.miscMod +
-                                                        character.savingThrows.will.tempMod;
-                }, ['savingThrows.will.baseSave', 
+                KO.listen(function (event) {
+                    character.savingThrows.will.total = character.savingThrows.will.total - event.detail.oldValue + event.detail.newValue;
+                }, ['savingThrows.will.baseSave',
                     'abilities.wisdom.mod',
                     'savingThrows.will.magicMod',
                     'savingThrows.will.miscMod',
                     'savingThrows.will.tempMod']);
                 
-                KO.listen(function () {
+                KO.listen(function (event) {
                     character.grapple.total = character.baseAttackBonus +
                                               character.abilities.strength.mod +
                                               character.grapple.sizeMod +
@@ -1056,14 +1033,13 @@
                     'grapple.sizeMod',
                     'grapple.miscMod']);
                 
-                KO.listen(function (value, mapping, match) {
+                KO.listen(function (event, match) {
                     var skill = match[1];
-                    
-                    character.skills[skill].skillMod = //add key ability modifier
-                                                       character.skills[skill].ranks +
-                                                       character.skills[skill].miscMod;
+                    character.skills[skill].skillMod = character.skills[skill].skillMod - event.detail.oldValue + event.detail.newValue;
                 }, /skills\.(.*)\.(?:ranks|miscMod)/);
-            })();
+                
+                // TODO: Add listeners for skills on ability modifiers
+            }());
         </script>
     </body>
 </html>
