@@ -6,6 +6,7 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
+                font-size: 0.75em;
             }
             input[readonly] {
                 background-color: #eee;
@@ -18,7 +19,10 @@
             }
             td.number, td.number input {
                 text-align: center;
-                width: 4em;
+                width: 5em;
+            }
+            input {
+                font: inherit;
             }
             .center {
                 text-align: center;
@@ -27,14 +31,11 @@
                 background-color: black;
                 color: white;
             }
-            .small {
-                font-size: 0.75em;
-            }
         </style>
     </head>
     <body>
         <table>
-            <tr class="small">
+            <tr>
                 <th>Abilities</th>
                 <th>Ability Score</th>
                 <th>Ability Modifier</th>
@@ -85,7 +86,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th></th>
                 <th>Maximum HP</th>
                 <th>Current HP</th>
@@ -99,7 +100,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th></th>
                 <th>Total</th>
                 <th></th>
@@ -137,7 +138,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th></th>
                 <th>Total</th>
                 <th></th>
@@ -163,7 +164,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th></th>
                 <th>Total</th>
                 <th></th>
@@ -181,7 +182,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th></th>
                 <th>Total</th>
                 <th></th>
@@ -199,7 +200,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th>Saving Throws</th>
                 <th>Total</th>
                 <th></th>
@@ -275,7 +276,7 @@
             </tr>
         </table>
         <table>
-            <tr class="small">
+            <tr>
                 <th></th>
                 <th>Total</th>
                 <th></th>
@@ -304,7 +305,7 @@
             <tr>
                 <th class="invert" colspan="10">SKILLS</th>
             </tr>
-            <tr class="small">
+            <tr>
                 <th>Class Skill</th>
                 <th>Skill Name</th>
                 <th>Key Ability</th>
@@ -318,8 +319,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.appraise.classSkill" type="checkbox" /></td>
-                <td class="small">Appraise ■</td>
-                <td class="center small">INT</td>
+                <td>Appraise ■</td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.appraise.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -330,8 +331,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.balance.classSkill" type="checkbox" /></td>
-                <td class="small">Balance ■ *</td>
-                <td class="center small">DEX</td>
+                <td>Balance ■ *</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.balance.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -342,8 +343,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.bluff.classSkill" type="checkbox" /></td>
-                <td class="small">Bluff ■</td>
-                <td class="center small">CHA</td>
+                <td>Bluff ■</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.bluff.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -354,8 +355,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.climb.classSkill" type="checkbox" /></td>
-                <td class="small">Climb ■ *</td>
-                <td class="center small">STR</td>
+                <td>Climb ■ *</td>
+                <td class="center">STR</td>
                 <td class="number"><input data-mapping="skills.climb.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
@@ -366,8 +367,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.concentration.classSkill" type="checkbox" /></td>
-                <td class="small">Concentration ■</td>
-                <td class="center small">CON</td>
+                <td>Concentration ■</td>
+                <td class="center">CON</td>
                 <td class="number"><input data-mapping="skills.concentration.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
@@ -378,8 +379,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.craft1.classSkill" type="checkbox" /></td>
-                <td class="small">Craft ■ (__________)</td>
-                <td class="center small">INT</td>
+                <td>Craft ■ <input data-mapping="skills.craft1.item" placeholder="Item" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.craft1.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -390,8 +391,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.craft2.classSkill" type="checkbox" /></td>
-                <td class="small">Craft ■ (__________)</td>
-                <td class="center small">INT</td>
+                <td>Craft ■ <input data-mapping="skills.craft2.item" placeholder="Item" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.craft2.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -402,8 +403,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.craft3.classSkill" type="checkbox" /></td>
-                <td class="small">Craft ■ (__________)</td>
-                <td class="center small">INT</td>
+                <td>Craft ■ <input data-mapping="skills.craft3.item" placeholder="Item" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.craft3.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -414,8 +415,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.decipherScript.classSkill" type="checkbox" /></td>
-                <td class="small">Decipher Script</td>
-                <td class="center small">INT</td>
+                <td>Decipher Script</td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.decipherScript.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -426,8 +427,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.diplomacy.classSkill" type="checkbox" /></td>
-                <td class="small">Diplomacy ■</td>
-                <td class="center small">CHA</td>
+                <td>Diplomacy ■</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.diplomacy.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -438,8 +439,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.disableDevice.classSkill" type="checkbox" /></td>
-                <td class="small">Disable Device</td>
-                <td class="center small">INT</td>
+                <td>Disable Device</td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.disableDevice.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -450,8 +451,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.disguise.classSkill" type="checkbox" /></td>
-                <td class="small">Disguise ■</td>
-                <td class="center small">CHA</td>
+                <td>Disguise ■</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.disguise.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -462,8 +463,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.escapeArtist.classSkill" type="checkbox" /></td>
-                <td class="small">Escape Artist ■ *</td>
-                <td class="center small">DEX</td>
+                <td>Escape Artist ■ *</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.escapeArtist.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -474,8 +475,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.forgery.classSkill" type="checkbox" /></td>
-                <td class="small">Forgery ■</td>
-                <td class="center small">INT</td>
+                <td>Forgery ■</td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.forgery.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -486,8 +487,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.gatherInformation.classSkill" type="checkbox" /></td>
-                <td class="small">Gather Information ■</td>
-                <td class="center small">CHA</td>
+                <td>Gather Information ■</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.gatherInformation.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -498,8 +499,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.handleAnimal.classSkill" type="checkbox" /></td>
-                <td class="small">Handle Animal</td>
-                <td class="center small">CHA</td>
+                <td>Handle Animal</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.handleAnimal.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -510,8 +511,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.heal.classSkill" type="checkbox" /></td>
-                <td class="small">Heal ■</td>
-                <td class="center small">WIS</td>
+                <td>Heal ■</td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.heal.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -522,8 +523,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.hide.classSkill" type="checkbox" /></td>
-                <td class="small">Hide ■ *</td>
-                <td class="center small">DEX</td>
+                <td>Hide ■ *</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.hide.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -534,8 +535,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.intimidate.classSkill" type="checkbox" /></td>
-                <td class="small">Intimidate ■</td>
-                <td class="center small">CHA</td>
+                <td>Intimidate ■</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.intimidate.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -546,8 +547,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.jump.classSkill" type="checkbox" /></td>
-                <td class="small">Jump ■ *</td>
-                <td class="center small">STR</td>
+                <td>Jump ■ *</td>
+                <td class="center">STR</td>
                 <td class="number"><input data-mapping="skills.jump.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
@@ -558,8 +559,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.knowledge1.classSkill" type="checkbox" /></td>
-                <td class="small">Knowledge (__________)</td>
-                <td class="center small">INT</td>
+                <td>Knowledge <input data-mapping="skills.knowledge1.field" placeholder="Field" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.knowledge1.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -570,8 +571,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.knowledge2.classSkill" type="checkbox" /></td>
-                <td class="small">Knowledge (__________)</td>
-                <td class="center small">INT</td>
+                <td>Knowledge <input data-mapping="skills.knowledge2.field" placeholder="Field" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.knowledge2.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -582,8 +583,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.knowledge3.classSkill" type="checkbox" /></td>
-                <td class="small">Knowledge (__________)</td>
-                <td class="center small">INT</td>
+                <td>Knowledge <input data-mapping="skills.knowledge3.field" placeholder="Field" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.knowledge3.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -594,8 +595,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.knowledge4.classSkill" type="checkbox" /></td>
-                <td class="small">Knowledge (__________)</td>
-                <td class="center small">INT</td>
+                <td>Knowledge <input data-mapping="skills.knowledge4.field" placeholder="Field" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.knowledge4.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -606,8 +607,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.knowledge5.classSkill" type="checkbox" /></td>
-                <td class="small">Knowledge (__________)</td>
-                <td class="center small">INT</td>
+                <td>Knowledge <input data-mapping="skills.knowledge5.field" placeholder="Field" type="text" /></td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.knowledge5.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -618,8 +619,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.listen.classSkill" type="checkbox" /></td>
-                <td class="small">Listen ■</td>
-                <td class="center small">WIS</td>
+                <td>Listen ■</td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.listen.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -630,8 +631,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.moveSilently.classSkill" type="checkbox" /></td>
-                <td class="small">Move Silently ■ *</td>
-                <td class="center small">DEX</td>
+                <td>Move Silently ■ *</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.moveSilently.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -642,8 +643,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.openLock.classSkill" type="checkbox" /></td>
-                <td class="small">Open Lock</td>
-                <td class="center small">DEX</td>
+                <td>Open Lock</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.openLock.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -654,8 +655,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.perform1.classSkill" type="checkbox" /></td>
-                <td class="small">Perform (__________)</td>
-                <td class="center small">CHA</td>
+                <td>Perform <input data-mapping="skills.perform1.talent" placeholder="Talent" type="text" /></td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.perform1.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -666,8 +667,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.perform2.classSkill" type="checkbox" /></td>
-                <td class="small">Perform (__________)</td>
-                <td class="center small">CHA</td>
+                <td>Perform <input data-mapping="skills.perform2.talent" placeholder="Talent" type="text" /></td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.perform2.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -678,8 +679,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.perform3.classSkill" type="checkbox" /></td>
-                <td class="small">Perform (__________)</td>
-                <td class="center small">CHA</td>
+                <td>Perform <input data-mapping="skills.perform3.talent" placeholder="Talent" type="text" /></td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.perform3.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -690,8 +691,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.profession1.classSkill" type="checkbox" /></td>
-                <td class="small">Profession (__________)</td>
-                <td class="center small">WIS</td>
+                <td>Profession <input data-mapping="skills.profession1.trade" placeholder="Trade" type="text" /></td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.profession1.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -702,8 +703,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.profession2.classSkill" type="checkbox" /></td>
-                <td class="small">Profession (__________)</td>
-                <td class="center small">WIS</td>
+                <td>Profession <input data-mapping="skills.profession1.trade" placeholder="Trade" type="text" /></td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.profession2.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -714,8 +715,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.ride.classSkill" type="checkbox" /></td>
-                <td class="small">Ride ■</td>
-                <td class="center small">DEX</td>
+                <td>Ride ■</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.ride.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -726,8 +727,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.search.classSkill" type="checkbox" /></td>
-                <td class="small">Search ■</td>
-                <td class="center small">INT</td>
+                <td>Search ■</td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.search.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -738,8 +739,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.senseMotive.classSkill" type="checkbox" /></td>
-                <td class="small">Sense Motive ■</td>
-                <td class="center small">WIS</td>
+                <td>Sense Motive ■</td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.senseMotive.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -750,8 +751,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.sleightOfHand.classSkill" type="checkbox" /></td>
-                <td class="small">Sleight of Hand *</td>
-                <td class="center small">DEX</td>
+                <td>Sleight of Hand *</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.sleightOfHand.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -762,8 +763,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.spellcraft.classSkill" type="checkbox" /></td>
-                <td class="small">Spellcraft</td>
-                <td class="center small">INT</td>
+                <td>Spellcraft</td>
+                <td class="center">INT</td>
                 <td class="number"><input data-mapping="skills.spellcraft.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
@@ -774,8 +775,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.spot.classSkill" type="checkbox" /></td>
-                <td class="small">Spot ■</td>
-                <td class="center small">WIS</td>
+                <td>Spot ■</td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.spot.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -786,8 +787,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.survival.classSkill" type="checkbox" /></td>
-                <td class="small">Survival ■</td>
-                <td class="center small">WIS</td>
+                <td>Survival ■</td>
+                <td class="center">WIS</td>
                 <td class="number"><input data-mapping="skills.survival.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
@@ -798,8 +799,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.swim.classSkill" type="checkbox" /></td>
-                <td class="small">Swim ■ *</td>
-                <td class="center small">STR</td>
+                <td>Swim ■ *</td>
+                <td class="center">STR</td>
                 <td class="number"><input data-mapping="skills.swim.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
@@ -810,8 +811,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.tumble.classSkill" type="checkbox" /></td>
-                <td class="small">Tumble *</td>
-                <td class="center small">DEX</td>
+                <td>Tumble *</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.tumble.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -822,8 +823,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.useMagicDevice.classSkill" type="checkbox" /></td>
-                <td class="small">Use Magic Device</td>
-                <td class="center small">CHA</td>
+                <td>Use Magic Device</td>
+                <td class="center">CHA</td>
                 <td class="number"><input data-mapping="skills.useMagicDevice.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
@@ -834,8 +835,8 @@
             </tr>
             <tr>
                 <td class="center"><input data-mapping="skills.useRope.classSkill" type="checkbox" /></td>
-                <td class="small">Use Rope ■</td>
-                <td class="center small">DEX</td>
+                <td>Use Rope ■</td>
+                <td class="center">DEX</td>
                 <td class="number"><input data-mapping="skills.useRope.skillMod" readonly="readonly" type="text" /></td>
                 <td>=</td>
                 <td class="number"><input data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
@@ -845,10 +846,10 @@
                 <td class="number"><input data-mapping="skills.useRope.miscMod" type="text" /></td>
             </tr>
             <tr>
-                <td class="small" colspan="10">■ Denotes a skill that can be used untrained.</td>
+                <td colspan="10">■ Denotes a skill that can be used untrained.</td>
             </tr>
             <tr>
-                <td class="small" colspan="10">* Armor check penalty, if any, applies. (Double penalty for Swim.)</td>
+                <td colspan="10">* Armor check penalty, if any, applies. (Double penalty for Swim.)</td>
             </tr>
         </table>
         <script src="js/KO-1.0.16.js"></script>
@@ -881,9 +882,9 @@
                         bluff: { classSkill: false, keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
                         climb: { classSkill: false, keyAbility: 'strength', skillMod: 0, ranks: 0, miscMod: 0 },
                         concentration: { classSkill: false, keyAbility: 'constitution', skillMod: 0, ranks: 0, miscMod: 0 },
-                        craft1: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
-                        craft2: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
-                        craft3: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        craft1: { classSkill: false, item: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        craft2: { classSkill: false, item: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        craft3: { classSkill: false, item: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
                         decipherScript: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
                         diplomacy: { classSkill: false, keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
                         disableDevice: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
@@ -896,19 +897,19 @@
                         hide: { classSkill: false, keyAbility: 'dexterity', skillMod: 0, ranks: 0, miscMod: 0 },
                         intimidate: { classSkill: false, keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
                         jump: { classSkill: false, keyAbility: 'strength', skillMod: 0, ranks: 0, miscMod: 0 },
-                        knowledge1: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
-                        knowledge2: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
-                        knowledge3: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
-                        knowledge4: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
-                        knowledge5: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge1: { classSkill: false, field: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge2: { classSkill: false, field: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge3: { classSkill: false, field: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge4: { classSkill: false, field: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
+                        knowledge5: { classSkill: false, field: '', keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
                         listen: { classSkill: false, keyAbility: 'wisdom', skillMod: 0, ranks: 0, miscMod: 0 },
                         moveSilently: { classSkill: false, keyAbility: 'dexterity', skillMod: 0, ranks: 0, miscMod: 0 },
                         openLock: { classSkill: false, keyAbility: 'dexterity', skillMod: 0, ranks: 0, miscMod: 0 },
-                        perform1: { classSkill: false, keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
-                        perform2: { classSkill: false, keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
-                        perform3: { classSkill: false, keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
-                        profession1: { classSkill: false, keyAbility: 'wisdom', skillMod: 0, ranks: 0, miscMod: 0 },
-                        profession2: { classSkill: false, keyAbility: 'wisdom', skillMod: 0, ranks: 0, miscMod: 0 },
+                        perform1: { classSkill: false, talent: '', keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
+                        perform2: { classSkill: false, talent: '', keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
+                        perform3: { classSkill: false, talent: '', keyAbility: 'charisma', skillMod: 0, ranks: 0, miscMod: 0 },
+                        profession1: { classSkill: false, trade: '', keyAbility: 'wisdom', skillMod: 0, ranks: 0, miscMod: 0 },
+                        profession2: { classSkill: false, trade: '', keyAbility: 'wisdom', skillMod: 0, ranks: 0, miscMod: 0 },
                         ride: { classSkill: false, keyAbility: 'dexterity', skillMod: 0, ranks: 0, miscMod: 0 },
                         search: { classSkill: false, keyAbility: 'intelligence', skillMod: 0, ranks: 0, miscMod: 0 },
                         senseMotive: { classSkill: false, keyAbility: 'wisdom', skillMod: 0, ranks: 0, miscMod: 0 },
