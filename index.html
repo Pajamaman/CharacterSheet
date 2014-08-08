@@ -35,7 +35,7 @@
             }
             input.number {
                 text-align: center;
-                width: 5em;
+                width: 5.25em;
             }
             .center {
                 text-align: center;
@@ -361,7 +361,7 @@
                 <td><input class="number" data-mapping="grapple.miscMod" type="text" /></td>
             </tr>
         </table>
-        <table id="skills"
+        <table id="skills">
             <tr>
                 <th class="invert large" colspan="10">Skills</th>
             </tr>
@@ -911,7 +911,7 @@
             ■ Denotes a skill that can be used untrained.<br />
             * Armor check penalty, if any, applies. (Double penalty for Swim.)
         </p>
-        <script src="js/KO-1.0.16.js"></script>
+        <script src="js/KO-1.0.17.js"></script>
         <script>
             (function () {
                 var character = {
@@ -931,80 +931,80 @@
                     'hair': '',
                     'skin': '',
                     'abilities': {
-                        'strength': { 'score': 0, 'mod': 0, 'tempScore': 0, 'tempMod': 0 },
-                        'dexterity': { 'score': 0, 'mod': 0, 'tempScore': 0, 'tempMod': 0 },
-                        'constitution': { 'score': 0, 'mod': 0, 'tempScore': 0, 'tempMod': 0 },
-                        'intelligence': { 'score': 0, 'mod': 0, 'tempScore': 0, 'tempMod': 0 },
-                        'wisdom': { 'score': 0, 'mod': 0, 'tempScore': 0, 'tempMod': 0 },
-                        'charisma': { 'score': 0, 'mod': 0, 'tempScore': 0, 'tempMod': 0 }
+                        'strength': { 'score': '', 'mod': '', 'tempScore': '', 'tempMod': '' },
+                        'dexterity': { 'score': '', 'mod': '', 'tempScore': '', 'tempMod': '' },
+                        'constitution': { 'score': '', 'mod': '', 'tempScore': '', 'tempMod': '' },
+                        'intelligence': { 'score': '', 'mod': '', 'tempScore': '', 'tempMod': '' },
+                        'wisdom': { 'score': '', 'mod': '', 'tempScore': '', 'tempMod': '' },
+                        'charisma': { 'score': '', 'mod': '', 'tempScore': '', 'tempMod': '' }
                     },
-                    'hitPoints': { 'max': 0, 'current': 0, 'nonlethalDamage': 0 },
+                    'hitPoints': { 'max': '', 'current': '', 'nonlethalDamage': '' },
                     'armorClass': {
                         'total': 10,
                         'baseArmor': 10,
-                        'armorBonus': 0,
-                        'shieldBonus': 0,
-                        'sizeMod': 0,
-                        'naturalArmor': 0,
-                        'deflectionMod': 0,
-                        'miscMod': 0,
+                        'armorBonus': '',
+                        'shieldBonus': '',
+                        'sizeMod': '',
+                        'naturalArmor': '',
+                        'deflectionMod': '',
+                        'miscMod': '',
                         'touch': 10,
                         'flatFooted': 10 },
-                    'initiative': { 'total': 0, 'miscMod': 0 },
+                    'initiative': { 'total': '', 'miscMod': '' },
                     'savingThrows': {
-                        'fortitude': { 'total': 0, 'baseSave': 0, 'magicMod': 0, 'miscMod': 0, 'tempMod': 0 },
-                        'reflex': { 'total': 0, 'baseSave': 0, 'magicMod': 0, 'miscMod': 0, 'tempMod': 0 },
-                        'will': { 'total': 0, 'baseSave': 0, 'magicMod': 0, 'miscMod': 0, 'tempMod': 0 }
+                        'fortitude': { 'total': '', 'baseSave': '', 'magicMod': '', 'miscMod': '', 'tempMod': '' },
+                        'reflex': { 'total': '', 'baseSave': '', 'magicMod': '', 'miscMod': '', 'tempMod': '' },
+                        'will': { 'total': '', 'baseSave': '', 'magicMod': '', 'miscMod': '', 'tempMod': '' }
                     },
-                    'speed': 0,
-                    'baseAttackBonus': 0,
-                    'spellResistance': 0,
-                    'grapple': { 'total': 0, 'sizeMod': 0, 'miscMod': 0 },
+                    'speed': '',
+                    'baseAttackBonus': '',
+                    'spellResistance': '',
+                    'grapple': { 'total': '', 'sizeMod': '', 'miscMod': '' },
                     'skills': {
-                        'appraise': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'balance': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'bluff': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'climb': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'concentration': { 'classSkill': false, 'keyAbility': 'constitution', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'craft1': { 'classSkill': false, 'item': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'craft2': { 'classSkill': false, 'item': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'craft3': { 'classSkill': false, 'item': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'decipherScript': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'diplomacy': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'disableDevice': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'disguise': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'escapeArtist': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'forgery': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'gatherInformation': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'handleAnimal': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'heal': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'hide': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'intimidate': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'jump': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'knowledge1': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'knowledge2': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'knowledge3': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'knowledge4': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'knowledge5': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'listen': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'moveSilently': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'openLock': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'perform1': { 'classSkill': false, 'talent': '', 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'perform2': { 'classSkill': false, 'talent': '', 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'perform3': { 'classSkill': false, 'talent': '', 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'profession1': { 'classSkill': false, 'trade': '', 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'profession2': { 'classSkill': false, 'trade': '', 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'ride': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'search': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'senseMotive': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'sleightOfHand': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'spellcraft': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'spot': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'survival': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'swim': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'tumble': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'useMagicDevice': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 },
-                        'useRope': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': 0, 'ranks': 0, 'miscMod': 0 }
+                        'appraise': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'balance': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'bluff': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'climb': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'concentration': { 'classSkill': false, 'keyAbility': 'constitution', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'craft1': { 'classSkill': false, 'item': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'craft2': { 'classSkill': false, 'item': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'craft3': { 'classSkill': false, 'item': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'decipherScript': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'diplomacy': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'disableDevice': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'disguise': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'escapeArtist': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'forgery': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'gatherInformation': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'handleAnimal': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'heal': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'hide': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'intimidate': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'jump': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'knowledge1': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'knowledge2': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'knowledge3': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'knowledge4': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'knowledge5': { 'classSkill': false, 'field': '', 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'listen': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'moveSilently': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'openLock': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'perform1': { 'classSkill': false, 'talent': '', 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'perform2': { 'classSkill': false, 'talent': '', 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'perform3': { 'classSkill': false, 'talent': '', 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'profession1': { 'classSkill': false, 'trade': '', 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'profession2': { 'classSkill': false, 'trade': '', 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'ride': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'search': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'senseMotive': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'sleightOfHand': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'spellcraft': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'spot': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'survival': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'swim': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'tumble': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'useMagicDevice': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': '', 'ranks': '', 'miscMod': '' },
+                        'useRope': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': '', 'ranks': '', 'miscMod': '' }
                     }
                 };
                 
@@ -1073,16 +1073,20 @@
                     'armorClass.miscMod']);
                 
                 KO.listen(function (event) {
-                    character.armorClass.touch = character.armorClass.touch - event.detail.oldValue + event.detail.newValue;
-                }, ['armorClass.total',
-                    'armorClass.armorBonus',
-                    'armorClass.shieldBonus',
-                    'armorClass.naturalArmor']);
+                    character.armorClass.touch = character.armorClass.total - character.armorClass.armorBonus - character.armorClass.shieldBonus - character.armorClass.naturalArmor;
+                }, 'armorClass.total');
                 
                 KO.listen(function (event) {
-                    character.armorClass.flatFooted = character.armorClass.flatFooted - event.detail.oldValue + event.detail.newValue;
-                }, ['armorClass.total',
-                    'character.abilities.dexterity.mod']);
+                    character.armorClass.flatFooted = character.armorClass.total;
+                    if (character.abilities.dexterity.mod > 0) {
+                        character.armorClass.flatFooted -= character.abilities.dexterity.mod;
+                    }
+                }, 'armorClass.total');
+                
+                KO.listen(function (event) {
+                    character.initiative.total = character.initiative.total - event.detail.oldValue + event.detail.newValue;
+                }, ['abilities.dexterity.mod',
+                    'initiative.miscMod']);
                 
                 KO.listen(function (event) {
                     character.savingThrows.fortitude.total = character.savingThrows.fortitude.total - event.detail.oldValue + event.detail.newValue;
