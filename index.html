@@ -27,7 +27,14 @@
             td {
                 padding: 0.25em;
             }
+            table.alt {
+                border-collapse: collapse;
+            }
+            table.alt tr:nth-child(odd) {
+                background-color: #eee;
+            }
             input {
+                box-sizing: border-box;
                 font: inherit;
             }
             input[readonly] {
@@ -35,7 +42,10 @@
             }
             input.number {
                 text-align: center;
-                width: 5.25em;
+                width: 5.7em;
+            }
+            input.long-text {
+                width: 100%;
             }
             .center {
                 text-align: center;
@@ -50,12 +60,6 @@
             }
             .small {
                 font-size: 8pt;
-            }
-            #skills {
-                border-collapse: collapse;
-            }
-            #skills tr:nth-child(odd) {
-                background-color: #eee;
             }
         </style>
     </head>
@@ -361,7 +365,7 @@
                 <td><input class="number" data-mapping="grapple.miscMod" type="text" /></td>
             </tr>
         </table>
-        <table id="skills">
+        <table class="alt">
             <tr>
                 <th class="invert large" colspan="10">Skills</th>
             </tr>
@@ -911,6 +915,71 @@
             ■ Denotes a skill that can be used untrained.<br />
             * Armor check penalty, if any, applies. (Double penalty for Swim.)
         </p>
+        <table class="alt">
+            <tr>
+                <th class="invert large" colspan="10">Attacks</th>
+            </tr>
+            <tr>
+                <th style="text-align: left;">Attack Name</th>
+                <th>Attack<br />Bonus</th>
+                <th>Damage</th>
+                <th>Critical</th>
+                <th>Range</th>
+                <th>Type</th>
+                <th>Ammunition</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td><input data-mapping="attacks.attack1.attackName" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack1.attackBonus" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack1.damage" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack1.critical" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack1.range" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack1.type" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack1.ammunition" type="text" /></td>
+                <td><input data-mapping="attacks.attack1.notes" type="text" /></td>
+            </tr>
+            <tr>
+                <td><input data-mapping="attacks.attack2.attackName" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack2.attackBonus" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack2.damage" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack2.critical" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack2.range" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack2.type" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack2.ammunition" type="text" /></td>
+                <td><input data-mapping="attacks.attack2.notes" type="text" /></td>
+            </tr>
+            <tr>
+                <td><input data-mapping="attacks.attack3.attackName" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack3.attackBonus" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack3.damage" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack3.critical" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack3.range" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack3.type" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack3.ammunition" type="text" /></td>
+                <td><input data-mapping="attacks.attack3.notes" type="text" /></td>
+            </tr>
+            <tr>
+                <td><input data-mapping="attacks.attack4.attackName" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack4.attackBonus" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack4.damage" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack4.critical" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack4.range" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack4.type" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack4.ammunition" type="text" /></td>
+                <td><input data-mapping="attacks.attack4.notes" type="text" /></td>
+            </tr>
+            <tr>
+                <td><input data-mapping="attacks.attack5.attackName" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack5.attackBonus" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack5.damage" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack5.critical" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack5.range" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack5.type" type="text" /></td>
+                <td><input class="number" data-mapping="attacks.attack5.ammunition" type="text" /></td>
+                <td><input data-mapping="attacks.attack5.notes" type="text" /></td>
+            </tr>
+        </table>
         <script src="js/KO-1.0.18.js"></script>
         <script>
             (function () {
@@ -1005,6 +1074,13 @@
                         'tumble': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
                         'useMagicDevice': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
                         'useRope': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null }
+                    },
+                    'attacks': {
+                        'attack1': { 'attackName': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack2': { 'attackName': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack3': { 'attackName': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack4': { 'attackName': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack5': { 'attackName': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
                     }
                 };
                 
