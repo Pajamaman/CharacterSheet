@@ -1,0 +1,143 @@
+@font-face {
+    font-family: VerdanaProCondBold;
+    src: url("../fonts/VerdanaPro-CondBold.woff");
+}
+@font-face {
+    font-family: VerdanaProCondRegular;
+    src: url("../fonts/VerdanaPro-CondRegular.woff");
+}
+body {
+    font-family: VerdanaProCondRegular, sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+}
+table {
+    margin: 1em 0;
+}
+th {
+    font-weight: normal;
+    padding: 0.25em;
+    text-transform: uppercase;
+}
+td {
+    padding: 0.25em;
+}
+table.alt {
+    border-collapse: collapse;
+}
+table.alt tr:nth-child(odd) {
+    background-color: #eee;
+}
+input[type="text"] {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 12pt;
+    width: 8.05em;
+}
+input[readonly] {
+    background-color: #eee;
+}
+input.short {
+    text-align: center;
+    width: 3.8em;
+}
+input.long {
+    width: 100%;
+}
+.center {
+    text-align: center;
+}
+.invert {
+    background-color: black;
+    color: white;
+}
+.large {
+    font-family: VerdanaProCondBold, sans-serif;
+    font-size: 12pt;
+}
+#logo {
+    position: absolute;
+    top: 1em;
+    left: 74em;
+}
+#logo img {
+    width: 40em;
+}
+#description {
+    position: absolute;
+    top: 1em;
+    left: 4em;
+}
+#abilities {
+    position: absolute;
+    top: 14em;
+    left: 4em;
+}
+#hit-points {
+    position: absolute;
+    top: 14em;
+    left: 39em;
+}
+#speed {
+    position: absolute;
+    top: 17.6em;
+    left: 66em;
+}
+#damage-reduction {
+    position: absolute;
+    top: 17.3em;
+    left: 80em;
+}
+#armor-class {
+    position: absolute;
+    top: 23em;
+    left: 39em;
+}
+#armor-class-touch {
+    position: absolute;
+    top: 35.3em;
+    left: 39em;
+}
+#armor-class-flat-footed {
+    position: absolute;
+    top: 35.3em;
+    left: 55em;
+}
+#initiative {
+    position: absolute;
+    top: 32em;
+    left: 74em;
+}
+#saving-throws {
+    position: absolute;
+    top: 42.75em;
+    left: 4em;
+}
+#base-attack-bonus {
+    position: absolute;
+    top: 62em;
+    left: 4em;
+}
+#spell-resistance {
+    position: absolute;
+    top: 62em;
+    left: 28em;
+}
+#grapple {
+    position: absolute;
+    top: 66em;
+    left: 4em;
+}
+#skills {
+    position: absolute;
+    top: 42em;
+    left: 60em;
+}
+#attacks {
+    position: absolute;
+    top: 78em;
+    left: 4em;
+}
+#attacks table {
+    margin: 2em 0;
+}
