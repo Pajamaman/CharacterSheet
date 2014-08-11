@@ -29,6 +29,7 @@ table.alt tr:nth-child(odd) {
     background-color: #eee;
 }
 input[type="text"] {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: inherit;
     font-size: 12pt;
@@ -55,89 +56,50 @@ input.long {
     font-family: VerdanaProCondBold, sans-serif;
     font-size: 12pt;
 }
+.table-group {
+    margin: 1em 0;
+}
+.table-group:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.table-group table {
+    float: left;
+    margin: 0;
+    padding-left: 2em;
+}
+.table-group table:first-child {
+    padding-left: 0;
+}
+#container {
+    margin: 0 auto;
+    position: relative;
+    width: 110em;
+}
 #logo {
     position: absolute;
-    top: 1em;
-    left: 74em;
-}
-#logo img {
+    right: 0;
+    top: 0;
     width: 40em;
 }
-#description {
+#hit-points-speed-etc {
     position: absolute;
-    top: 1em;
-    left: 4em;
-}
-#abilities {
-    position: absolute;
-    top: 14em;
-    left: 4em;
-}
-#hit-points {
-    position: absolute;
-    top: 14em;
-    left: 39em;
+    right: 0;
+    top: 11.8em;
 }
 #speed {
-    position: absolute;
-    top: 17.6em;
-    left: 66em;
+    position: relative;
+    top: 3.7em;
 }
-#damage-reduction {
-    position: absolute;
-    top: 17.3em;
-    left: 80em;
-}
-#armor-class {
-    position: absolute;
-    top: 23em;
-    left: 39em;
-}
-#armor-class-touch {
-    position: absolute;
-    top: 35.3em;
-    left: 39em;
-}
+#damage-reduction,
+#armor-class-touch,
 #armor-class-flat-footed {
-    position: absolute;
-    top: 35.3em;
-    left: 55em;
-}
-#initiative {
-    position: absolute;
-    top: 32em;
-    left: 74em;
-}
-#saving-throws {
-    position: absolute;
-    top: 42.75em;
-    left: 4em;
-}
-#base-attack-bonus {
-    position: absolute;
-    top: 62em;
-    left: 4em;
-}
-#spell-resistance {
-    position: absolute;
-    top: 62em;
-    left: 28em;
-}
-#grapple {
-    position: absolute;
-    top: 66em;
-    left: 4em;
+    position: relative;
+    top: 3.3em;
 }
 #skills {
     position: absolute;
-    top: 42em;
-    left: 60em;
-}
-#attacks {
-    position: absolute;
-    top: 78em;
-    left: 4em;
-}
-#attacks table {
-    margin: 2em 0;
+    right: 0;
+    top: 40em;
 }

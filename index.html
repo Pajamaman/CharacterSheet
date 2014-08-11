@@ -6,10 +6,8 @@
         <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="logo">
-            <img src="img/logo.png" />
-        </div>
-        <div id="description">
+        <div id="container">
+            <img id="logo" src="img/logo.png" />
             <table>
                 <tr>
                     <th>Name</th>
@@ -52,853 +50,307 @@
                     <td><input class="short" data-mapping="skin" type="text" /></td>
                 </tr>
             </table>
-        </div>
-        <table id="abilities">
-            <tr>
-                <th>Abilities</th>
-                <th>Ability<br />Score</th>
-                <th>Ability<br />Modifier</th>
-                <th>Temporary<br />Score</th>
-                <th>Temporary<br />Modifier</th>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">STR</div>
-                    <div>Strength</div>
-                </th>
-                <td><input class="short" data-mapping="abilities.strength.score" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.strength.tempScore" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.strength.tempMod" readonly="readonly" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">DEX</div>
-                    <div>Dexterity</div>
-                </th>
-                <td><input class="short" data-mapping="abilities.dexterity.score" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.dexterity.tempScore" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.dexterity.tempMod" readonly="readonly" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">CON</div>
-                    <div>Constitution</div>
-                </th>
-                <td><input class="short" data-mapping="abilities.constitution.score" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.constitution.tempScore" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.constitution.tempMod" readonly="readonly" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">INT</div>
-                    <div>Intelligence</div>
-                </th>
-                <td><input class="short" data-mapping="abilities.intelligence.score" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.intelligence.tempScore" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.intelligence.tempMod" readonly="readonly" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">WIS</div>
-                    <div>Wisdom</div>
-                </th>
-                <td><input class="short" data-mapping="abilities.wisdom.score" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.wisdom.tempScore" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.wisdom.tempMod" readonly="readonly" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">CHA</div>
-                    <div>Charisma</div>
-                </th>
-                <td><input class="short" data-mapping="abilities.charisma.score" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.charisma.tempScore" type="text" /></td>
-                <td><input class="short" data-mapping="abilities.charisma.tempMod" readonly="readonly" type="text" /></td>
-            </tr>
-        </table>
-        <table id="hit-points">
-            <tr>
-                <th></th>
-                <th>Maximum<br />HP</th>
-                <th>Current<br />HP</th>
-                <th>Nonlethal<br />Damage</th>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">HP</div>
-                    <div>Hit Points</div>
-                </th>
-                <td><input class="short" data-mapping="hitPoints.max" type="text" /></td>
-                <td><input class="short" data-mapping="hitPoints.current" type="text" /></td>
-                <td><input class="short" data-mapping="hitPoints.nonlethalDamage" type="text" /></td>
-            </tr>
-        </table>
-        <table id="speed">
-            <tr>
-                <th class="invert large">Speed</th>
-                <td><input class="short" data-mapping="speed" type="text" /></td>
-            </tr>
-        </table>
-        <table id="damage-reduction">
-            <tr>
-                <th class="invert">
-                    <div class="large">Damage</div>
-                    <div>Reduction</div>
-                </th>
-                <td><input class="short" data-mapping="damageReduction" type="text" /></td>
-            </tr>
-        </table>
-        <table id="armor-class">
-            <tr>
-                <th></th>
-                <th>Total</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Armor<br />Bonus</th>
-                <th></th>
-                <th>Shield<br />Bonus</th>
-                <th></th>
-                <th>Dexterity<br />Modifier</th>
-                <th></th>
-                <th>Size<br />Modifier</th>
-                <th></th>
-                <th>Natural<br />Armor</th>
-                <th></th>
-                <th>Deflection<br />Modifier</th>
-                <th></th>
-                <th>Misc.<br />Modifier</th>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">AC</div>
-                    <div>Armor Class</div>
-                </th>
-                <td><input class="short" data-mapping="armorClass.total" readonly="readonly" type="text" /></th>
-                <td>=</td>
-                <td><input class="short" data-mapping="armorClass.baseArmor" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="armorClass.armorBonus" type="text" /></th>
-                <td>+</td>
-                <td><input class="short" data-mapping="armorClass.shieldBonus" type="text" /></th>
-                <td>+</td>
-                <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></th>
-                <td>+</td>
-                <td><input class="short" data-mapping="armorClass.sizeMod" type="text" /></th>
-                <td>+</td>
-                <td><input class="short" data-mapping="armorClass.naturalArmor" type="text" /></th>
-                <td>+</td>
-                <td><input class="short" data-mapping="armorClass.deflectionMod" type="text" /></th>
-                <td>+</td>
-                <td><input class="short" data-mapping="armorClass.miscMod" type="text" /></th>
-            </tr>
-        </table>
-        <table id="armor-class-touch">
-            <tr>
-                <th class="invert">
-                    <div class="large">Touch</div>
-                    <div>Armor Class</div>
-                </th>
-                <td><input class="short" data-mapping="armorClass.touch" readonly="readonly" type="text" /></td>
-            </tr>
-        </table>
-        <table id="armor-class-flat-footed">
-            <tr>
-                <th class="invert">
-                    <div class="large">Flat-Footed</div>
-                    <div>Armor Class</div>
-                </th>
-                <td><input class="short" data-mapping="armorClass.flatFooted" readonly="readonly" type="text" /></td>
-            </tr>
-        </table>
-        <table id="initiative">
-            <tr>
-                <th></th>
-                <th>Total</th>
-                <th></th>
-                <th>Dexterity<br />Modifier</th>
-                <th></th>
-                <th>Misc.<br />Modifier</th>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">Initiative</div>
-                    <div>Modifier</div>
-                </th>
-                <td><input class="short" data-mapping="initiative.total" readonly="readonly" type="text" /></td>
-                <td>=</td>
-                <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="initiative.miscMod" type="text" /></td>
-            </tr>
-        </table>
-        <table id="saving-throws">
-            <tr>
-                <th>Saving<br />Throws</th>
-                <th>Total</th>
-                <th></th>
-                <th>Base Save</th>
-                <th></th>
-                <th>Ability<br />Modifier</th>
-                <th></th>
-                <th>Magic<br />Modifier</th>
-                <th></th>
-                <th>Misc.<br />Modifier</th>
-                <th></th>
-                <th>Temporary<br />Modifier</th>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">Fortitude</div>
-                    <div>(Constitution)</div>
-                </th>
-                <td><input class="short" data-mapping="savingThrows.fortitude.total" readonly="readonly" type="text" /></td>
-                <td>=</td>
-                <td><input class="short" data-mapping="savingThrows.fortitude.baseSave" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.fortitude.magicMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.fortitude.miscMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.fortitude.tempMod" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">Reflex</div>
-                    <div>(Dexterity)</div>
-                </th>
-                <td><input class="short" data-mapping="savingThrows.reflex.total" readonly="readonly" type="text" /></td>
-                <td>=</td>
-                <td><input class="short" data-mapping="savingThrows.reflex.baseSave" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.reflex.magicMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.reflex.miscMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.reflex.tempMod" type="text" /></td>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">Will</div>
-                    <div>(Wisdom)</div>
-                </th>
-                <td><input class="short" data-mapping="savingThrows.will.total" readonly="readonly" type="text" /></td>
-                <td>=</td>
-                <td><input class="short" data-mapping="savingThrows.will.baseSave" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.will.magicMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.will.miscMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="savingThrows.will.tempMod" type="text" /></td>
-            </tr>
-        </table>
-        <table id="base-attack-bonus">
-            <tr>
-                <th class="invert large">Base Attack Bonus</th>
-                <td><input class="short" data-mapping="baseAttackBonus" type="text" /></td>
-            </tr>
-        </table>
-        <table id="spell-resistance">
-            <tr>
-                <th class="invert large">Spell Resistance</th>
-                <td><input class="short" data-mapping="spellResistance" type="text" /></td>
-            </tr>
-        </table>
-        <table id="grapple">
-            <tr>
-                <th></th>
-                <th>Total</th>
-                <th></th>
-                <th>Base<br />Attack<br />Bonus</th>
-                <th></th>
-                <th>Strength<br />Modifier</th>
-                <th></th>
-                <th>Size<br />Modifier</th>
-                <th></th>
-                <th>Misc.<br />Modifier</th>
-            </tr>
-            <tr>
-                <th class="invert">
-                    <div class="large">Grapple</div>
-                    <div>Modifier</div>
-                </th>
-                <td><input class="short" data-mapping="grapple.total" readonly="readonly" type="text" /></td>
-                <td>=</td>
-                <td><input class="short" data-mapping="baseAttackBonus" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="grapple.sizeMod" type="text" /></td>
-                <td>+</td>
-                <td><input class="short" data-mapping="grapple.miscMod" type="text" /></td>
-            </tr>
-        </table>
-        <div id="skills">
-            <table class="alt">
+            <table>
                 <tr>
-                    <th class="invert large" colspan="10">Skills</th>
+                    <th>Abilities</th>
+                    <th>Ability<br />Score</th>
+                    <th>Ability<br />Modifier</th>
+                    <th>Temporary<br />Score</th>
+                    <th>Temporary<br />Modifier</th>
                 </tr>
                 <tr>
+                    <th class="invert">
+                        <div class="large">STR</div>
+                        <div>Strength</div>
+                    </th>
+                    <td><input class="short" data-mapping="abilities.strength.score" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.strength.tempScore" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.strength.tempMod" readonly="readonly" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">DEX</div>
+                        <div>Dexterity</div>
+                    </th>
+                    <td><input class="short" data-mapping="abilities.dexterity.score" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.dexterity.tempScore" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.dexterity.tempMod" readonly="readonly" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">CON</div>
+                        <div>Constitution</div>
+                    </th>
+                    <td><input class="short" data-mapping="abilities.constitution.score" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.constitution.tempScore" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.constitution.tempMod" readonly="readonly" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">INT</div>
+                        <div>Intelligence</div>
+                    </th>
+                    <td><input class="short" data-mapping="abilities.intelligence.score" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.intelligence.tempScore" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.intelligence.tempMod" readonly="readonly" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">WIS</div>
+                        <div>Wisdom</div>
+                    </th>
+                    <td><input class="short" data-mapping="abilities.wisdom.score" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.wisdom.tempScore" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.wisdom.tempMod" readonly="readonly" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">CHA</div>
+                        <div>Charisma</div>
+                    </th>
+                    <td><input class="short" data-mapping="abilities.charisma.score" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.charisma.tempScore" type="text" /></td>
+                    <td><input class="short" data-mapping="abilities.charisma.tempMod" readonly="readonly" type="text" /></td>
+                </tr>
+            </table>
+            <div id="hit-points-speed-etc">
+                <div class="table-group">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Maximum<br />HP</th>
+                            <th>Current<br />HP</th>
+                            <th>Nonlethal<br />Damage</th>
+                        </tr>
+                        <tr>
+                            <th class="invert">
+                                <div class="large">HP</div>
+                                <div>Hit Points</div>
+                            </th>
+                            <td><input class="short" data-mapping="hitPoints.max" type="text" /></td>
+                            <td><input class="short" data-mapping="hitPoints.current" type="text" /></td>
+                            <td><input class="short" data-mapping="hitPoints.nonlethalDamage" type="text" /></td>
+                        </tr>
+                    </table>
+                    <table id="speed">
+                        <tr>
+                            <th class="invert large">Speed</th>
+                            <td><input class="short" data-mapping="speed" type="text" /></td>
+                        </tr>
+                    </table>
+                    <table id="damage-reduction">
+                        <tr>
+                            <th class="invert">
+                                <div class="large">Damage</div>
+                                <div>Reduction</div>
+                            </th>
+                            <td><input class="short" data-mapping="damageReduction" type="text" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Total</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Armor<br />Bonus</th>
+                        <th></th>
+                        <th>Shield<br />Bonus</th>
+                        <th></th>
+                        <th>Dexterity<br />Modifier</th>
+                        <th></th>
+                        <th>Size<br />Modifier</th>
+                        <th></th>
+                        <th>Natural<br />Armor</th>
+                        <th></th>
+                        <th>Deflection<br />Modifier</th>
+                        <th></th>
+                        <th>Misc.<br />Modifier</th>
+                    </tr>
+                    <tr>
+                        <th class="invert">
+                            <div class="large">AC</div>
+                            <div>Armor Class</div>
+                        </th>
+                        <td><input class="short" data-mapping="armorClass.total" readonly="readonly" type="text" /></th>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="armorClass.baseArmor" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="armorClass.armorBonus" type="text" /></th>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="armorClass.shieldBonus" type="text" /></th>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></th>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="armorClass.sizeMod" type="text" /></th>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="armorClass.naturalArmor" type="text" /></th>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="armorClass.deflectionMod" type="text" /></th>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="armorClass.miscMod" type="text" /></th>
+                    </tr>
+                </table>
+                <div class="table-group">
+                    <table id="armor-class-touch">
+                        <tr>
+                            <th class="invert">
+                                <div class="large">Touch</div>
+                                <div>Armor Class</div>
+                            </th>
+                            <td><input class="short" data-mapping="armorClass.touch" readonly="readonly" type="text" /></td>
+                        </tr>
+                    </table>
+                    <table id="armor-class-flat-footed">
+                        <tr>
+                            <th class="invert">
+                                <div class="large">Flat-Footed</div>
+                                <div>Armor Class</div>
+                            </th>
+                            <td><input class="short" data-mapping="armorClass.flatFooted" readonly="readonly" type="text" /></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Total</th>
+                            <th></th>
+                            <th>Dexterity<br />Modifier</th>
+                            <th></th>
+                            <th>Misc.<br />Modifier</th>
+                        </tr>
+                        <tr>
+                            <th class="invert">
+                                <div class="large">Initiative</div>
+                                <div>Modifier</div>
+                            </th>
+                            <td><input class="short" data-mapping="initiative.total" readonly="readonly" type="text" /></td>
+                            <td>=</td>
+                            <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                            <td>+</td>
+                            <td><input class="short" data-mapping="initiative.miscMod" type="text" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th>Saving<br />Throws</th>
+                    <th>Total</th>
                     <th></th>
-                    <th style="text-align: left;">Skill Name</th>
-                    <th>Key<br />Ability</th>
-                    <th>Skill<br />Modifier</th>
+                    <th>Base Save</th>
                     <th></th>
                     <th>Ability<br />Modifier</th>
                     <th></th>
-                    <th>Ranks</th>
+                    <th>Magic<br />Modifier</th>
+                    <th></th>
+                    <th>Misc.<br />Modifier</th>
+                    <th></th>
+                    <th>Temporary<br />Modifier</th>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">Fortitude</div>
+                        <div>(Constitution)</div>
+                    </th>
+                    <td><input class="short" data-mapping="savingThrows.fortitude.total" readonly="readonly" type="text" /></td>
+                    <td>=</td>
+                    <td><input class="short" data-mapping="savingThrows.fortitude.baseSave" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.fortitude.magicMod" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.fortitude.miscMod" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.fortitude.tempMod" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">Reflex</div>
+                        <div>(Dexterity)</div>
+                    </th>
+                    <td><input class="short" data-mapping="savingThrows.reflex.total" readonly="readonly" type="text" /></td>
+                    <td>=</td>
+                    <td><input class="short" data-mapping="savingThrows.reflex.baseSave" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.reflex.magicMod" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.reflex.miscMod" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.reflex.tempMod" type="text" /></td>
+                </tr>
+                <tr>
+                    <th class="invert">
+                        <div class="large">Will</div>
+                        <div>(Wisdom)</div>
+                    </th>
+                    <td><input class="short" data-mapping="savingThrows.will.total" readonly="readonly" type="text" /></td>
+                    <td>=</td>
+                    <td><input class="short" data-mapping="savingThrows.will.baseSave" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.will.magicMod" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.will.miscMod" type="text" /></td>
+                    <td>+</td>
+                    <td><input class="short" data-mapping="savingThrows.will.tempMod" type="text" /></td>
+                </tr>
+            </table>
+            <div class="table-group">
+                <table>
+                    <tr>
+                        <th class="invert large">Base Attack Bonus</th>
+                        <td><input class="short" data-mapping="baseAttackBonus" type="text" /></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="invert large">Spell Resistance</th>
+                        <td><input class="short" data-mapping="spellResistance" type="text" /></td>
+                    </tr>
+                </table>
+            </div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Total</th>
+                    <th></th>
+                    <th>Base<br />Attack<br />Bonus</th>
+                    <th></th>
+                    <th>Strength<br />Modifier</th>
+                    <th></th>
+                    <th>Size<br />Modifier</th>
                     <th></th>
                     <th>Misc.<br />Modifier</th>
                 </tr>
                 <tr>
-                    <td><input data-mapping="skills.appraise.classSkill" type="checkbox" /></td>
-                    <td>Appraise ■</td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.appraise.skillMod" readonly="readonly" type="text" /></td>
+                    <th class="invert">
+                        <div class="large">Grapple</div>
+                        <div>Modifier</div>
+                    </th>
+                    <td><input class="short" data-mapping="grapple.total" readonly="readonly" type="text" /></td>
                     <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                    <td><input class="short" data-mapping="baseAttackBonus" readonly="readonly" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="skills.appraise.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.appraise.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.balance.classSkill" type="checkbox" /></td>
-                    <td>Balance ■ *</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.balance.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.balance.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.balance.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.bluff.classSkill" type="checkbox" /></td>
-                    <td>Bluff ■</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.bluff.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.bluff.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.bluff.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.climb.classSkill" type="checkbox" /></td>
-                    <td>Climb ■ *</td>
-                    <td class="center">STR</td>
-                    <td><input class="short" data-mapping="skills.climb.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
                     <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="skills.climb.ranks" type="text" /></td>
+                    <td><input class="short" data-mapping="grapple.sizeMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="skills.climb.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.concentration.classSkill" type="checkbox" /></td>
-                    <td>Concentration ■</td>
-                    <td class="center">CON</td>
-                    <td><input class="short" data-mapping="skills.concentration.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.concentration.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.concentration.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.craft1.classSkill" type="checkbox" /></td>
-                    <td>Craft ■ <input data-mapping="skills.craft1.item" placeholder="Item" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.craft1.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.craft1.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.craft1.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.craft2.classSkill" type="checkbox" /></td>
-                    <td>Craft ■ <input data-mapping="skills.craft2.item" placeholder="Item" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.craft2.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.craft2.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.craft2.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.craft3.classSkill" type="checkbox" /></td>
-                    <td>Craft ■ <input data-mapping="skills.craft3.item" placeholder="Item" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.craft3.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.craft3.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.craft3.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.decipherScript.classSkill" type="checkbox" /></td>
-                    <td>Decipher Script</td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.decipherScript.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.decipherScript.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.decipherScript.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.diplomacy.classSkill" type="checkbox" /></td>
-                    <td>Diplomacy ■</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.diplomacy.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.diplomacy.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.diplomacy.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.disableDevice.classSkill" type="checkbox" /></td>
-                    <td>Disable Device</td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.disableDevice.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.disableDevice.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.disableDevice.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.disguise.classSkill" type="checkbox" /></td>
-                    <td>Disguise ■</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.disguise.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.disguise.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.disguise.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.escapeArtist.classSkill" type="checkbox" /></td>
-                    <td>Escape Artist ■ *</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.escapeArtist.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.escapeArtist.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.escapeArtist.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.forgery.classSkill" type="checkbox" /></td>
-                    <td>Forgery ■</td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.forgery.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.forgery.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.forgery.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.gatherInformation.classSkill" type="checkbox" /></td>
-                    <td>Gather Information ■</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.gatherInformation.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.gatherInformation.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.gatherInformation.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.handleAnimal.classSkill" type="checkbox" /></td>
-                    <td>Handle Animal</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.handleAnimal.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.handleAnimal.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.handleAnimal.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.heal.classSkill" type="checkbox" /></td>
-                    <td>Heal ■</td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.heal.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.heal.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.heal.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.hide.classSkill" type="checkbox" /></td>
-                    <td>Hide ■ *</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.hide.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.hide.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.hide.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.intimidate.classSkill" type="checkbox" /></td>
-                    <td>Intimidate ■</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.intimidate.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.intimidate.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.intimidate.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.jump.classSkill" type="checkbox" /></td>
-                    <td>Jump ■ *</td>
-                    <td class="center">STR</td>
-                    <td><input class="short" data-mapping="skills.jump.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.jump.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.jump.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.knowledge1.classSkill" type="checkbox" /></td>
-                    <td>Knowledge <input data-mapping="skills.knowledge1.field" placeholder="Field" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.knowledge1.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge1.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge1.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.knowledge2.classSkill" type="checkbox" /></td>
-                    <td>Knowledge <input data-mapping="skills.knowledge2.field" placeholder="Field" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.knowledge2.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge2.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge2.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.knowledge3.classSkill" type="checkbox" /></td>
-                    <td>Knowledge <input data-mapping="skills.knowledge3.field" placeholder="Field" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.knowledge3.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge3.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge3.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.knowledge4.classSkill" type="checkbox" /></td>
-                    <td>Knowledge <input data-mapping="skills.knowledge4.field" placeholder="Field" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.knowledge4.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge4.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge4.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.knowledge5.classSkill" type="checkbox" /></td>
-                    <td>Knowledge <input data-mapping="skills.knowledge5.field" placeholder="Field" type="text" /></td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.knowledge5.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge5.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.knowledge5.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.listen.classSkill" type="checkbox" /></td>
-                    <td>Listen ■</td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.listen.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.listen.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.listen.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.moveSilently.classSkill" type="checkbox" /></td>
-                    <td>Move Silently ■ *</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.moveSilently.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.moveSilently.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.moveSilently.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.openLock.classSkill" type="checkbox" /></td>
-                    <td>Open Lock</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.openLock.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.openLock.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.openLock.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.perform1.classSkill" type="checkbox" /></td>
-                    <td>Perform <input data-mapping="skills.perform1.talent" placeholder="Talent" type="text" /></td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.perform1.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.perform1.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.perform1.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.perform2.classSkill" type="checkbox" /></td>
-                    <td>Perform <input data-mapping="skills.perform2.talent" placeholder="Talent" type="text" /></td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.perform2.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.perform2.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.perform2.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.perform3.classSkill" type="checkbox" /></td>
-                    <td>Perform <input data-mapping="skills.perform3.talent" placeholder="Talent" type="text" /></td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.perform3.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.perform3.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.perform3.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.profession1.classSkill" type="checkbox" /></td>
-                    <td>Profession <input data-mapping="skills.profession1.trade" placeholder="Trade" type="text" /></td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.profession1.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.profession1.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.profession1.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.profession2.classSkill" type="checkbox" /></td>
-                    <td>Profession <input data-mapping="skills.profession1.trade" placeholder="Trade" type="text" /></td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.profession2.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.profession2.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.profession2.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.ride.classSkill" type="checkbox" /></td>
-                    <td>Ride ■</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.ride.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.ride.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.ride.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.search.classSkill" type="checkbox" /></td>
-                    <td>Search ■</td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.search.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.search.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.search.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.senseMotive.classSkill" type="checkbox" /></td>
-                    <td>Sense Motive ■</td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.senseMotive.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.senseMotive.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.senseMotive.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.sleightOfHand.classSkill" type="checkbox" /></td>
-                    <td>Sleight of Hand *</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.sleightOfHand.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.sleightOfHand.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.sleightOfHand.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.spellcraft.classSkill" type="checkbox" /></td>
-                    <td>Spellcraft</td>
-                    <td class="center">INT</td>
-                    <td><input class="short" data-mapping="skills.spellcraft.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.spellcraft.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.spellcraft.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.spot.classSkill" type="checkbox" /></td>
-                    <td>Spot ■</td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.spot.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.spot.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.spot.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.survival.classSkill" type="checkbox" /></td>
-                    <td>Survival ■</td>
-                    <td class="center">WIS</td>
-                    <td><input class="short" data-mapping="skills.survival.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.survival.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.survival.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.swim.classSkill" type="checkbox" /></td>
-                    <td>Swim ■ *</td>
-                    <td class="center">STR</td>
-                    <td><input class="short" data-mapping="skills.swim.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.swim.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.swim.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.tumble.classSkill" type="checkbox" /></td>
-                    <td>Tumble *</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.tumble.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.tumble.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.tumble.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.useMagicDevice.classSkill" type="checkbox" /></td>
-                    <td>Use Magic Device</td>
-                    <td class="center">CHA</td>
-                    <td><input class="short" data-mapping="skills.useMagicDevice.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.useMagicDevice.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.useMagicDevice.miscMod" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><input data-mapping="skills.useRope.classSkill" type="checkbox" /></td>
-                    <td>Use Rope ■</td>
-                    <td class="center">DEX</td>
-                    <td><input class="short" data-mapping="skills.useRope.skillMod" readonly="readonly" type="text" /></td>
-                    <td>=</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.useRope.ranks" type="text" /></td>
-                    <td>+</td>
-                    <td><input class="short" data-mapping="skills.useRope.miscMod" type="text" /></td>
+                    <td><input class="short" data-mapping="grapple.miscMod" type="text" /></td>
                 </tr>
             </table>
-            <p>
-                □ Mark this box if the skill is a class skill for the character.<br />
-                ■ Denotes a skill that can be used untrained.<br />
-                * Armor check penalty, if any, applies. (Double penalty for Swim.)
-            </p>
-        </div>
-        <div id="attacks">
             <table>
                 <tr>
                     <th class="invert large" colspan="2">Attack</th>
@@ -1029,6 +481,558 @@
                     <td colspan="2"><input class="long" data-mapping="attacks.attack5.notes" type="text" /></td>
                 </tr>
             </table>
+            <div id="skills">
+                <table class="alt">
+                    <tr>
+                        <th class="invert large" colspan="10">Skills</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th style="text-align: left;">Skill Name</th>
+                        <th>Key<br />Ability</th>
+                        <th>Skill<br />Modifier</th>
+                        <th></th>
+                        <th>Ability<br />Modifier</th>
+                        <th></th>
+                        <th>Ranks</th>
+                        <th></th>
+                        <th>Misc.<br />Modifier</th>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.appraise.classSkill" type="checkbox" /></td>
+                        <td>Appraise ■</td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.appraise.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.appraise.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.appraise.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.balance.classSkill" type="checkbox" /></td>
+                        <td>Balance ■ *</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.balance.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.balance.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.balance.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.bluff.classSkill" type="checkbox" /></td>
+                        <td>Bluff ■</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.bluff.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.bluff.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.bluff.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.climb.classSkill" type="checkbox" /></td>
+                        <td>Climb ■ *</td>
+                        <td class="center">STR</td>
+                        <td><input class="short" data-mapping="skills.climb.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.climb.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.climb.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.concentration.classSkill" type="checkbox" /></td>
+                        <td>Concentration ■</td>
+                        <td class="center">CON</td>
+                        <td><input class="short" data-mapping="skills.concentration.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.concentration.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.concentration.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.craft1.classSkill" type="checkbox" /></td>
+                        <td>Craft ■ <input data-mapping="skills.craft1.item" placeholder="Item" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.craft1.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.craft1.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.craft1.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.craft2.classSkill" type="checkbox" /></td>
+                        <td>Craft ■ <input data-mapping="skills.craft2.item" placeholder="Item" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.craft2.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.craft2.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.craft2.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.craft3.classSkill" type="checkbox" /></td>
+                        <td>Craft ■ <input data-mapping="skills.craft3.item" placeholder="Item" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.craft3.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.craft3.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.craft3.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.decipherScript.classSkill" type="checkbox" /></td>
+                        <td>Decipher Script</td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.decipherScript.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.decipherScript.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.decipherScript.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.diplomacy.classSkill" type="checkbox" /></td>
+                        <td>Diplomacy ■</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.diplomacy.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.diplomacy.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.diplomacy.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.disableDevice.classSkill" type="checkbox" /></td>
+                        <td>Disable Device</td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.disableDevice.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.disableDevice.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.disableDevice.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.disguise.classSkill" type="checkbox" /></td>
+                        <td>Disguise ■</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.disguise.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.disguise.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.disguise.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.escapeArtist.classSkill" type="checkbox" /></td>
+                        <td>Escape Artist ■ *</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.escapeArtist.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.escapeArtist.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.escapeArtist.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.forgery.classSkill" type="checkbox" /></td>
+                        <td>Forgery ■</td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.forgery.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.forgery.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.forgery.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.gatherInformation.classSkill" type="checkbox" /></td>
+                        <td>Gather Information ■</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.gatherInformation.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.gatherInformation.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.gatherInformation.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.handleAnimal.classSkill" type="checkbox" /></td>
+                        <td>Handle Animal</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.handleAnimal.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.handleAnimal.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.handleAnimal.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.heal.classSkill" type="checkbox" /></td>
+                        <td>Heal ■</td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.heal.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.heal.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.heal.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.hide.classSkill" type="checkbox" /></td>
+                        <td>Hide ■ *</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.hide.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.hide.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.hide.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.intimidate.classSkill" type="checkbox" /></td>
+                        <td>Intimidate ■</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.intimidate.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.intimidate.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.intimidate.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.jump.classSkill" type="checkbox" /></td>
+                        <td>Jump ■ *</td>
+                        <td class="center">STR</td>
+                        <td><input class="short" data-mapping="skills.jump.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.jump.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.jump.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.knowledge1.classSkill" type="checkbox" /></td>
+                        <td>Knowledge <input data-mapping="skills.knowledge1.field" placeholder="Field" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.knowledge1.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge1.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge1.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.knowledge2.classSkill" type="checkbox" /></td>
+                        <td>Knowledge <input data-mapping="skills.knowledge2.field" placeholder="Field" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.knowledge2.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge2.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge2.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.knowledge3.classSkill" type="checkbox" /></td>
+                        <td>Knowledge <input data-mapping="skills.knowledge3.field" placeholder="Field" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.knowledge3.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge3.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge3.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.knowledge4.classSkill" type="checkbox" /></td>
+                        <td>Knowledge <input data-mapping="skills.knowledge4.field" placeholder="Field" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.knowledge4.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge4.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge4.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.knowledge5.classSkill" type="checkbox" /></td>
+                        <td>Knowledge <input data-mapping="skills.knowledge5.field" placeholder="Field" type="text" /></td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.knowledge5.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge5.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.knowledge5.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.listen.classSkill" type="checkbox" /></td>
+                        <td>Listen ■</td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.listen.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.listen.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.listen.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.moveSilently.classSkill" type="checkbox" /></td>
+                        <td>Move Silently ■ *</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.moveSilently.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.moveSilently.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.moveSilently.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.openLock.classSkill" type="checkbox" /></td>
+                        <td>Open Lock</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.openLock.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.openLock.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.openLock.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.perform1.classSkill" type="checkbox" /></td>
+                        <td>Perform <input data-mapping="skills.perform1.talent" placeholder="Talent" type="text" /></td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.perform1.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.perform1.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.perform1.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.perform2.classSkill" type="checkbox" /></td>
+                        <td>Perform <input data-mapping="skills.perform2.talent" placeholder="Talent" type="text" /></td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.perform2.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.perform2.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.perform2.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.perform3.classSkill" type="checkbox" /></td>
+                        <td>Perform <input data-mapping="skills.perform3.talent" placeholder="Talent" type="text" /></td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.perform3.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.perform3.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.perform3.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.profession1.classSkill" type="checkbox" /></td>
+                        <td>Profession <input data-mapping="skills.profession1.trade" placeholder="Trade" type="text" /></td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.profession1.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.profession1.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.profession1.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.profession2.classSkill" type="checkbox" /></td>
+                        <td>Profession <input data-mapping="skills.profession1.trade" placeholder="Trade" type="text" /></td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.profession2.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.profession2.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.profession2.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.ride.classSkill" type="checkbox" /></td>
+                        <td>Ride ■</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.ride.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.ride.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.ride.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.search.classSkill" type="checkbox" /></td>
+                        <td>Search ■</td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.search.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.search.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.search.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.senseMotive.classSkill" type="checkbox" /></td>
+                        <td>Sense Motive ■</td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.senseMotive.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.senseMotive.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.senseMotive.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.sleightOfHand.classSkill" type="checkbox" /></td>
+                        <td>Sleight of Hand *</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.sleightOfHand.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.sleightOfHand.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.sleightOfHand.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.spellcraft.classSkill" type="checkbox" /></td>
+                        <td>Spellcraft</td>
+                        <td class="center">INT</td>
+                        <td><input class="short" data-mapping="skills.spellcraft.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.spellcraft.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.spellcraft.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.spot.classSkill" type="checkbox" /></td>
+                        <td>Spot ■</td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.spot.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.spot.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.spot.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.survival.classSkill" type="checkbox" /></td>
+                        <td>Survival ■</td>
+                        <td class="center">WIS</td>
+                        <td><input class="short" data-mapping="skills.survival.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.survival.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.survival.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.swim.classSkill" type="checkbox" /></td>
+                        <td>Swim ■ *</td>
+                        <td class="center">STR</td>
+                        <td><input class="short" data-mapping="skills.swim.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.swim.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.swim.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.tumble.classSkill" type="checkbox" /></td>
+                        <td>Tumble *</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.tumble.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.tumble.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.tumble.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.useMagicDevice.classSkill" type="checkbox" /></td>
+                        <td>Use Magic Device</td>
+                        <td class="center">CHA</td>
+                        <td><input class="short" data-mapping="skills.useMagicDevice.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.useMagicDevice.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.useMagicDevice.miscMod" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="skills.useRope.classSkill" type="checkbox" /></td>
+                        <td>Use Rope ■</td>
+                        <td class="center">DEX</td>
+                        <td><input class="short" data-mapping="skills.useRope.skillMod" readonly="readonly" type="text" /></td>
+                        <td>=</td>
+                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.useRope.ranks" type="text" /></td>
+                        <td>+</td>
+                        <td><input class="short" data-mapping="skills.useRope.miscMod" type="text" /></td>
+                    </tr>
+                </table>
+                <p>
+                    □ Mark this box if the skill is a class skill for the character.<br />
+                    ■ Denotes a skill that can be used untrained.<br />
+                    * Armor check penalty, if any, applies. (Double penalty for Swim.)
+                </p>
+            </div>
         </div>
         <script src="js/KO-1.0.19.js"></script>
         <script>
@@ -1080,6 +1084,13 @@
                     'baseAttackBonus': null,
                     'spellResistance': null,
                     'grapple': { 'total': null, 'sizeMod': null, 'miscMod': null },
+                    'attacks': {
+                        'attack1': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack2': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack3': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack4': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+                        'attack5': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
+                    },
                     'skills': {
                         'appraise': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
                         'balance': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
@@ -1125,13 +1136,6 @@
                         'tumble': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
                         'useMagicDevice': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
                         'useRope': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null }
-                    },
-                    'attacks': {
-                        'attack1': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-                        'attack2': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-                        'attack3': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-                        'attack4': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-                        'attack5': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
                     }
                 };
                 
