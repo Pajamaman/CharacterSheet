@@ -1034,6 +1034,10 @@
                 </p>
             </div>
         </div>
+        <div id="controls">
+            <a href="#" id="save">Save</a><br />
+            <a href="#" id="load">Load</a>
+        </div>
         <script src="js/KO-1.0.19.js"></script>
         <script>
             (function () {
@@ -1263,6 +1267,19 @@
                         }
                     });
                 }, /abilities\.(.*)\.mod/);
+                
+                window.addEventListener('click', function (event) {
+                    if (event.target.id === 'save') {
+                        event.target.download = 'character.json';
+                        event.target.href = 'data:text/json,' + JSON.stringify(character);
+                        return;
+                    }
+                    
+                    if (event.target.id === 'load') {
+                        // load character
+                        return;
+                    }
+                });
             }());
         </script>
     </body>

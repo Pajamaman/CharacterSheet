@@ -103,3 +103,8 @@ input.long {
     right: 0;
     top: 40em;
 }
+#controls {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
