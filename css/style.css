@@ -8,13 +8,14 @@
 }
 body {
     font-family: VerdanaProCondRegular, sans-serif;
-    font-size: 8pt;
+    font-size: 10pt;
     white-space: nowrap;
 }
 table {
     margin: 1em 0;
 }
 th {
+    font-size: 8pt;
     font-weight: normal;
     padding: 0.25em;
     text-transform: uppercase;
@@ -31,16 +32,15 @@ table.alt tr:nth-child(odd) {
 input[type="text"] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: inherit;
-    font-size: 12pt;
-    width: 8.05em;
+    font: inherit;
+    width: 9.65em;
 }
 input[readonly] {
     background-color: #eee;
 }
 input.short {
     text-align: center;
-    width: 3.8em;
+    width: 4.5em;
 }
 input.long {
     width: 100%;
@@ -75,37 +75,36 @@ input.long {
 #container {
     margin: 0 auto;
     position: relative;
-    width: 110em;
+    width: 90em;
 }
 #logo {
     position: absolute;
     right: 0;
     top: 0;
-    width: 40em;
+    width: 30em;
 }
 #hit-points-speed-etc {
     position: absolute;
     right: 0;
-    top: 11.8em;
+    top: 9.3em;
 }
 #speed {
     position: relative;
-    top: 3.7em;
+    top: 3em;
 }
 #damage-reduction,
 #armor-class-touch,
 #armor-class-flat-footed {
     position: relative;
-    top: 3.3em;
+    top: 2.6em;
 }
 #skills {
     position: absolute;
     right: 0;
-    top: 40em;
+    top: 32em;
 }
 #controls {
     background-color: black;
-    font-size: 12pt;
     padding: 0.25em;
     position: fixed;
     top: 0;
