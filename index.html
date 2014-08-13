@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Character Sheet</title>
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
     </head>
     <body>
         <div id="container">
@@ -1035,10 +1036,12 @@
             </div>
         </div>
         <div id="controls">
-            <a href="#" id="save">Save</a><br />
-            <a href="#" id="load">Load</a>
+            <i id="save" class="fa fa-file fa-fw"></i>
+            <a id="save-file"></a>
+            <i id="load" class="fa fa-folder-open fa-fw"></i>
+            <input id="load-file" type="file" />
         </div>
-        <script src="js/KO-1.0.19.js"></script>
+        <script src="js/KO-1.0.20.js"></script>
         <script>
             (function () {
                 var character = {
@@ -1096,50 +1099,50 @@
                         'attack5': { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
                     },
                     'skills': {
-                        'appraise': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'balance': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'bluff': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'climb': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'concentration': { 'classSkill': false, 'keyAbility': 'constitution', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'craft1': { 'classSkill': false, 'item': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'craft2': { 'classSkill': false, 'item': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'craft3': { 'classSkill': false, 'item': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'decipherScript': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'diplomacy': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'disableDevice': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'disguise': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'escapeArtist': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'forgery': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'gatherInformation': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'handleAnimal': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'heal': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'hide': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'intimidate': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'jump': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'knowledge1': { 'classSkill': false, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'knowledge2': { 'classSkill': false, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'knowledge3': { 'classSkill': false, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'knowledge4': { 'classSkill': false, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'knowledge5': { 'classSkill': false, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'listen': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'moveSilently': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'openLock': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'perform1': { 'classSkill': false, 'talent': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'perform2': { 'classSkill': false, 'talent': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'perform3': { 'classSkill': false, 'talent': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'profession1': { 'classSkill': false, 'trade': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'profession2': { 'classSkill': false, 'trade': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'ride': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'search': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'senseMotive': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'sleightOfHand': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'spellcraft': { 'classSkill': false, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'spot': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'survival': { 'classSkill': false, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'swim': { 'classSkill': false, 'keyAbility': 'strength', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'tumble': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'useMagicDevice': { 'classSkill': false, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
-                        'useRope': { 'classSkill': false, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null }
+                        'appraise': { 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'balance': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'bluff': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'climb': { 'classSkill': null, 'keyAbility': 'strength', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'concentration': { 'classSkill': null, 'keyAbility': 'constitution', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'craft1': { 'classSkill': null, 'item': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'craft2': { 'classSkill': null, 'item': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'craft3': { 'classSkill': null, 'item': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'decipherScript': { 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'diplomacy': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'disableDevice': { 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'disguise': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'escapeArtist': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'forgery': { 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'gatherInformation': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'handleAnimal': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'heal': { 'classSkill': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'hide': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'intimidate': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'jump': { 'classSkill': null, 'keyAbility': 'strength', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'knowledge1': { 'classSkill': null, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'knowledge2': { 'classSkill': null, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'knowledge3': { 'classSkill': null, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'knowledge4': { 'classSkill': null, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'knowledge5': { 'classSkill': null, 'field': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'listen': { 'classSkill': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'moveSilently': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'openLock': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'perform1': { 'classSkill': null, 'talent': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'perform2': { 'classSkill': null, 'talent': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'perform3': { 'classSkill': null, 'talent': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'profession1': { 'classSkill': null, 'trade': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'profession2': { 'classSkill': null, 'trade': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'ride': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'search': { 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'senseMotive': { 'classSkill': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'sleightOfHand': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'spellcraft': { 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'spot': { 'classSkill': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'survival': { 'classSkill': null, 'keyAbility': 'wisdom', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'swim': { 'classSkill': null, 'keyAbility': 'strength', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'tumble': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'useMagicDevice': { 'classSkill': null, 'keyAbility': 'charisma', 'skillMod': null, 'ranks': null, 'miscMod': null },
+                        'useRope': { 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null }
                     }
                 };
                 
@@ -1256,11 +1259,13 @@
                 
                 KO.listen(function (event, match) {
                     var skill = match[1];
+                    
                     character.skills[skill].skillMod = character.skills[skill].skillMod - event.detail.oldValue + event.detail.newValue;
                 }, /skills\.(.*)\.(?:ranks|miscMod)/);
                 
                 KO.listen(function (event, match) {
                     var ability = match[1];
+                    
                     Object.keys(character.skills).forEach(function (skill) {
                         if (character.skills[skill].keyAbility == ability) {
                             character.skills[skill].skillMod = character.skills[skill].skillMod - event.detail.oldValue + event.detail.newValue;
@@ -1269,14 +1274,49 @@
                 }, /abilities\.(.*)\.mod/);
                 
                 window.addEventListener('click', function (event) {
+                    var saveFile;
+                    
                     if (event.target.id === 'save') {
-                        event.target.download = 'character.json';
-                        event.target.href = 'data:text/json,' + JSON.stringify(character);
+                        saveFile = document.getElementById('save-file');
+                        saveFile.download = 'character.json';
+                        saveFile.href = 'data:text/json,' + JSON.stringify(character);
+                        saveFile.click();
+                        
                         return;
                     }
                     
                     if (event.target.id === 'load') {
-                        // load character
+                        document.getElementById('load-file').click();
+                        
+                        return;
+                    }
+                });
+                
+                window.addEventListener('change', function (event) {
+                    var file, fileReader;
+                    
+                    if (event.target.id === 'load-file') {
+                        file = document.getElementById('load-file').files[0];
+                        
+                        fileReader = new FileReader();
+                        
+                        fileReader.onerror = function () {
+                            // handle error
+                        };
+                        
+                        fileReader.onload = function () {
+                            try {
+                                character = JSON.parse(this.result);
+                                
+                                // make sure character is a character
+                                KO.bind(character);
+                            } catch (e) {
+                                // handle error
+                            }
+                        };
+                        
+                        fileReader.readAsText(file);
+                        
                         return;
                     }
                 });

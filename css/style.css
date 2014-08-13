@@ -104,7 +104,21 @@ input.long {
     top: 40em;
 }
 #controls {
+    background-color: black;
+    font-size: 12pt;
+    padding: 0.25em;
     position: fixed;
     top: 0;
     left: 0;
+}
+#controls i {
+    color: white;
+}
+#controls i:hover {
+    color: #eee;
+    cursor: pointer;
+}
+#save-file,
+#load-file {
+    display: none;
 }
