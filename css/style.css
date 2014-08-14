@@ -98,6 +98,15 @@ input.long {
     position: relative;
     top: 2.6em;
 }
+#gear input[type="text"] {
+    width: 12.65em;
+}
+#gear input.short {
+    width: 6em;
+}
+#gear input.long {
+    width: 100%;
+}
 #skills {
     position: absolute;
     right: 0;
