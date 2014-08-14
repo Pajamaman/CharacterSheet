@@ -53,6 +53,8 @@
             { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
             { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
         ],
+        'maxSkillRanks': null,
+        'totalSkillRanks': null,
         'skills': [
             { 'name': 'Appraise', 'classSkill': null, 'keyAbility': 'intelligence', 'skillMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Balance', 'classSkill': null, 'keyAbility': 'dexterity', 'skillMod': null, 'ranks': null, 'miscMod': null },
@@ -243,7 +245,7 @@
                     
                     // make sure character is a character
                     KO.bind(character);
-                } catch (e) {
+                } catch (ex) {
                     // handle error
                 }
             };

@@ -103,6 +103,19 @@ input.long {
     right: 0;
     top: 32em;
 }
+#skills table {
+    position: relative;
+}
+#max-skill-ranks {
+    position: absolute;
+    top: 0.5em;
+    right: 12em;
+}
+#total-skill-ranks {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+}
 #controls {
     background-color: black;
     padding: 0.25em;
