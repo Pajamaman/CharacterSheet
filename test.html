@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8" />
+<style>
+    @font-face {
+        font-family: VerdanaProCondBold;
+        src: url("fonts/VerdanaPro-CondBold.woff");
+    }
+    @font-face {
+        font-family: VerdanaProCondRegular;
+        src: url("fonts/VerdanaPro-CondRegular.woff");
+    }
+    body {
+        font-family: VerdanaProCondRegular, sans-serif;
+        font-size: 10pt;
+        white-space: nowrap;
+    }
+    .table {
+        display: table;
+        width: 40em;
+    }
+    .table .cell {
+        display: table-cell;
+        vertical-align: bottom;
+    }
+    .table .label {
+        background-color: black;
+        color: white;
+        font-size: 8pt;
+        padding: 0.25em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .table .label.large {
+        font-family: VerdanaProCondBold, sans-serif;
+        font-size: 12pt;
+    }
+    .table .label.round {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .table input {
+        border: 1px solid black;
+        box-sizing: border-box;
+        font: inherit;
+        padding: 0.25em;
+        text-align: center;
+        width: 100%;
+    }
+</style>
+<div class="table">
+    <div class="cell">
+        <div class="label large round">Armor/Protective Item</div>
+        <input type="text" />
+    </div>
+    <div class="cell">
+        <div class="label">Type</div>
+        <input type="text" />
+    </div>
+    <div class="cell">
+        <div class="label">Armor Bonus</div>
+        <input type="text" />
+    </div>
+    <div class="cell">
+        <div class="label">Maximum Dex Bonus</div>
+        <input type="text" />
+    </div>
+</div>
+<div class="table">
+    <div class="cell">
+        <div class="label">Skill Penalty</div>
+        <input type="text" />
+    </div>
+    <div class="cell">
+        <div class="label">Spell Failure</div>
+        <input type="text" />
+    </div>
+    <div class="cell">
+        <div class="label">Speed</div>
+        <input type="text" />
+    </div>
+    <div class="cell">
+        <div class="label">Weight</div>
+        <input type="text" />
+    </div>
+    <div class="cell" style="width: 45%;">
+        <div class="label">Special Properties</div>
+        <input type="text" />
+    </div>
+</div>
