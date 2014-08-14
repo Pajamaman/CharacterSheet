@@ -1,5 +1,8 @@
 <!doctype html>
+
 <meta charset="utf-8" />
+<link href="css/normalize.css" rel="stylesheet" />
+
 <style>
     @font-face {
         font-family: VerdanaProCondBold;
@@ -12,23 +15,32 @@
     body {
         font-family: VerdanaProCondRegular, sans-serif;
         font-size: 10pt;
-        white-space: nowrap;
     }
     .table {
         display: table;
-        width: 40em;
+        margin: 1em 0;
+    }
+    .table .row {
+        display: table-row;
     }
     .table .cell {
         display: table-cell;
+        padding: 0.25em;
         vertical-align: bottom;
     }
+    .table .row .cell {
+        vertical-align: middle;
+    }
     .table .label {
-        background-color: black;
-        color: white;
         font-size: 8pt;
         padding: 0.25em;
         text-align: center;
         text-transform: uppercase;
+        white-space: nowrap;
+    }
+    .table .label.invert {
+        background-color: black;
+        color: white;
     }
     .table .label.large {
         font-family: VerdanaProCondBold, sans-serif;
@@ -40,50 +52,264 @@
     }
     .table input {
         border: 1px solid black;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         font: inherit;
         padding: 0.25em;
         text-align: center;
         width: 100%;
     }
+    .table input[readonly] {
+        background-color: lightgray;
+    }
+    #description {
+        width: 60em;
+    }
+    #abilities .cell {
+        width: 5em;
+    }
+    #gear {
+        width: 40em;
+    }
+    #gear .cell {
+        padding: 0;
+    }
 </style>
-<div class="table">
-    <div class="cell">
-        <div class="label large round">Armor/Protective Item</div>
-        <input type="text" />
+
+<div class="table" id="description">
+    <div>
+        <div class="cell">
+            <div class="label">Character Name</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Player</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Class</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Level</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Race</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Alignment</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Deity</div>
+            <input type="text" />
+        </div>
     </div>
-    <div class="cell">
-        <div class="label">Type</div>
-        <input type="text" />
-    </div>
-    <div class="cell">
-        <div class="label">Armor Bonus</div>
-        <input type="text" />
-    </div>
-    <div class="cell">
-        <div class="label">Maximum Dex Bonus</div>
-        <input type="text" />
+    <div>
+        <div class="cell">
+            <div class="label">Size</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Age</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Gender</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Height</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Weight</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Eyes</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Hair</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label">Skin</div>
+            <input type="text" />
+        </div>
     </div>
 </div>
-<div class="table">
-    <div class="cell">
-        <div class="label">Skill Penalty</div>
-        <input type="text" />
+
+<div class="table" id="abilities">
+    <div class="row">
+        <div class="cell">
+            <div class="label">Ability Name</div>
+        </div>
+        <div class="cell">
+            <div class="label">Ability<br />Score</div>
+        </div>
+        <div class="cell">
+            <div class="label">Ability<br />Modifier</div>
+        </div>
+        <div class="cell">
+            <div class="label">Temporary<br />Score</div>
+        </div>
+        <div class="cell">
+            <div class="label">Temporary<br />Modifier</div>
+        </div>
     </div>
-    <div class="cell">
-        <div class="label">Spell Failure</div>
-        <input type="text" />
+    <div class="row">
+        <div class="cell">
+            <div class="invert label large">STR</div>
+            <div class="invert label">Strength</div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
     </div>
-    <div class="cell">
-        <div class="label">Speed</div>
-        <input type="text" />
+    <div class="row">
+        <div class="cell">
+            <div class="invert label large">DEX</div>
+            <div class="invert label">Dexterity</div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
     </div>
-    <div class="cell">
-        <div class="label">Weight</div>
-        <input type="text" />
+    <div class="row">
+        <div class="cell">
+            <div class="invert label large">CON</div>
+            <div class="invert label">Constitution</div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
     </div>
-    <div class="cell" style="width: 45%;">
-        <div class="label">Special Properties</div>
-        <input type="text" />
+    <div class="row">
+        <div class="cell">
+            <div class="invert label large">INT</div>
+            <div class="invert label">Intelligence</div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="invert label large">WIS</div>
+            <div class="invert label">Wisdom</div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="invert label large">CHA</div>
+            <div class="invert label">Charisma</div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="table" id="gear">
+    <div>
+        <div class="cell">
+            <div class="invert label large round">Armor/Protective Item</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Type</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Armor Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Maximum Dex Bonus</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div>
+        <div class="cell">
+            <div class="invert label">Skill Penalty</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Spell Failure</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Speed</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Weight</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="invert label">Special Properties</div>
+            <input type="text" />
+        </div>
     </div>
 </div>
