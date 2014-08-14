@@ -487,30 +487,76 @@
             <div id="gear">
                 <table>
                     <tr>
-                        <th class="invert large">Armor/Protective Item</th>
+                        <th class="invert" colspan="2" style="font-weight: bold;">Armor/Protective Item</th>
                         <th colspan="2">Type</th>
                         <th>Armor<br />Bonus</th>
                         <th>Maximum<br />Dex Bonus</th>
                     </tr>
                     <tr>
-                        <td><input class="long" data-mapping="gear.0.name" type="text" /></td>
+                        <td colspan="2"><input data-mapping="gear.0.name" type="text" /></td>
                         <td colspan="2"><input data-mapping="gear.0.type" type="text" /></td>
                         <td><input class="short" data-mapping="gear.0.armorClassBonus" type="text" /></td>
                         <td><input class="short" data-mapping="gear.0.maxDexterity" type="text" /></td>
                     </tr>
                     <tr>
-                        <th>Special Properties</th>
-                        <th>Armor Check<br />Penalty</th>
-                        <th>Arcane Spell<br />Failure Chance</th>
+                        <th>Skill<br />Penalty</th>
+                        <th>Spell<br />Failure</th>
                         <th>Speed</th>
                         <th>Weight</th>
+                        <th colspan="2">Special Properties</th>
                     </tr>
                     <tr>
-                        <td><input class="long" data-mapping="gear.0.specialProperties" type="text" /></td>
                         <td><input class="short" data-mapping="gear.0.checkPenalty" type="text" /></td>
                         <td><input class="short" data-mapping="gear.0.spellFailure" type="text" /></td>
                         <td><input class="short" data-mapping="gear.0.speed" type="text" /></td>
                         <td><input class="short" data-mapping="gear.0.weight" type="text" /></td>
+                        <td colspan="2"><input data-mapping="gear.0.specialProperties" type="text" /></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="invert" style="font-weight: bold;">Shield/Protective Item</th>
+                        <th>Armor<br />Bonus</th>
+                        <th>Weight</th>
+                        <th>Skill<br />Penalty</th>
+                        <th>Spell<br />Failure</th>
+                        <th>Special Properties</th>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="gear.1.name" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.1.armorClassBonus" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.1.weight" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.1.checkPenalty" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.1.spellFailure" type="text" /></td>
+                        <td><input data-mapping="gear.1.specialProperties" type="text" /></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="invert" style="font-weight: bold;">Protective Item</th>
+                        <th>Armor<br />Bonus</th>
+                        <th>Weight</th>
+                        <th>Special Properties</th>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="gear.2.name" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.2.armorClassBonus" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.2.weight" type="text" /></td>
+                        <td><input data-mapping="gear.2.specialProperties" type="text" /></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="invert" style="font-weight: bold;">Protective Item</th>
+                        <th>Armor<br />Bonus</th>
+                        <th>Weight</th>
+                        <th>Special Properties</th>
+                    </tr>
+                    <tr>
+                        <td><input data-mapping="gear.3.name" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.3.armorClassBonus" type="text" /></td>
+                        <td><input class="short" data-mapping="gear.3.weight" type="text" /></td>
+                        <td><input data-mapping="gear.3.specialProperties" type="text" /></td>
                     </tr>
                 </table>
             </div>
