@@ -16,6 +16,36 @@
         font-family: VerdanaProCondRegular, sans-serif;
         font-size: 10pt;
     }
+    input {
+        font: inherit;
+    }
+    input[readonly] {
+        background-color: lightgray;
+    }
+    .invert {
+        background-color: black;
+        color: white;
+    }
+    .label {
+        font-size: 8pt;
+        padding: 0.25em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .large {
+        font-family: VerdanaProCondBold, sans-serif;
+        font-size: 12pt;
+    }
+    .nowrap {
+        white-space: nowrap;
+    }
+    .round-top {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .short {
+        width: 5em;
+    }
     .table {
         display: table;
         margin: 1em 0;
@@ -26,53 +56,26 @@
     .table .cell {
         display: table-cell;
         padding: 0.25em;
-        vertical-align: bottom;
-    }
-    .table .row .cell {
         vertical-align: middle;
-    }
-    .table .label {
-        font-size: 8pt;
-        padding: 0.25em;
-        text-align: center;
-        text-transform: uppercase;
-        white-space: nowrap;
-    }
-    .table .label.invert {
-        background-color: black;
-        color: white;
-    }
-    .table .label.large {
-        font-family: VerdanaProCondBold, sans-serif;
-        font-size: 12pt;
-    }
-    .table .label.round {
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
     }
     .table input {
         border: 1px solid black;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        font: inherit;
         padding: 0.25em;
         text-align: center;
         width: 100%;
     }
-    .table input[readonly] {
-        background-color: lightgray;
-    }
     #description {
         width: 60em;
     }
-    #abilities .cell {
-        width: 5em;
-    }
     #gear {
+        padding: 0.25em;
         width: 40em;
     }
     #gear .cell {
         padding: 0;
+        vertical-align: bottom;
     }
 </style>
 
@@ -90,7 +93,7 @@
             <div class="label">Class</div>
             <input type="text" />
         </div>
-        <div class="cell">
+        <div class="cell short">
             <div class="label">Level</div>
             <input type="text" />
         </div>
@@ -98,7 +101,7 @@
             <div class="label">Race</div>
             <input type="text" />
         </div>
-        <div class="cell">
+        <div class="cell short">
             <div class="label">Alignment</div>
             <input type="text" />
         </div>
@@ -108,15 +111,15 @@
         </div>
     </div>
     <div>
-        <div class="cell">
+        <div class="cell short">
             <div class="label">Size</div>
             <input type="text" />
         </div>
-        <div class="cell">
+        <div class="cell short">
             <div class="label">Age</div>
             <input type="text" />
         </div>
-        <div class="cell">
+        <div class="cell short">
             <div class="label">Gender</div>
             <input type="text" />
         </div>
@@ -148,41 +151,25 @@
         <div class="cell">
             <div class="label">Ability Name</div>
         </div>
-        <div class="cell">
-            <div class="label">Ability<br />Score</div>
+        <div class="cell short">
+            <div class="label">Ability Score</div>
         </div>
-        <div class="cell">
-            <div class="label">Ability<br />Modifier</div>
+        <div class="cell short">
+            <div class="label">Ability Modifier</div>
         </div>
-        <div class="cell">
-            <div class="label">Temporary<br />Score</div>
+        <div class="cell short">
+            <div class="label">Temporary Score</div>
         </div>
-        <div class="cell">
-            <div class="label">Temporary<br />Modifier</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="cell">
-            <div class="invert label large">STR</div>
-            <div class="invert label">Strength</div>
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
+        <div class="cell short">
+            <div class="label">Temporary Modifier</div>
         </div>
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label large">DEX</div>
-            <div class="invert label">Dexterity</div>
+            <div class="invert label">
+                <div class="large">STR</div>
+                Strength
+            </div>
         </div>
         <div class="cell">
             <input type="text" />
@@ -199,8 +186,10 @@
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label large">CON</div>
-            <div class="invert label">Constitution</div>
+            <div class="invert label">
+                <div class="large">DEX</div>
+                Dexterity
+            </div>
         </div>
         <div class="cell">
             <input type="text" />
@@ -217,8 +206,10 @@
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label large">INT</div>
-            <div class="invert label">Intelligence</div>
+            <div class="invert label">
+                <div class="large">CON</div>
+                Constitution
+            </div>
         </div>
         <div class="cell">
             <input type="text" />
@@ -235,8 +226,10 @@
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label large">WIS</div>
-            <div class="invert label">Wisdom</div>
+            <div class="invert label">
+                <div class="large">INT</div>
+                Intelligence
+            </div>
         </div>
         <div class="cell">
             <input type="text" />
@@ -253,8 +246,30 @@
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label large">CHA</div>
-            <div class="invert label">Charisma</div>
+            <div class="invert label">
+                <div class="large">WIS</div>
+                Wisdom
+            </div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <input readonly="readonly" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="invert label">
+                <div class="large">CHA</div>
+                Charisma
+            </div>
         </div>
         <div class="cell">
             <input type="text" />
@@ -271,10 +286,86 @@
     </div>
 </div>
 
+<div class="table" id="armor-class">
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Total</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Armor Bonus</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Shield Bonus</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Dex Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Size Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Natural Armor</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Deflection Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="label">Misc Modifier</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="invert label">
+                <div class="large">AC</div>
+                Armor Class
+            </div>
+        </div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">= 10 +</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">+</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">+</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">+</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">+</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">+</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+        <div class="cell">+</div>
+        <div class="cell">
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
 <div class="table" id="gear">
     <div>
         <div class="cell">
-            <div class="invert label large round">Armor/Protective Item</div>
+            <div class="invert label large nowrap round-top">Armor/Protective Item</div>
             <input type="text" />
         </div>
         <div class="cell">
@@ -286,7 +377,7 @@
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Maximum Dex Bonus</div>
+            <div class="invert label">Max Dex Bonus</div>
             <input type="text" />
         </div>
     </div>
