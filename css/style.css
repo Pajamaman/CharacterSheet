@@ -106,6 +106,12 @@ td input {
     position: relative;
     width: 82em;
 }
+#logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20em;
+}
 #description {
     margin: 1em 0;
     width: 60em;
