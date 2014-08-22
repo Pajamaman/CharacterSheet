@@ -47,65 +47,88 @@
         'spellResistance': null,
         'grapple': { 'total': null, 'sizeMod': null, 'miscMod': null },
         'attacks': [
-            { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-            { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-            { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-            { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
-            { 'name': null, 'attackBonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
+            { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+            { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+            { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+            { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
+            { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
         ],
         'maxSkillRanks': null,
         'totalSkillRanks': null,
         'skills': [
-            { 'name': 'Appraise', 'classSkill': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Balance', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Bluff', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Climb', 'classSkill': null, 'keyAbility': 'STR', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Concentration', 'classSkill': null, 'keyAbility': 'CON', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Craft', 'classSkill': null, 'item': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Craft', 'classSkill': null, 'item': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Craft', 'classSkill': null, 'item': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Decipher Script', 'classSkill': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Diplomacy', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Disable Device', 'classSkill': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Disguise', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Escape Artist', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Forgery', 'classSkill': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Gather Information', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Handle Animal', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Heal', 'classSkill': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Hide', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Intimidate', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Jump', 'classSkill': null, 'keyAbility': 'STR', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Knowledge', 'classSkill': null, 'field': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Knowledge', 'classSkill': null, 'field': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Knowledge', 'classSkill': null, 'field': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Knowledge', 'classSkill': null, 'field': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Knowledge', 'classSkill': null, 'field': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Listen', 'classSkill': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Move Silently', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Open Lock', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Perform', 'classSkill': null, 'talent': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Perform', 'classSkill': null, 'talent': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Perform', 'classSkill': null, 'talent': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Profession', 'classSkill': null, 'trade': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Profession', 'classSkill': null, 'trade': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Ride', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Search', 'classSkill': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Sense Motive', 'classSkill': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Sleight of Hand', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Spellcraft', 'classSkill': null, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Spot', 'classSkill': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Survival', 'classSkill': null, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Swim', 'classSkill': null, 'keyAbility': 'STR', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Tumble', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Use Magic Device', 'classSkill': null, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
-            { 'name': 'Use Rope', 'classSkill': null, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null }
+            { 'name': 'Appraise',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Balance',                                 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Bluff',                                   'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Climb',                                   'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'STR', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Concentration',                           'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'CON', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Craft',              'description': null, 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Craft',              'description': null, 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Craft',              'description': null, 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Decipher Script',                         'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Diplomacy',                               'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Disable Device',                          'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Disguise',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Escape Artist',                           'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Forgery',                                 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Gather Information',                      'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Handle Animal',                           'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Heal',                                    'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Hide',                                    'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Intimidate',                              'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Jump',                                    'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'STR', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Knowledge',          'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Knowledge',          'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Knowledge',          'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Knowledge',          'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Knowledge',          'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Listen',                                  'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Move Silently',                           'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Open Lock',                               'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Perform',            'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Perform',            'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Perform',            'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Profession',         'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Profession',         'description': null, 'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Ride',                                    'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Search',                                  'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Sense Motive',                            'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Sleight of Hand',                         'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Spellcraft',                              'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Spot',                                    'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Survival',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'WIS', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Swim',                                    'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'STR', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Tumble',                                  'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Use Magic Device',                        'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
+            { 'name': 'Use Rope',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null }
         ]
     };
     
     function getAbilityMod(score) {
         return Math.floor((score - 10) / 2);
     }
+    
+    function createSkillsTable() {
+        var table = document.getElementById('skills').firstElementChild;
+        
+        for (var i = 0; i < character.skills.length; i++) {
+            var newRow = table.insertRow();
+            
+            newRow.innerHTML = '<td><input type="checkbox" /></td>' +
+                               '<td>' +
+                                   character.skills[i].name +
+                                   (character.skills[i].description !== undefined ? ' <input data-mapping="skills.' + i + '.description" type="text" />' : '') +
+                                   (character.skills[i].useUntrained ? ' ■' : '') +
+                                   (character.skills[i].armorCheckPenalty ? ' *' : '') +
+                               '</td>' +
+                               '<td>' + character.skills[i].keyAbility + '</td>' +
+                               '<td><input data-mapping="skills.' + i + '.skillMod" type="text" readonly="readonly" /></td>' +
+                               '<td><input data-mapping="skills.' + i + '.abilityMod" type="text" readonly="readonly" /></td>' +
+                               '<td><input data-mapping="skills.' + i + '.ranks" type="text" /></td>' +
+                               '<td><input data-mapping="skills.' + i + '.miscMod" type="text" /></td>';
+        }
+    }
+    
+    createSkillsTable();
     
     KO.bind(character);
     
@@ -167,6 +190,7 @@
     
     KO.listen('armorClass.total', function (event) {
         character.armorClass.flatFooted = character.armorClass.total;
+        
         if (character.abilities.dexterity.mod > 0) {
             character.armorClass.flatFooted -= character.abilities.dexterity.mod;
         }
@@ -245,7 +269,7 @@
                     
                     // make sure character is a character
                     KO.bind(character);
-                } catch (ex) {
+                } catch (exception) {
                     // handle error
                 }
             };

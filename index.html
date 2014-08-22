@@ -3,1115 +3,799 @@
     <head>
         <meta charset="utf-8" />
         <title>Character Sheet</title>
+        <link href="css/normalize.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
-        <link href="css/font-awesome.min.css" rel="stylesheet" />
     </head>
     <body>
         <div id="container">
-            <img id="logo" src="img/logo.png" />
-            <table>
+            <div id="description">
+                <div class="flex">
+                    <div class="cell">
+                        <div class="caps small">Character Name</div>
+                        <input data-mapping="name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="caps small">Player</div>
+                        <input data-mapping="player" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="caps small">Class</div>
+                        <input data-mapping="class" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Level</div>
+                        <input data-mapping="level" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="caps small">Race</div>
+                        <input data-mapping="race" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="caps small">Alignment</div>
+                        <input data-mapping="alignment" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="caps small">Deity</div>
+                        <input data-mapping="deity" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Size</div>
+                        <input data-mapping="size" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Age</div>
+                        <input data-mapping="age" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Gender</div>
+                        <input data-mapping="gender" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Height</div>
+                        <input data-mapping="height" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Weight</div>
+                        <input data-mapping="weight" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Eyes</div>
+                        <input data-mapping="eyes" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Hair</div>
+                        <input data-mapping="hair" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="caps small">Skin</div>
+                        <input data-mapping="skin" type="text" />
+                    </div>
+                </div>
+            </div>
+            <table id="abilities">
                 <tr>
-                    <th>Name</th>
-                    <th>Player</th>
-                    <th>Class</th>
-                    <th>Level</th>
-                    <th>Race</th>
-                    <th>Size</th>
+                    <td>
+                        <div class="caps small">Ability Name</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Ability Score</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Ability Modifier</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Temp Score</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Temp Modifier</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><input data-mapping="name" type="text" /></td>
-                    <td><input data-mapping="player" type="text" /></td>
-                    <td><input data-mapping="class" type="text" /></td>
-                    <td><input class="short" data-mapping="level" type="text" /></td>
-                    <td><input data-mapping="race" type="text" /></td>
-                    <td><input class="short" data-mapping="size" type="text" /></td>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">STR</div>
+                            <div class="small">Strength</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="abilities.strength.score" type="text" /></td>
+                    <td><input data-mapping="abilities.strength.mod" type="text" readonly="readonly" /></td>
+                    <td><input data-mapping="abilities.strength.tempScore" type="text" /></td>
+                    <td><input data-mapping="abilities.strength.tempMod" type="text" readonly="readonly" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">DEX</div>
+                            <div class="small">Dexterity</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="abilities.dexterity.score" type="text" /></td>
+                    <td><input data-mapping="abilities.dexterity.mod" type="text" readonly="readonly" /></td>
+                    <td><input data-mapping="abilities.dexterity.tempScore" type="text" /></td>
+                    <td><input data-mapping="abilities.dexterity.tempMod" type="text" readonly="readonly" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">CON</div>
+                            <div class="small">Constitution</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="abilities.constitution.score" type="text" /></td>
+                    <td><input data-mapping="abilities.constitution.mod" type="text" readonly="readonly" /></td>
+                    <td><input data-mapping="abilities.constitution.tempScore" type="text" /></td>
+                    <td><input data-mapping="abilities.constitution.tempMod" type="text" readonly="readonly" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">INT</div>
+                            <div class="small">Intelligence</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="abilities.intelligence.score" type="text" /></td>
+                    <td><input data-mapping="abilities.intelligence.mod" type="text" readonly="readonly" /></td>
+                    <td><input data-mapping="abilities.intelligence.tempScore" type="text" /></td>
+                    <td><input data-mapping="abilities.intelligence.tempMod" type="text" readonly="readonly" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">WIS</div>
+                            <div class="small">Wisdom</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="abilities.wisdom.score" type="text" /></td>
+                    <td><input data-mapping="abilities.wisdom.mod" type="text" readonly="readonly" /></td>
+                    <td><input data-mapping="abilities.wisdom.tempScore" type="text" /></td>
+                    <td><input data-mapping="abilities.wisdom.tempMod" type="text" readonly="readonly" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">CHA</div>
+                            <div class="small">Charisma</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="abilities.charisma.score" type="text" /></td>
+                    <td><input data-mapping="abilities.charisma.mod" type="text" readonly="readonly" /></td>
+                    <td><input data-mapping="abilities.charisma.tempScore" type="text" /></td>
+                    <td><input data-mapping="abilities.charisma.tempMod" type="text" readonly="readonly" /></td>
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <th>Alignment</th>
-                    <th>Deity</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Height</th>
-                    <th>Weight</th>
-                    <th>Eyes</th>
-                    <th>Hair</th>
-                    <th>Skin</th>
-                </tr>
-                <tr>
-                    <td><input class="short" data-mapping="alignment" type="text" /></td>
-                    <td><input data-mapping="deity" type="text" /></td>
-                    <td><input class="short" data-mapping="age" type="text" /></td>
-                    <td><input class="short" data-mapping="gender" type="text" /></td>
-                    <td><input class="short" data-mapping="height" type="text" /></td>
-                    <td><input class="short" data-mapping="weight" type="text" /></td>
-                    <td><input class="short" data-mapping="eyes" type="text" /></td>
-                    <td><input class="short" data-mapping="hair" type="text" /></td>
-                    <td><input class="short" data-mapping="skin" type="text" /></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <th>Abilities</th>
-                    <th>Ability<br />Score</th>
-                    <th>Ability<br />Modifier</th>
-                    <th>Temporary<br />Score</th>
-                    <th>Temporary<br />Modifier</th>
-                </tr>
-                <tr>
-                    <th class="invert">
-                        <div class="large">STR</div>
-                        <div>Strength</div>
-                    </th>
-                    <td><input class="short" data-mapping="abilities.strength.score" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.strength.tempScore" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.strength.tempMod" readonly="readonly" type="text" /></td>
-                </tr>
-                <tr>
-                    <th class="invert">
-                        <div class="large">DEX</div>
-                        <div>Dexterity</div>
-                    </th>
-                    <td><input class="short" data-mapping="abilities.dexterity.score" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.dexterity.tempScore" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.dexterity.tempMod" readonly="readonly" type="text" /></td>
-                </tr>
-                <tr>
-                    <th class="invert">
-                        <div class="large">CON</div>
-                        <div>Constitution</div>
-                    </th>
-                    <td><input class="short" data-mapping="abilities.constitution.score" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.constitution.tempScore" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.constitution.tempMod" readonly="readonly" type="text" /></td>
-                </tr>
-                <tr>
-                    <th class="invert">
-                        <div class="large">INT</div>
-                        <div>Intelligence</div>
-                    </th>
-                    <td><input class="short" data-mapping="abilities.intelligence.score" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.intelligence.mod" readonly="readonly" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.intelligence.tempScore" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.intelligence.tempMod" readonly="readonly" type="text" /></td>
-                </tr>
-                <tr>
-                    <th class="invert">
-                        <div class="large">WIS</div>
-                        <div>Wisdom</div>
-                    </th>
-                    <td><input class="short" data-mapping="abilities.wisdom.score" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.wisdom.tempScore" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.wisdom.tempMod" readonly="readonly" type="text" /></td>
-                </tr>
-                <tr>
-                    <th class="invert">
-                        <div class="large">CHA</div>
-                        <div>Charisma</div>
-                    </th>
-                    <td><input class="short" data-mapping="abilities.charisma.score" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.charisma.mod" readonly="readonly" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.charisma.tempScore" type="text" /></td>
-                    <td><input class="short" data-mapping="abilities.charisma.tempMod" readonly="readonly" type="text" /></td>
-                </tr>
-            </table>
-            <div id="hit-points-speed-etc">
+            <div id="hit-points-etc">
                 <div class="table-group">
-                    <table>
+                    <table id="hit-points">
                         <tr>
-                            <th></th>
-                            <th>Maximum<br />HP</th>
-                            <th>Current<br />HP</th>
-                            <th>Nonlethal<br />Damage</th>
+                            <td></td>
+                            <td class="short">
+                                <div class="caps small">Max</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Current</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Nonlethal Damage</div>
+                            </td>
                         </tr>
                         <tr>
-                            <th class="invert">
-                                <div class="large">HP</div>
-                                <div>Hit Points</div>
-                            </th>
-                            <td><input class="short" data-mapping="hitPoints.max" type="text" /></td>
-                            <td><input class="short" data-mapping="hitPoints.current" type="text" /></td>
-                            <td><input class="short" data-mapping="hitPoints.nonlethalDamage" type="text" /></td>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">HP</div>
+                                    <div class="small">Hit Points</div>
+                                </div>
+                            </td>
+                            <td><input data-mapping="hitPoints.max" type="text" /></td>
+                            <td><input data-mapping="hitPoints.current" type="text" /></td>
+                            <td><input data-mapping="hitPoints.nonlethalDamage" type="text" /></td>
                         </tr>
                     </table>
                     <table id="speed">
                         <tr>
-                            <th class="invert large">Speed</th>
-                            <td><input class="short" data-mapping="speed" type="text" /></td>
+                            <td>
+                                <div class="label caps large">Speed</div>
+                            </td>
+                            <td class="short"><input data-mapping="speed" type="text" /></td>
                         </tr>
                     </table>
                     <table id="damage-reduction">
                         <tr>
-                            <th class="invert">
-                                <div class="large">Damage</div>
-                                <div>Reduction</div>
-                            </th>
-                            <td><input class="short" data-mapping="damageReduction" type="text" /></td>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">Damage</div>
+                                    <div class="small">Reduction</div>
+                                </div>
+                            </td>
+                            <td class="short"><input data-mapping="damageReduction" type="text" /></td>
                         </tr>
                     </table>
                 </div>
-                <table>
+                <table id="armor-class">
                     <tr>
-                        <th></th>
-                        <th>Total</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th>Armor<br />Bonus</th>
-                        <th></th>
-                        <th>Shield<br />Bonus</th>
-                        <th></th>
-                        <th>Dexterity<br />Modifier</th>
-                        <th></th>
-                        <th>Size<br />Modifier</th>
-                        <th></th>
-                        <th>Natural<br />Armor</th>
-                        <th></th>
-                        <th>Deflection<br />Modifier</th>
-                        <th></th>
-                        <th>Misc.<br />Modifier</th>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Total</div>
+                        </td>
+                        <td></td>
+                        <td class="short"></td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Armor Bonus</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Shield Bonus</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Dex Modifier</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Size Modifier</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Natural Armor</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Deflection Modifier</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Misc Modifier</div>
+                        </td>
                     </tr>
                     <tr>
-                        <th class="invert">
-                            <div class="large">AC</div>
-                            <div>Armor Class</div>
-                        </th>
-                        <td><input class="short" data-mapping="armorClass.total" readonly="readonly" type="text" /></th>
+                        <td>
+                            <div class="label caps">
+                                <div class="large">AC</div>
+                                <div class="small">Armor Class</div>
+                            </div>
+                        </td>
+                        <td><input data-mapping="armorClass.total" type="text" readonly="readonly" /></td>
                         <td>=</td>
-                        <td><input class="short" data-mapping="armorClass.baseArmor" readonly="readonly" type="text" /></td>
+                        <td><input data-mapping="armorClass.baseArmor" type="text" readonly="readonly" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="armorClass.armorBonus" type="text" /></th>
+                        <td><input data-mapping="armorClass.armorBonus" type="text" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="armorClass.shieldBonus" type="text" /></th>
+                        <td><input data-mapping="armorClass.shieldBonus" type="text" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></th>
+                        <td><input data-mapping="abilities.dexterity.mod" type="text" readonly="readonly" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="armorClass.sizeMod" type="text" /></th>
+                        <td><input data-mapping="armorClass.sizeMod" type="text" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="armorClass.naturalArmor" type="text" /></th>
+                        <td><input data-mapping="armorClass.naturalArmor" type="text" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="armorClass.deflectionMod" type="text" /></th>
+                        <td><input data-mapping="armorClass.deflectionMod" type="text" /></td>
                         <td>+</td>
-                        <td><input class="short" data-mapping="armorClass.miscMod" type="text" /></th>
+                        <td><input data-mapping="armorClass.miscMod" type="text" /></td>
                     </tr>
                 </table>
                 <div class="table-group">
-                    <table id="armor-class-touch">
+                    <table id="touch-armor-class">
                         <tr>
-                            <th class="invert">
-                                <div class="large">Touch</div>
-                                <div>Armor Class</div>
-                            </th>
-                            <td><input class="short" data-mapping="armorClass.touch" readonly="readonly" type="text" /></td>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">Touch</div>
+                                    <div class="small">Armor Class</div>
+                                </div>
+                            </td>
+                            <td class="short"><input data-mapping="armorClass.touch" type="text" readonly="readonly" /></td>
                         </tr>
                     </table>
-                    <table id="armor-class-flat-footed">
+                    <table id="flat-footed-armor-class">
                         <tr>
-                            <th class="invert">
-                                <div class="large">Flat-Footed</div>
-                                <div>Armor Class</div>
-                            </th>
-                            <td><input class="short" data-mapping="armorClass.flatFooted" readonly="readonly" type="text" /></td>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">Flat-Footed</div>
+                                    <div class="small">Armor Class</div>
+                                </div>
+                            </td>
+                            <td class="short"><input data-mapping="armorClass.flatFooted" type="text" readonly="readonly" /></td>
                         </tr>
                     </table>
-                    <table>
+                    <table id="initiative-modifier">
                         <tr>
-                            <th></th>
-                            <th>Total</th>
-                            <th></th>
-                            <th>Dexterity<br />Modifier</th>
-                            <th></th>
-                            <th>Misc.<br />Modifier</th>
+                            <td></td>
+                            <td class="short">
+                                <div class="caps small">Total</div>
+                            </td>
+                            <td></td>
+                            <td class="short">
+                                <div class="caps small">Dex Modifier</div>
+                            </td>
+                            <td></td>
+                            <td class="short">
+                                <div class="caps small">Misc Modifier</div>
+                            </td>
                         </tr>
                         <tr>
-                            <th class="invert">
-                                <div class="large">Initiative</div>
-                                <div>Modifier</div>
-                            </th>
-                            <td><input class="short" data-mapping="initiative.total" readonly="readonly" type="text" /></td>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">Initiative</div>
+                                    <div class="small">Modifier</div>
+                                </div>
+                            </td>
+                            <td><input data-mapping="initiative.total" type="text" readonly="readonly" /></td>
                             <td>=</td>
-                            <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                            <td><input data-mapping="abilities.dexterity.mod" type="text" readonly="readonly" /></td>
                             <td>+</td>
-                            <td><input class="short" data-mapping="initiative.miscMod" type="text" /></td>
+                            <td><input data-mapping="initiative.miscMod" type="text" /></td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <table>
+            <table id="saving-throws">
                 <tr>
-                    <th>Saving Throws</th>
-                    <th>Total</th>
-                    <th></th>
-                    <th>Base Save</th>
-                    <th></th>
-                    <th>Ability<br />Modifier</th>
-                    <th></th>
-                    <th>Magic<br />Modifier</th>
-                    <th></th>
-                    <th>Misc.<br />Modifier</th>
-                    <th></th>
-                    <th>Temporary<br />Modifier</th>
+                    <td>
+                        <div class="caps small">Saving Throws</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Total</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Base Save</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Ability Modifier</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Magic Modifier</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Misc Modifier</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Temp Modifier</div>
+                    </td>
                 </tr>
                 <tr>
-                    <th class="invert">
-                        <div class="large">Fortitude</div>
-                        <div>(Constitution)</div>
-                    </th>
-                    <td><input class="short" data-mapping="savingThrows.fortitude.total" readonly="readonly" type="text" /></td>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">Fortitude</div>
+                            <div class="small">(Constitution)</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="savingThrows.fortitude.total" type="text" readonly="readonly" /></td>
                     <td>=</td>
-                    <td><input class="short" data-mapping="savingThrows.fortitude.baseSave" type="text" /></td>
+                    <td><input data-mapping="savingThrows.fortitude.baseSave" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="abilities.constitution.mod" readonly="readonly" type="text" /></td>
+                    <td><input data-mapping="abilities.constitution.mod" type="text" readonly="readonly" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.fortitude.magicMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.fortitude.magicMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.fortitude.miscMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.fortitude.miscMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.fortitude.tempMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.fortitude.tempMod" type="text" /></td>
                 </tr>
                 <tr>
-                    <th class="invert">
-                        <div class="large">Reflex</div>
-                        <div>(Dexterity)</div>
-                    </th>
-                    <td><input class="short" data-mapping="savingThrows.reflex.total" readonly="readonly" type="text" /></td>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">Reflex</div>
+                            <div class="small">(Dexterity)</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="savingThrows.reflex.total" type="text" readonly="readonly" /></td>
                     <td>=</td>
-                    <td><input class="short" data-mapping="savingThrows.reflex.baseSave" type="text" /></td>
+                    <td><input data-mapping="savingThrows.reflex.baseSave" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="abilities.dexterity.mod" readonly="readonly" type="text" /></td>
+                    <td><input data-mapping="abilities.dexterity.mod" type="text" readonly="readonly" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.reflex.magicMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.reflex.magicMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.reflex.miscMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.reflex.miscMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.reflex.tempMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.reflex.tempMod" type="text" /></td>
                 </tr>
                 <tr>
-                    <th class="invert">
-                        <div class="large">Will</div>
-                        <div>(Wisdom)</div>
-                    </th>
-                    <td><input class="short" data-mapping="savingThrows.will.total" readonly="readonly" type="text" /></td>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">Will</div>
+                            <div class="small">(Wisdom)</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="savingThrows.will.total" type="text" readonly="readonly" /></td>
                     <td>=</td>
-                    <td><input class="short" data-mapping="savingThrows.will.baseSave" type="text" /></td>
+                    <td><input data-mapping="savingThrows.will.baseSave" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="abilities.wisdom.mod" readonly="readonly" type="text" /></td>
+                    <td><input data-mapping="abilities.wisdom.mod" type="text" readonly="readonly" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.will.magicMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.will.magicMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.will.miscMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.will.miscMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="savingThrows.will.tempMod" type="text" /></td>
+                    <td><input data-mapping="savingThrows.will.tempMod" type="text" /></td>
                 </tr>
             </table>
             <div class="table-group">
-                <table>
+                <table id="base-attack-bonus">
                     <tr>
-                        <th class="invert large">Base Attack Bonus</th>
-                        <td><input class="short" data-mapping="baseAttackBonus" type="text" /></td>
+                        <td>
+                            <div class="label caps large">Base Attack Bonus</div>
+                        </td>
+                        <td class="short"><input data-mapping="baseAttackBonus" type="text" /></td>
                     </tr>
                 </table>
-                <table>
+                <table id="spell-resistance">
                     <tr>
-                        <th class="invert large">Spell Resistance</th>
-                        <td><input class="short" data-mapping="spellResistance" type="text" /></td>
+                        <td>
+                            <div class="label caps large">Spell Resistance</div>
+                        </td>
+                        <td class="short"><input data-mapping="spellResistance" type="text" /></td>
                     </tr>
                 </table>
             </div>
-            <table>
+            <table id="grapple-modifier">
                 <tr>
-                    <th></th>
-                    <th>Total</th>
-                    <th></th>
-                    <th>Base<br />Attack<br />Bonus</th>
-                    <th></th>
-                    <th>Strength<br />Modifier</th>
-                    <th></th>
-                    <th>Size<br />Modifier</th>
-                    <th></th>
-                    <th>Misc.<br />Modifier</th>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Total</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Base Attack Bonus</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Strength Modifier</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Size Modifier</div>
+                    </td>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Misc Modifier</div>
+                    </td>
                 </tr>
                 <tr>
-                    <th class="invert">
-                        <div class="large">Grapple</div>
-                        <div>Modifier</div>
-                    </th>
-                    <td><input class="short" data-mapping="grapple.total" readonly="readonly" type="text" /></td>
+                    <td>
+                        <div class="label caps">
+                            <div class="large">Grapple</div>
+                            <div class="small">Modifier</div>
+                        </div>
+                    </td>
+                    <td><input data-mapping="grapple.total" type="text" readonly="readonly" /></td>
                     <td>=</td>
-                    <td><input class="short" data-mapping="baseAttackBonus" readonly="readonly" type="text" /></td>
+                    <td><input data-mapping="baseAttackBonus" type="text" readonly="readonly" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="abilities.strength.mod" readonly="readonly" type="text" /></td>
+                    <td><input data-mapping="abilities.strength.mod" type="text" readonly="readonly" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="grapple.sizeMod" type="text" /></td>
+                    <td><input data-mapping="grapple.sizeMod" type="text" /></td>
                     <td>+</td>
-                    <td><input class="short" data-mapping="grapple.miscMod" type="text" /></td>
+                    <td><input data-mapping="grapple.miscMod" type="text" /></td>
                 </tr>
             </table>
-            <div id="attacks">
-                <table>
-                    <tr>
-                        <th class="invert large" colspan="2">Attack</th>
-                        <th>Attack<br />Bonus</th>
-                        <th>Damage</th>
-                        <th>Critical</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input class="long" data-mapping="attacks.0.name" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.0.attackBonus" type="text" /></td>
-                        <td><input data-mapping="attacks.0.damage" type="text" /></td>
-                        <td><input data-mapping="attacks.0.critical" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <th>Range</th>
-                        <th>Type</th>
-                        <th>Ammunition</th>
-                        <th colspan="2">Notes</th>
-                    </tr>
-                    <tr>
-                        <td><input class="short" data-mapping="attacks.0.range" type="text" /></td>
-                        <td><input data-mapping="attacks.0.type" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.0.ammunition" type="text" /></td>
-                        <td colspan="2"><input class="long" data-mapping="attacks.0.notes" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert large" colspan="2">Attack</th>
-                        <th>Attack<br />Bonus</th>
-                        <th>Damage</th>
-                        <th>Critical</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input class="long" data-mapping="attacks.1.name" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.1.attackBonus" type="text" /></td>
-                        <td><input data-mapping="attacks.1.damage" type="text" /></td>
-                        <td><input data-mapping="attacks.1.critical" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <th>Range</th>
-                        <th>Type</th>
-                        <th>Ammunition</th>
-                        <th colspan="2">Notes</th>
-                    </tr>
-                    <tr>
-                        <td><input class="short" data-mapping="attacks.1.range" type="text" /></td>
-                        <td><input data-mapping="attacks.1.type" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.1.ammunition" type="text" /></td>
-                        <td colspan="2"><input class="long" data-mapping="attacks.1.notes" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert large" colspan="2">Attack</th>
-                        <th>Attack<br />Bonus</th>
-                        <th>Damage</th>
-                        <th>Critical</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input class="long" data-mapping="attacks.2.name" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.2.attackBonus" type="text" /></td>
-                        <td><input data-mapping="attacks.2.damage" type="text" /></td>
-                        <td><input data-mapping="attacks.2.critical" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <th>Range</th>
-                        <th>Type</th>
-                        <th>Ammunition</th>
-                        <th colspan="2">Notes</th>
-                    </tr>
-                    <tr>
-                        <td><input class="short" data-mapping="attacks.2.range" type="text" /></td>
-                        <td><input data-mapping="attacks.2.type" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.2.ammunition" type="text" /></td>
-                        <td colspan="2"><input class="long" data-mapping="attacks.2.notes" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert large" colspan="2">Attack</th>
-                        <th>Attack<br />Bonus</th>
-                        <th>Damage</th>
-                        <th>Critical</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input class="long" data-mapping="attacks.3.name" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.3.attackBonus" type="text" /></td>
-                        <td><input data-mapping="attacks.3.damage" type="text" /></td>
-                        <td><input data-mapping="attacks.3.critical" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <th>Range</th>
-                        <th>Type</th>
-                        <th>Ammunition</th>
-                        <th colspan="2">Notes</th>
-                    </tr>
-                    <tr>
-                        <td><input class="short" data-mapping="attacks.3.range" type="text" /></td>
-                        <td><input data-mapping="attacks.3.type" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.3.ammunition" type="text" /></td>
-                        <td colspan="2"><input class="long" data-mapping="attacks.3.notes" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert large" colspan="2">Attack</th>
-                        <th>Attack<br />Bonus</th>
-                        <th>Damage</th>
-                        <th>Critical</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input class="long" data-mapping="attacks.4.name" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.4.attackBonus" type="text" /></td>
-                        <td><input data-mapping="attacks.4.damage" type="text" /></td>
-                        <td><input data-mapping="attacks.4.critical" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <th>Range</th>
-                        <th>Type</th>
-                        <th>Ammunition</th>
-                        <th colspan="2">Notes</th>
-                    </tr>
-                    <tr>
-                        <td><input class="short" data-mapping="attacks.4.range" type="text" /></td>
-                        <td><input data-mapping="attacks.4.type" type="text" /></td>
-                        <td><input class="short" data-mapping="attacks.4.ammunition" type="text" /></td>
-                        <td colspan="2"><input class="long" data-mapping="attacks.4.notes" type="text" /></td>
-                    </tr>
-                </table>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Attack</div>
+                        <input data-mapping="attacks.0.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Attack Bonus</div>
+                        <input data-mapping="attacks.0.bonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Damage</div>
+                        <input data-mapping="attacks.0.damage" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Critical</div>
+                        <input data-mapping="attacks.0.critical" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Range</div>
+                        <input data-mapping="attacks.0.range" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Type</div>
+                        <input data-mapping="attacks.0.type" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Ammunition</div>
+                        <input data-mapping="attacks.0.ammunition" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Notes</div>
+                        <input data-mapping="attacks.0.notes" type="text" />
+                    </div>
+                </div>
             </div>
-            <div id="gear">
-                <table>
-                    <tr>
-                        <th class="invert" colspan="2" style="font-weight: bold;">Armor/Protective Item</th>
-                        <th colspan="2">Type</th>
-                        <th>Armor<br />Bonus</th>
-                        <th>Maximum<br />Dex Bonus</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input data-mapping="gear.0.name" type="text" /></td>
-                        <td colspan="2"><input data-mapping="gear.0.type" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.0.armorClassBonus" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.0.maxDexterity" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <th>Skill<br />Penalty</th>
-                        <th>Spell<br />Failure</th>
-                        <th>Speed</th>
-                        <th>Weight</th>
-                        <th colspan="2">Special Properties</th>
-                    </tr>
-                    <tr>
-                        <td><input class="short" data-mapping="gear.0.checkPenalty" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.0.spellFailure" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.0.speed" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.0.weight" type="text" /></td>
-                        <td colspan="2"><input data-mapping="gear.0.specialProperties" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert" style="font-weight: bold;">Shield/Protective Item</th>
-                        <th>Armor<br />Bonus</th>
-                        <th>Weight</th>
-                        <th>Skill<br />Penalty</th>
-                        <th>Spell<br />Failure</th>
-                        <th>Special Properties</th>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="gear.1.name" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.1.armorClassBonus" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.1.weight" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.1.checkPenalty" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.1.spellFailure" type="text" /></td>
-                        <td><input data-mapping="gear.1.specialProperties" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert" style="font-weight: bold;">Protective Item</th>
-                        <th>Armor<br />Bonus</th>
-                        <th>Weight</th>
-                        <th>Special Properties</th>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="gear.2.name" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.2.armorClassBonus" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.2.weight" type="text" /></td>
-                        <td><input data-mapping="gear.2.specialProperties" type="text" /></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th class="invert" style="font-weight: bold;">Protective Item</th>
-                        <th>Armor<br />Bonus</th>
-                        <th>Weight</th>
-                        <th>Special Properties</th>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="gear.3.name" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.3.armorClassBonus" type="text" /></td>
-                        <td><input class="short" data-mapping="gear.3.weight" type="text" /></td>
-                        <td><input data-mapping="gear.3.specialProperties" type="text" /></td>
-                    </tr>
-                </table>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Attack</div>
+                        <input data-mapping="attacks.1.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Attack Bonus</div>
+                        <input data-mapping="attacks.1.bonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Damage</div>
+                        <input data-mapping="attacks.1.damage" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Critical</div>
+                        <input data-mapping="attacks.1.critical" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Range</div>
+                        <input data-mapping="attacks.1.range" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Type</div>
+                        <input data-mapping="attacks.1.type" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Ammunition</div>
+                        <input data-mapping="attacks.1.ammunition" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Notes</div>
+                        <input data-mapping="attacks.1.notes" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Attack</div>
+                        <input data-mapping="attacks.2.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Attack Bonus</div>
+                        <input data-mapping="attacks.2.bonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Damage</div>
+                        <input data-mapping="attacks.2.damage" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Critical</div>
+                        <input data-mapping="attacks.2.critical" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Range</div>
+                        <input data-mapping="attacks.2.range" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Type</div>
+                        <input data-mapping="attacks.2.type" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Ammunition</div>
+                        <input data-mapping="attacks.2.ammunition" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Notes</div>
+                        <input data-mapping="attacks.2.notes" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Attack</div>
+                        <input data-mapping="attacks.3.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Attack Bonus</div>
+                        <input data-mapping="attacks.3.bonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Damage</div>
+                        <input data-mapping="attacks.3.damage" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Critical</div>
+                        <input data-mapping="attacks.3.critical" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Range</div>
+                        <input data-mapping="attacks.3.range" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Type</div>
+                        <input data-mapping="attacks.3.type" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Ammunition</div>
+                        <input data-mapping="attacks.3.ammunition" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Notes</div>
+                        <input data-mapping="attacks.3.notes" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Attack</div>
+                        <input data-mapping="attacks.4.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Attack Bonus</div>
+                        <input data-mapping="attacks.4.bonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Damage</div>
+                        <input data-mapping="attacks.4.damage" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Critical</div>
+                        <input data-mapping="attacks.4.critical" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Range</div>
+                        <input data-mapping="attacks.4.range" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Type</div>
+                        <input data-mapping="attacks.4.type" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Ammunition</div>
+                        <input data-mapping="attacks.4.ammunition" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Notes</div>
+                        <input data-mapping="attacks.4.notes" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Armor/Protective Item</div>
+                        <input data-mapping="gear.0.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Type</div>
+                        <input data-mapping="gear.0.type" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">AC Bonus</div>
+                        <input data-mapping="gear.0.armorClassBonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Max Dex</div>
+                        <input data-mapping="gear.0.maxDexterity" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Check Penalty</div>
+                        <input data-mapping="gear.0.checkPenalty" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Spell Failure</div>
+                        <input data-mapping="gear.0.spellFailure" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Speed</div>
+                        <input data-mapping="gear.0.speed" type="text" />
+                    </div>
+                    <div class="cell short">
+                        <div class="label caps small">Weight</div>
+                        <input data-mapping="gear.0.weight" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Special Properties</div>
+                        <input data-mapping="gear.0.specialProperties" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex">
+                    <div class="cell long">
+                        <div class="label caps large round-top">Shield/Protective Item</div>
+                        <input data-mapping="gear.1.name" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">AC Bonus</div>
+                        <input data-mapping="gear.1.armorClassBonus" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Weight</div>
+                        <input data-mapping="gear.1.weight" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Check Penalty</div>
+                        <input data-mapping="gear.1.checkPenalty" type="text" />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell short">
+                        <div class="label caps small">Spell Failure</div>
+                        <input data-mapping="gear.1.spellFailure" type="text" />
+                    </div>
+                    <div class="cell">
+                        <div class="label caps small">Special Properties</div>
+                        <input data-mapping="gear.1.specialProperties" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="item flex">
+                <div class="cell long">
+                    <div class="label caps large round-top">Protective Item</div>
+                    <input data-mapping="gear.2.name" type="text" />
+                </div>
+                <div class="cell">
+                    <div class="label caps small">AC Bonus</div>
+                    <input data-mapping="gear.2.armorClassBonus" type="text" />
+                </div>
+                <div class="cell">
+                    <div class="label caps small">Weight</div>
+                    <input data-mapping="gear.2.weight" type="text" />
+                </div>
+                <div class="cell">
+                    <div class="label caps small">Special Properties</div>
+                    <input data-mapping="gear.2.specialProperties" type="text" />
+                </div>
+            </div>
+            <div class="item flex">
+                <div class="cell long">
+                    <div class="label caps large round-top">Protective Item</div>
+                    <input data-mapping="gear.3.name" type="text" />
+                </div>
+                <div class="cell">
+                    <div class="label caps small">AC Bonus</div>
+                    <input data-mapping="gear.3.armorClassBonus" type="text" />
+                </div>
+                <div class="cell">
+                    <div class="label caps small">Weight</div>
+                    <input data-mapping="gear.3.weight" type="text" />
+                </div>
+                <div class="cell">
+                    <div class="label caps small">Special Properties</div>
+                    <input data-mapping="gear.3.specialProperties" type="text" />
+                </div>
             </div>
             <div id="skills">
-                <table class="alt">
+                <table>
+                    <caption class="label caps large">Skills</caption>
                     <tr>
-                        <th class="invert" colspan="10" style="height: 2.5em; text-align: left;">
-                            <div class="large">Skills</div>
-                            <div id="max-skill-ranks">
-                                Max Ranks <input class="short" data-binding="maxSkillRanks" type="text" />
-                            </div>
-                            <div id="total-skill-ranks">
-                                Total Ranks <input class="short" data-binding="totalSkillRanks" type="text" />
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th style="text-align: left;">Skill Name</th>
-                        <th>Key<br />Ability</th>
-                        <th>Skill<br />Modifier</th>
-                        <th></th>
-                        <th>Ability<br />Modifier</th>
-                        <th></th>
-                        <th>Ranks</th>
-                        <th></th>
-                        <th>Misc.<br />Modifier</th>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.0.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.0.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.0.keyAbility"></span></td>
-                        <td><input class="short" data-mapping="skills.0.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.0.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.0.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.0.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.1.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.1.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.1.keyAbility"></span></td>
-                        <td><input class="short" data-mapping="skills.1.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.1.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.1.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.1.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.2.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.2.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.2.keyAbility"></span></td>
-                        <td><input class="short" data-mapping="skills.2.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.2.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.2.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.2.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.3.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.3.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.3.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.3.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.3.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.3.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.3.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.4.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.4.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.4.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.4.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.4.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.4.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.4.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.5.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.5.name"></span> ■ <input data-mapping="skills.5.item" placeholder="Item" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.5.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.5.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.5.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.5.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.5.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.6.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.6.name"></span> ■ <input data-mapping="skills.6.item" placeholder="Item" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.6.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.6.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.6.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.6.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.6.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.7.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.7.name"></span> ■ <input data-mapping="skills.7.item" placeholder="Item" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.7.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.7.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.7.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.7.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.7.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.8.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.8.name"></span></td>
-                        <td class="center"><span data-mapping="skills.8.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.8.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.8.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.8.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.8.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.9.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.9.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.9.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.9.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.9.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.9.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.9.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.10.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.10.name"></span></td>
-                        <td class="center"><span data-mapping="skills.10.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.10.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.10.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.10.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.10.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.11.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.11.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.11.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.11.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.11.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.11.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.11.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.12.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.12.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.12.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.12.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.12.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.12.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.12.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.13.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.13.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.13.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.13.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.13.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.13.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.13.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.14.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.14.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.14.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.14.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.14.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.14.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.14.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.15.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.15.name"></span></td>
-                        <td class="center"><span data-mapping="skills.15.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.15.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.15.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.15.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.15.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.16.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.16.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.16.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.16.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.16.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.16.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.16.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.17.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.17.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.17.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.17.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.17.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.17.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.17.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.18.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.18.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.18.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.18.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.18.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.18.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.18.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.19.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.19.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.19.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.19.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.19.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.19.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.19.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.20.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.20.name"></span> <input data-mapping="skills.20.field" placeholder="Field" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.20.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.20.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.20.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.20.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.20.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.21.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.21.name"></span> <input data-mapping="skills.21.field" placeholder="Field" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.21.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.21.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.21.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.21.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.21.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.22.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.22.name"></span> <input data-mapping="skills.22.field" placeholder="Field" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.22.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.22.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.22.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.22.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.22.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.23.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.23.name"></span> <input data-mapping="skills.23.field" placeholder="Field" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.23.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.23.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.23.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.23.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.23.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.24.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.24.name"></span> <input data-mapping="skills.24.field" placeholder="Field" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.24.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.24.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.24.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.24.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.24.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.25.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.25.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.25.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.25.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.25.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.25.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.25.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.26.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.26.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.26.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.26.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.26.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.26.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.26.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.27.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.27.name"></span></td>
-                        <td class="center"><span data-mapping="skills.27.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.27.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.27.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.27.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.27.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.28.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.28.name"></span> <input data-mapping="skills.28.talent" placeholder="Talent" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.28.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.28.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.28.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.28.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.28.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.29.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.29.name"></span> <input data-mapping="skills.29.talent" placeholder="Talent" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.29.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.29.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.29.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.29.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.29.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.30.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.30.name"></span> <input data-mapping="skills.30.talent" placeholder="Talent" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.30.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.30.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.30.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.30.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.30.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.31.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.31.name"></span> <input data-mapping="skills.31.trade" placeholder="Trade" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.31.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.31.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.31.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.31.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.31.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.32.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.32.name"></span> <input data-mapping="skills.32.trade" placeholder="Trade" type="text" /></td>
-                        <td class="center"><span data-mapping="skills.32.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.32.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.32.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.32.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.32.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.33.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.33.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.33.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.33.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.33.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.33.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.33.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.34.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.34.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.34.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.34.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.34.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.34.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.34.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.35.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.35.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.35.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.35.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.35.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.35.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.35.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.36.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.36.name"></span> *</td>
-                        <td class="center"><span data-mapping="skills.36.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.36.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.36.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.36.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.36.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.37.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.37.name"></span></td>
-                        <td class="center"><span data-mapping="skills.37.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.37.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.37.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.37.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.37.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.38.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.38.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.38.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.38.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.38.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.38.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.38.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.39.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.39.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.39.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.39.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.39.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.39.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.39.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.40.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.40.name"></span> ■ *</td>
-                        <td class="center"><span data-mapping="skills.40.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.40.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.40.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.40.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.40.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.41.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.41.name"></span> *</td>
-                        <td class="center"><span data-mapping="skills.41.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.41.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.41.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.41.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.41.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.42.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.42.name"></span></td>
-                        <td class="center"><span data-mapping="skills.42.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.42.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.42.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.42.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.42.miscMod" type="text" /></td>
-                    </tr>
-                    <tr>
-                        <td><input data-mapping="skills.43.classSkill" type="checkbox" /></td>
-                        <td><span data-mapping="skills.43.name"></span> ■</td>
-                        <td class="center"><span data-mapping="skills.43.keyAbility"></td>
-                        <td><input class="short" data-mapping="skills.43.skillMod" readonly="readonly" type="text" /></td>
-                        <td>=</td>
-                        <td><input class="short" data-mapping="skills.43.abilityMod" readonly="readonly" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.43.ranks" type="text" /></td>
-                        <td>+</td>
-                        <td><input class="short" data-mapping="skills.43.miscMod" type="text" /></td>
+                        <td></td>
+                        <td>
+                            <div class="caps small">Skill Name</div>
+                        </td>
+                        <td>
+                            <div class="caps small">Key Ability</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Skill Modifier</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Ability Modifier</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Ranks</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Misc Modifier</div>
+                        </td>
                     </tr>
                 </table>
                 <p>
@@ -1120,12 +804,6 @@
                     * Armor check penalty, if any, applies. (Double penalty for Swim.)
                 </p>
             </div>
-        </div>
-        <div id="controls" class="large">
-            <i id="save" class="fa fa-file fa-fw"></i>
-            <a id="save-file"></a>
-            <i id="load" class="fa fa-folder-open fa-fw"></i>
-            <input id="load-file" type="file" />
         </div>
         <script src="js/KO-1.0.21.js"></script>
         <script src="js/script.js"></script>
