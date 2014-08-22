@@ -14,37 +14,70 @@
     }
     body {
         font-family: VerdanaProCondRegular, sans-serif;
-        font-size: 10pt;
+        font-size: 14px;
     }
     input {
+        border: 1px solid black;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         font: inherit;
+        padding: 0.25em;
+        text-align: center;
     }
     input[readonly] {
         background-color: lightgray;
     }
-    .invert {
+    .label {
         background-color: black;
         color: white;
-    }
-    .label {
-        font-size: 8pt;
         padding: 0.25em;
-        text-align: center;
-        text-transform: uppercase;
-    }
-    .large {
-        font-family: VerdanaProCondBold, sans-serif;
-        font-size: 12pt;
-    }
-    .nowrap {
-        white-space: nowrap;
     }
     .round-top {
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
     }
-    .short {
-        width: 5em;
+    .small {
+        font-size: 10px;
+    }
+    .large {
+        font-family: VerdanaProCondBold, sans-serif;
+        font-size: 16px;
+    }
+    .caps {
+        text-transform: uppercase;
+    }
+    .flex {
+        margin: 1em 0;
+    }
+    .flex .row {
+        align-items: flex-end;
+        display: flex;
+    }
+    .flex .cell {
+        flex: auto;
+        padding: 0.25em;
+        text-align: center;
+    }
+    .flex .cell.long {
+        flex: none;
+        width: 16em;
+    }
+    .flex .cell.short {
+        flex: none;
+        width: 4em;
+    }
+    .flex input {
+        width: 100%;
+    }
+    .flex.item {
+        padding: 0.25em;
+        width: 40em;
+    }
+    .flex.item .cell {
+        padding: 0;
+    }
+    .flex.item .cell.short {
+        width: 6em;
     }
     .table {
         display: table;
@@ -56,91 +89,82 @@
     .table .cell {
         display: table-cell;
         padding: 0.25em;
+        text-align: center;
         vertical-align: middle;
     }
+    .table .cell.short {
+        width: 4em;
+    }
     .table input {
-        border: 1px solid black;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 0.25em;
-        text-align: center;
         width: 100%;
     }
     #description {
         width: 60em;
     }
-    #gear {
-        padding: 0.25em;
-        width: 40em;
-    }
-    #gear .cell {
-        padding: 0;
-        vertical-align: bottom;
-    }
 </style>
 
-<div class="table" id="description">
-    <div>
+<div class="flex" id="description">
+    <div class="row">
         <div class="cell">
-            <div class="label">Character Name</div>
+            <div class="small caps">Character Name</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="label">Player</div>
+            <div class="small caps">Player</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="label">Class</div>
+            <div class="small caps">Class</div>
             <input type="text" />
         </div>
         <div class="cell short">
-            <div class="label">Level</div>
+            <div class="small caps">Level</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="label">Race</div>
-            <input type="text" />
-        </div>
-        <div class="cell short">
-            <div class="label">Alignment</div>
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <div class="label">Deity</div>
+            <div class="small caps">Race</div>
             <input type="text" />
         </div>
     </div>
-    <div>
+    <div class="row">
         <div class="cell short">
-            <div class="label">Size</div>
+            <div class="small caps">Alignment</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="small caps">Deity</div>
             <input type="text" />
         </div>
         <div class="cell short">
-            <div class="label">Age</div>
+            <div class="small caps">Size</div>
             <input type="text" />
         </div>
         <div class="cell short">
-            <div class="label">Gender</div>
+            <div class="small caps">Age</div>
             <input type="text" />
         </div>
-        <div class="cell">
-            <div class="label">Height</div>
+        <div class="cell short">
+            <div class="small caps">Gender</div>
             <input type="text" />
         </div>
-        <div class="cell">
-            <div class="label">Weight</div>
+        <div class="cell short">
+            <div class="small caps">Height</div>
             <input type="text" />
         </div>
-        <div class="cell">
-            <div class="label">Eyes</div>
+        <div class="cell short">
+            <div class="small caps">Weight</div>
             <input type="text" />
         </div>
-        <div class="cell">
-            <div class="label">Hair</div>
+        <div class="cell short">
+            <div class="small caps">Eyes</div>
             <input type="text" />
         </div>
-        <div class="cell">
-            <div class="label">Skin</div>
+        <div class="cell short">
+            <div class="small caps">Hair</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="small caps">Skin</div>
             <input type="text" />
         </div>
     </div>
@@ -149,140 +173,139 @@
 <div class="table" id="abilities">
     <div class="row">
         <div class="cell">
-            <div class="label">Ability Name</div>
+            <div class="small caps">Ability Name</div>
         </div>
         <div class="cell short">
-            <div class="label">Ability Score</div>
+            <div class="small caps">Ability Score</div>
         </div>
         <div class="cell short">
-            <div class="label">Ability Modifier</div>
+            <div class="small caps">Ability Modifier</div>
         </div>
         <div class="cell short">
-            <div class="label">Temporary Score</div>
+            <div class="small caps">Temporary Score</div>
         </div>
         <div class="cell short">
-            <div class="label">Temporary Modifier</div>
+            <div class="small caps">Temporary Modifier</div>
         </div>
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label">
-                <div class="large">STR</div>
-                Strength
+            <div class="label">
+                <div class="large caps">STR</div>
+                <div class="small caps">Strength</div>
             </div>
         </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+    </div>
+    <div class="row">
         <div class="cell">
-            <input type="text" />
+            <div class="label">
+                <div class="large caps">DEX</div>
+                <div class="small caps">Dexterity</div>
+            </div>
         </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+    </div>
+    <div class="row">
         <div class="cell">
-            <input readonly="readonly" type="text" />
+            <div class="label">
+                <div class="large caps">CON</div>
+                <div class="small caps">Constitution</div>
+            </div>
         </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+    </div>
+    <div class="row">
         <div class="cell">
-            <input type="text" />
+            <div class="label">
+                <div class="large caps">INT</div>
+                <div class="small caps">Intelligence</div>
+            </div>
         </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+    </div>
+    <div class="row">
         <div class="cell">
-            <input readonly="readonly" type="text" />
+            <div class="label">
+                <div class="large caps">WIS</div>
+                <div class="small caps">Wisdom</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">CHA</div>
+                <div class="small caps">Charisma</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input readonly="readonly" type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="hit-points">
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Total</div>
+        </div>
+        <div class="cell short">
+            <div class="small caps">Current</div>
+        </div>
+        <div class="cell short">
+            <div class="small caps">Nonlethal Damage</div>
         </div>
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label">
-                <div class="large">DEX</div>
-                Dexterity
+            <div class="label">
+                <div class="large caps">HP</div>
+                <div class="small caps">Hit Points</div>
             </div>
         </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell"><input type="text" /></div>
     </div>
+</div>
+
+<div class="table" id="speed">
     <div class="row">
         <div class="cell">
-            <div class="invert label">
-                <div class="large">CON</div>
-                Constitution
-            </div>
+            <div class="label large caps">Speed</div>
         </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
+        <div class="cell short"><input type="text" /></div>
     </div>
+</div>
+
+<div class="table" id="damage-reduction">
     <div class="row">
         <div class="cell">
-            <div class="invert label">
-                <div class="large">INT</div>
-                Intelligence
+            <div class="label">
+                <div class="large caps">Damage</div>
+                <div class="small caps">Reduction</div>
             </div>
         </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="cell">
-            <div class="invert label">
-                <div class="large">WIS</div>
-                Wisdom
-            </div>
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="cell">
-            <div class="invert label">
-                <div class="large">CHA</div>
-                Charisma
-            </div>
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
-        <div class="cell">
-            <input readonly="readonly" type="text" />
-        </div>
+        <div class="cell short"><input type="text" /></div>
     </div>
 </div>
 
@@ -290,116 +313,570 @@
     <div class="row">
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Total</div>
+            <div class="small caps">Total</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Armor Bonus</div>
+            <div class="small caps">Armor Bonus</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Shield Bonus</div>
+            <div class="small caps">Shield Bonus</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Dex Modifier</div>
+            <div class="small caps">Dex Modifier</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Size Modifier</div>
+            <div class="small caps">Size Modifier</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Natural Armor</div>
+            <div class="small caps">Natural Armor</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Deflection Modifier</div>
+            <div class="small caps">Deflection Modifier</div>
         </div>
         <div class="cell"></div>
         <div class="cell short">
-            <div class="label">Misc Modifier</div>
+            <div class="small caps">Misc Modifier</div>
         </div>
     </div>
     <div class="row">
         <div class="cell">
-            <div class="invert label">
-                <div class="large">AC</div>
-                Armor Class
+            <div class="label">
+                <div class="large caps">AC</div>
+                <div class="small caps">Armor Class</div>
             </div>
         </div>
-        <div class="cell">
-            <input type="text" />
-        </div>
+        <div class="cell"><input type="text" /></div>
         <div class="cell">= 10 +</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="touch-armor-class">
+    <div class="row">
         <div class="cell">
+            <div class="label">
+                <div class="large caps">Touch</div>
+                <div class="small caps">Armor Class</div>
+            </div>
+        </div>
+        <div class="cell short"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="flat-footed-armor-class">
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">Flat-Footed</div>
+                <div class="small caps">Armor Class</div>
+            </div>
+        </div>
+        <div class="cell short"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="initiative-modifier">
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Total</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Dex Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Misc Modifier</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">Initiative</div>
+                <div class="small caps">Modifier</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">=</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="saving-throws">
+    <div class="row">
+        <div class="cell">
+            <div class="small caps">Saving Throws</div>
+        </div>
+        <div class="cell short">
+            <div class="small caps">Total</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Base Save</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Ability Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Magic Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Misc Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Temporary Modifier</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">Fortitude</div>
+                <div class="small caps">(Constitution)</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">=</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">Reflex</div>
+                <div class="small caps">(Dexterity)</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">=</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">Will</div>
+                <div class="small caps">(Wisdom)</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">=</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="base-attack-bonus">
+    <div class="row">
+        <div class="cell">
+            <div class="label large caps">Base Attack Bonus</div>
+        </div>
+        <div class="cell short"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="spell-resistance">
+    <div class="row">
+        <div class="cell">
+            <div class="label large caps">Spell Resistance</div>
+        </div>
+        <div class="cell short"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="table" id="grapple-modifier">
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Total</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Base Attack Bonus</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Strength Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Size Modifier</div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell short">
+            <div class="small caps">Misc Modifier</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <div class="label">
+                <div class="large caps">Grapple</div>
+                <div class="small caps">Modifier</div>
+            </div>
+        </div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">=</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+        <div class="cell">+</div>
+        <div class="cell"><input type="text" /></div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Attack</div>
             <input type="text" />
         </div>
-        <div class="cell">+</div>
         <div class="cell">
+            <div class="label small caps">Attack Bonus</div>
             <input type="text" />
         </div>
-        <div class="cell">+</div>
         <div class="cell">
+            <div class="label small caps">Damage</div>
             <input type="text" />
         </div>
-        <div class="cell">+</div>
         <div class="cell">
+            <div class="label small caps">Critical</div>
             <input type="text" />
         </div>
-        <div class="cell">+</div>
-        <div class="cell">
+    </div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Range</div>
             <input type="text" />
         </div>
-        <div class="cell">+</div>
-        <div class="cell">
+        <div class="cell short">
+            <div class="label small caps">Type</div>
             <input type="text" />
         </div>
-        <div class="cell">+</div>
+        <div class="cell short">
+            <div class="label small caps">Ammunition</div>
+            <input type="text" />
+        </div>
         <div class="cell">
+            <div class="label small caps">Notes</div>
             <input type="text" />
         </div>
     </div>
 </div>
 
-<div class="table" id="gear">
-    <div>
-        <div class="cell">
-            <div class="invert label large nowrap round-top">Armor/Protective Item</div>
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Attack</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Type</div>
+            <div class="label small caps">Attack Bonus</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Armor Bonus</div>
+            <div class="label small caps">Damage</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Max Dex Bonus</div>
+            <div class="label small caps">Critical</div>
             <input type="text" />
         </div>
     </div>
-    <div>
-        <div class="cell">
-            <div class="invert label">Skill Penalty</div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Range</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Type</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Ammunition</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Spell Failure</div>
+            <div class="label small caps">Notes</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Attack</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Speed</div>
+            <div class="label small caps">Attack Bonus</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Weight</div>
+            <div class="label small caps">Damage</div>
             <input type="text" />
         </div>
         <div class="cell">
-            <div class="invert label">Special Properties</div>
+            <div class="label small caps">Critical</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Range</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Type</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Ammunition</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Notes</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Attack</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Attack Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Damage</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Critical</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Range</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Type</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Ammunition</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Notes</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Attack</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Attack Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Damage</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Critical</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Range</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Type</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Ammunition</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Notes</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Armor/Protective Item</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Type</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">AC Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Max Dex</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Check Penalty</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Spell Failure</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Speed</div>
+            <input type="text" />
+        </div>
+        <div class="cell short">
+            <div class="label small caps">Weight</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Special Properties</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Shield/Protective Item</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">AC Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Weight</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Check Penalty</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell short">
+            <div class="label small caps">Spell Failure</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Special Properties</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Protective Item</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">AC Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Weight</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Special Properties</div>
+            <input type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="flex item">
+    <div class="row">
+        <div class="cell long">
+            <div class="label large caps round-top">Protective Item</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">AC Bonus</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Weight</div>
+            <input type="text" />
+        </div>
+        <div class="cell">
+            <div class="label small caps">Special Properties</div>
             <input type="text" />
         </div>
     </div>
