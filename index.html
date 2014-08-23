@@ -774,36 +774,168 @@
                     <input data-mapping="gear.3.specialProperties" type="text" />
                 </div>
             </div>
-            <div id="skills">
-                <table>
-                    <caption class="label caps large">Skills</caption>
+            <table class="alt" id="other-possessions">
+                <caption class="label caps large">Other Possessions</caption>
+                <thead>
                     <tr>
-                        <td></td>
                         <td>
-                            <div class="caps small">Skill Name</div>
+                            <div class="caps small">Item</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Page</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Weight</div>
                         </td>
                         <td>
-                            <div class="caps small">Key Ability</div>
+                            <div class="caps small">Item</div>
                         </td>
                         <td class="short">
-                            <div class="caps small">Skill Modifier</div>
+                            <div class="caps small">Page</div>
                         </td>
                         <td class="short">
-                            <div class="caps small">Ability Modifier</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Ranks</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Misc Modifier</div>
+                            <div class="caps small">Weight</div>
                         </td>
                     </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div class="caps small right">Total Weight Carried</div>
+                        </td>
+                        <td><input type="text" /></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="table-group">
+                <table class="alt" id="feats">
+                    <caption class="label caps large">Feats</caption>
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="caps small">Feat Name</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Page</div>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="alt" id="special-abilities">
+                    <caption class="label caps large">Special Abilities</caption>
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="caps small">Special Ability Name</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Page</div>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="skills-etc">
+                <table class="alt" id="skills">
+                    <caption class="label caps large">Skills</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="caps small">Skill Name</div>
+                            </td>
+                            <td>
+                                <div class="caps small">Key Ability</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Skill Modifier</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Ability Modifier</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Ranks</div>
+                            </td>
+                            <td class="short">
+                                <div class="caps small">Misc Modifier</div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <div class="caps small right">Total Ranks Spent</div>
+                            </td>
+                            <td><input type="text" /></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
                 </table>
                 <p>
                     □ Mark this box if the skill is a class skill for the character.<br />
                     ■ Denotes a skill that can be used untrained.<br />
                     * Armor check penalty, if any, applies. (Double penalty for Swim.)
                 </p>
+                <table id="carrying-capacity">
+                    <tr>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Light Load</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Medium Load</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Heavy Load</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Lift Over Head</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Lift Off Ground</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Push or Drag</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="label caps large">Carrying Capacity</div>
+                        </td>
+                        <td><input data-mapping="carryingCapacity.lightLoad" type="text" /></td>
+                        <td><input data-mapping="carryingCapacity.mediumLoad" type="text" /></td>
+                        <td><input data-mapping="carryingCapacity.heavyLoad" type="text" /></td>
+                        <td><input data-mapping="carryingCapacity.liftOverHead" type="text" /></td>
+                        <td><input data-mapping="carryingCapacity.liftOffGround" type="text" /></td>
+                        <td><input data-mapping="carryingCapacity.pushOrDrag" type="text" /></td>
+                    </tr>
+                </table>
+                <table id="money">
+                    <tr>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">CP</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">SP</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">GP</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">PP</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="label caps large">Money</div>
+                        </td>
+                        <td><input data-mapping="money.copper" type="text" /></td>
+                        <td><input data-mapping="money.silver" type="text" /></td>
+                        <td><input data-mapping="money.gold" type="text" /></td>
+                        <td><input data-mapping="money.platinum" type="text" /></td>
+                    </tr>
+                </table>
             </div>
         </div>
         <script src="js/KO-1.0.21.js"></script>

@@ -55,6 +55,42 @@
         ],
         'maxSkillRanks': null,
         'totalSkillRanks': null,
+        'otherPossessions': [
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null }
+        ],
+        'carryingCapacity': {
+            'lightLoad': null,
+            'mediumLoad': null,
+            'heavyLoad': null,
+            'liftOverHead': null,
+            'liftOffGround': null,
+            'pushOrDrag': null
+        },
+        'money': {
+            'copper': null,
+            'silver': null,
+            'gold': null,
+            'platinum': null
+        },
         'skills': [
             { 'name': 'Appraise',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Balance',                                 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
@@ -100,6 +136,30 @@
             { 'name': 'Tumble',                                  'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Use Magic Device',                        'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Use Rope',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null }
+        ],
+        'feats': [
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null }
+        ],
+        'specialAbilities': [
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null }
         ]
     };
     
@@ -107,14 +167,32 @@
         return Math.floor((score - 10) / 2);
     }
     
+    function createOtherPossessionsTable() {
+        var tbody = document.getElementById('other-possessions').appendChild(document.createElement('tbody'));
+        
+        for (var i = 0; i < character.otherPossessions.length; i++) {
+            var newRow = tbody.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="otherPossessions.' + i + '.name" type="text" /></td>' +
+                               '<td><input data-mapping="otherPossessions.' + i + '.page" type="text" /></td>' +
+                               '<td><input data-mapping="otherPossessions.' + i + '.weight" type="text" /></td>';
+            
+            i++;
+            
+            newRow.innerHTML += '<td><input data-mapping="otherPossessions.' + i + '.name" type="text" /></td>' +
+                                '<td><input data-mapping="otherPossessions.' + i + '.page" type="text" /></td>' +
+                                '<td><input data-mapping="otherPossessions.' + i + '.weight" type="text" /></td>';
+        }
+    }
+    
     function createSkillsTable() {
-        var table = document.getElementById('skills').firstElementChild;
+        var tbody = document.getElementById('skills').appendChild(document.createElement('tbody'));
         
         for (var i = 0; i < character.skills.length; i++) {
-            var newRow = table.insertRow();
+            var newRow = tbody.insertRow();
             
-            newRow.innerHTML = '<td><input type="checkbox" /></td>' +
-                               '<td>' +
+            newRow.innerHTML = '<td><input data-mapping="skills.' + i + '.classSkill" type="checkbox" /></td>' +
+                               '<td class="skill-name">' +
                                    character.skills[i].name +
                                    (character.skills[i].description !== undefined ? ' <input data-mapping="skills.' + i + '.description" type="text" />' : '') +
                                    (character.skills[i].useUntrained ? ' ■' : '') +
@@ -128,7 +206,35 @@
         }
     }
     
+    function createFeatsTable() {
+        var tbody = document.getElementById('feats').appendChild(document.createElement('tbody'));
+        
+        for (var i = 0; i < character.feats.length; i++) {
+            var newRow = tbody.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="feats.' + i + '.name" type="text" /></td>' +
+                               '<td><input data-mapping="feats.' + i + '.page" type="text" /></td>';
+        }
+    }
+    
+    function createSpecialAbilitiesTable() {
+        var tbody = document.getElementById('special-abilities').appendChild(document.createElement('tbody'));
+        
+        for (var i = 0; i < character.specialAbilities.length; i++) {
+            var newRow = tbody.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="specialAbilities.' + i + '.name" type="text" /></td>' +
+                               '<td><input data-mapping="specialAbilities.' + i + '.page" type="text" /></td>';
+        }
+    }
+    
+    createOtherPossessionsTable();
+    
     createSkillsTable();
+    
+    createFeatsTable();
+    
+    createSpecialAbilitiesTable();
     
     KO.bind(character);
     

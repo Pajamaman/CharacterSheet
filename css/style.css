@@ -34,6 +34,10 @@ td.short {
 td input {
     width: 100%;
 }
+table.alt tbody tr:nth-child(odd),
+table.alt tfoot tr {
+    background-color: #eee;
+}
 .flex {
     align-items: flex-end;
     display: flex;
@@ -80,6 +84,9 @@ td input {
 .small {
     font-size: 10px;
 }
+.right {
+    text-align: right;
+}
 .round-top {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -93,13 +100,11 @@ td input {
     display: block;
 }
 .table-group table {
-    display: block;
     float: left;
-    margin: 0;
-    padding-left: 2em;
+    margin: 0 0 0 2em;
 }
 .table-group table:first-child {
-    padding-left: 0;
+    margin-left: 0;
 }
 #container {
     margin: 0 auto;
@@ -131,17 +136,21 @@ td input {
     position: relative;
     top: 2.5em;
 }
-#skills {
+#other-possessions {
+    width: 40em;
+}
+#feats,
+#special-abilities {
+    width: 19em;
+}
+#skills-etc {
     position: absolute;
     right: 0;
     top: 30em;
 }
-#skills tr:nth-child(even) {
-    background-color: #eee;
-}
-#skills td:nth-child(2) {
+#skills td.skill-name {
     text-align: left;
 }
-#skills td:nth-child(2) input {
+#skills td.skill-name input {
     width: 10em;
 }
