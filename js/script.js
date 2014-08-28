@@ -53,8 +53,12 @@
             { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null },
             { 'name': null, 'bonus': null, 'damage': null, 'critical': null, 'range': null, 'type': null, 'ammunition': null, 'notes': null }
         ],
-        'maxSkillRanks': null,
-        'totalSkillRanks': null,
+        'gear': [
+            { 'name': null, 'type': null, 'armorClassBonus': null, 'maxDexterity': null, 'checkPenalty': null, 'spellFailure': null, 'speed': null, 'weight': null, 'specialProperties': null },
+            { 'name': null, 'armorClassBonus': null, 'weight': null, 'checkPenalty': null, 'spellFailure': null, 'specialProperties': null },
+            { 'name': null, 'armorClassBonus': null, 'weight': null, 'specialProperties': null },
+            { 'name': null, 'armorClassBonus': null, 'weight': null, 'specialProperties': null }
+        ],
         'otherPossessions': [
             { 'name': null, 'page': null, 'weight': null },
             { 'name': null, 'page': null, 'weight': null },
@@ -77,20 +81,31 @@
             { 'name': null, 'page': null, 'weight': null },
             { 'name': null, 'page': null, 'weight': null }
         ],
-        'carryingCapacity': {
-            'lightLoad': null,
-            'mediumLoad': null,
-            'heavyLoad': null,
-            'liftOverHead': null,
-            'liftOffGround': null,
-            'pushOrDrag': null
-        },
-        'money': {
-            'copper': null,
-            'silver': null,
-            'gold': null,
-            'platinum': null
-        },
+        'totalWeight': null,
+        'feats': [
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null }
+        ],
+        'specialAbilities': [
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null }
+        ],
         'skills': [
             { 'name': 'Appraise',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Balance',                                 'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': true,  'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
@@ -137,30 +152,21 @@
             { 'name': 'Use Magic Device',                        'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Use Rope',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null }
         ],
-        'feats': [
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null }
-        ],
-        'specialAbilities': [
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null }
-        ]
+        'totalRanks': null,
+        'carryingCapacity': {
+            'lightLoad': null,
+            'mediumLoad': null,
+            'heavyLoad': null,
+            'liftOverHead': null,
+            'liftOffGround': null,
+            'pushOrDrag': null
+        },
+        'money': {
+            'copper': null,
+            'silver': null,
+            'gold': null,
+            'platinum': null
+        }
     };
     
     function getAbilityMod(score) {
@@ -322,10 +328,19 @@
         character.grapple.total = character.grapple.total - event.detail.oldValue + event.detail.newValue;
     });
     
-    KO.listen(/skills\.(.*)\.(?:abilityMod|ranks|miscMod)/, function (event, match) {
-        var skill = match[1];
+    KO.listen(/(?:gear|otherPossessions)\.\d\.weight/, function (event, match) {
+        character.totalWeight = character.totalWeight - event.detail.oldValue + event.detail.newValue;
+    });
+    
+    KO.listen(/skills\.(.*)\.(abilityMod|ranks|miscMod)/, function (event, match) {
+        var skill = match[1],
+            prop = match[2];
         
         character.skills[skill].skillMod = character.skills[skill].skillMod - event.detail.oldValue + event.detail.newValue;
+        
+        if (prop === 'ranks') {
+            character.totalRanks = character.totalRanks - event.detail.oldValue + event.detail.newValue;
+        }
     });
     
     KO.listen(/abilities\.(.*)\.mod/, function (event, match) {
