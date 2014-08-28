@@ -148,9 +148,21 @@ table.alt tfoot tr {
     right: 0;
     top: 30em;
 }
+#skills {
+    position: relative;
+}
 #skills td.skill-name {
     text-align: left;
 }
 #skills td.skill-name input {
     width: 10em;
+}
+#max-ranks {
+    position: absolute;
+    right: 0.25em;
+    top: 0.25em;
+}
+#max-ranks input {
+    color: black;
+    width: 6em;
 }

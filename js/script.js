@@ -152,6 +152,7 @@
             { 'name': 'Use Magic Device',                        'classSkill': null, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'CHA', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
             { 'name': 'Use Rope',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'DEX', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null }
         ],
+        'maxRanks': null,
         'totalRanks': null,
         'carryingCapacity': {
             'lightLoad': null,
