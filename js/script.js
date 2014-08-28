@@ -180,7 +180,9 @@
             { 'name': null, 'level': null, 'page': null },
             { 'name': null, 'level': null, 'page': null }
         ],
-        'spellSaveDifficultyClass': null
+        'spellSaveDifficultyClass': null,
+        'arcaneSpellFailureChance': null,
+        'languages': [null, null, null, null, null, null]
     };
     
     function getAbilityMod(score) {
@@ -257,6 +259,16 @@
             newRow.innerHTML = '<td><input data-mapping="spells.' + i + '.name" type="text" /></td>' +
                                '<td><input data-mapping="spells.' + i + '.level" type="text" /></td>' +
                                '<td><input data-mapping="spells.' + i + '.page" type="text" /></td>';
+        }
+    }());
+    
+    (function createLanguagesTable() {
+        var table = document.getElementById('languages');
+        
+        for (var i = 0; i < character.languages.length; i++) {
+            var newRow = table.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="languages.' + i + '" type="text" /></td>';
         }
     }());
     
