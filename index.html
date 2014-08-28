@@ -803,36 +803,32 @@
                         <td colspan="5">
                             <div class="caps small right">Total Weight</div>
                         </td>
-                        <td><input data-mapping="totalWeight" type="text" /></td>
+                        <td><input data-mapping="totalWeight" type="text" readonly="readonly" /></td>
                     </tr>
                 </tfoot>
             </table>
             <div class="table-group">
                 <table class="alt" id="feats">
                     <caption class="label caps large">Feats</caption>
-                    <thead>
-                        <tr>
-                            <td>
-                                <div class="caps small">Feat Name</div>
-                            </td>
-                            <td class="short">
-                                <div class="caps small">Page</div>
-                            </td>
-                        </tr>
-                    </thead>
+                    <tr>
+                        <td>
+                            <div class="caps small">Feat Name</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Page</div>
+                        </td>
+                    </tr>
                 </table>
                 <table class="alt" id="special-abilities">
                     <caption class="label caps large">Special Abilities</caption>
-                    <thead>
-                        <tr>
-                            <td>
-                                <div class="caps small">Special Ability Name</div>
-                            </td>
-                            <td class="short">
-                                <div class="caps small">Page</div>
-                            </td>
-                        </tr>
-                    </thead>
+                    <tr>
+                        <td>
+                            <div class="caps small">Special Ability Name</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Page</div>
+                        </td>
+                    </tr>
                 </table>
             </div>
             <div id="skills-etc">
@@ -871,7 +867,7 @@
                             <td colspan="5">
                                 <div class="caps small right">Total Ranks</div>
                             </td>
-                            <td><input data-mapping="totalRanks" type="text" /></td>
+                            <td><input data-mapping="totalRanks" type="text" readonly="readonly" /></td>
                             <td></td>
                         </tr>
                     </tfoot>
@@ -939,6 +935,31 @@
                         <td><input data-mapping="money.silver" type="text" /></td>
                         <td><input data-mapping="money.gold" type="text" /></td>
                         <td><input data-mapping="money.platinum" type="text" /></td>
+                    </tr>
+                </table>
+                <table class="alt" id="spells">
+                    <caption class="label caps large">Spells</caption>
+                    <tr>
+                        <td>
+                            <div class="caps small">Spell Name</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Level</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Page</div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="spell-save-difficulty-class">
+                    <tr>
+                        <td>
+                            <div class="label caps">
+                                <div class="large">Spell Save DC</div>
+                                <div class="small">Modifier</div>
+                            </div>
+                        </td>
+                        <td class="short"><input data-mapping="spellSaveDifficultyClass" type="text" /></td>
                     </tr>
                 </table>
             </div>

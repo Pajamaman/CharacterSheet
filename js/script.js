@@ -167,14 +167,27 @@
             'silver': null,
             'gold': null,
             'platinum': null
-        }
+        },
+        'spells': [
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null },
+            { 'name': null, 'level': null, 'page': null }
+        ],
+        'spellSaveDifficultyClass': null
     };
     
     function getAbilityMod(score) {
         return Math.floor((score - 10) / 2);
     }
     
-    function createOtherPossessionsTable() {
+    (function createOtherPossessionsTable() {
         var tbody = document.getElementById('other-possessions').appendChild(document.createElement('tbody'));
         
         for (var i = 0; i < character.otherPossessions.length; i++) {
@@ -190,9 +203,31 @@
                                 '<td><input data-mapping="otherPossessions.' + i + '.page" type="text" /></td>' +
                                 '<td><input data-mapping="otherPossessions.' + i + '.weight" type="text" /></td>';
         }
-    }
+    }());
     
-    function createSkillsTable() {
+    (function createFeatsTable() {
+        var table = document.getElementById('feats');
+        
+        for (var i = 0; i < character.feats.length; i++) {
+            var newRow = table.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="feats.' + i + '.name" type="text" /></td>' +
+                               '<td><input data-mapping="feats.' + i + '.page" type="text" /></td>';
+        }
+    }());
+    
+    (function createSpecialAbilitiesTable() {
+        var table = document.getElementById('special-abilities');
+        
+        for (var i = 0; i < character.specialAbilities.length; i++) {
+            var newRow = table.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="specialAbilities.' + i + '.name" type="text" /></td>' +
+                               '<td><input data-mapping="specialAbilities.' + i + '.page" type="text" /></td>';
+        }
+    }());
+    
+    (function createSkillsTable() {
         var tbody = document.getElementById('skills').appendChild(document.createElement('tbody'));
         
         for (var i = 0; i < character.skills.length; i++) {
@@ -211,37 +246,19 @@
                                '<td><input data-mapping="skills.' + i + '.ranks" type="text" /></td>' +
                                '<td><input data-mapping="skills.' + i + '.miscMod" type="text" /></td>';
         }
-    }
+    }());
     
-    function createFeatsTable() {
-        var tbody = document.getElementById('feats').appendChild(document.createElement('tbody'));
+    (function createSpellsTable() {
+        var table = document.getElementById('spells');
         
-        for (var i = 0; i < character.feats.length; i++) {
-            var newRow = tbody.insertRow();
+        for (var i = 0; i < character.spells.length; i++) {
+            var newRow = table.insertRow();
             
-            newRow.innerHTML = '<td><input data-mapping="feats.' + i + '.name" type="text" /></td>' +
-                               '<td><input data-mapping="feats.' + i + '.page" type="text" /></td>';
+            newRow.innerHTML = '<td><input data-mapping="spells.' + i + '.name" type="text" /></td>' +
+                               '<td><input data-mapping="spells.' + i + '.level" type="text" /></td>' +
+                               '<td><input data-mapping="spells.' + i + '.page" type="text" /></td>';
         }
-    }
-    
-    function createSpecialAbilitiesTable() {
-        var tbody = document.getElementById('special-abilities').appendChild(document.createElement('tbody'));
-        
-        for (var i = 0; i < character.specialAbilities.length; i++) {
-            var newRow = tbody.insertRow();
-            
-            newRow.innerHTML = '<td><input data-mapping="specialAbilities.' + i + '.name" type="text" /></td>' +
-                               '<td><input data-mapping="specialAbilities.' + i + '.page" type="text" /></td>';
-        }
-    }
-    
-    createOtherPossessionsTable();
-    
-    createSkillsTable();
-    
-    createFeatsTable();
-    
-    createSpecialAbilitiesTable();
+    }());
     
     KO.bind(character);
     
