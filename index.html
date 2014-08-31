@@ -220,7 +220,7 @@
                             <div class="caps small">Total</div>
                         </td>
                         <td></td>
-                        <td class="short"></td>
+                        <td></td>
                         <td></td>
                         <td class="short">
                             <div class="caps small">Armor Bonus</div>
@@ -259,7 +259,7 @@
                         </td>
                         <td><input data-mapping="armorClass.total" type="text" readonly="readonly" /></td>
                         <td>=</td>
-                        <td><input data-mapping="armorClass.baseArmor" type="text" readonly="readonly" /></td>
+                        <td><span data-mapping="armorClass.baseArmor"></span></td>
                         <td>+</td>
                         <td><input data-mapping="armorClass.armorBonus" type="text" /></td>
                         <td>+</td>
@@ -832,7 +832,7 @@
                 </table>
             </div>
             <div id="skills-etc">
-                <table class="alt" id="skills">
+                <table class="highlight-odd" id="skills">
                     <caption class="label caps">
                         <div class="large">Skills</div>
                         <div class="small" id="max-ranks">
@@ -937,17 +937,23 @@
                         <td><input data-mapping="money.platinum" type="text" /></td>
                     </tr>
                 </table>
-                <table id="spells">
+                <table class="highlight-even" id="spells">
                     <caption class="label caps large">Spells</caption>
                     <tr>
-                        <td>
-                            <div class="caps small">Spell Name</div>
-                        </td>
                         <td class="short">
                             <div class="caps small">Level</div>
                         </td>
                         <td class="short">
-                            <div class="caps small">Page</div>
+                            <div class="caps small">Spell Save DC</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Spells Per Day</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Bonus Spells</div>
+                        </td>
+                        <td>
+                            <div class="caps small">Spells Known/Prepared</div>
                         </td>
                     </tr>
                 </table>

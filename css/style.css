@@ -21,6 +21,13 @@ input {
 input[readonly] {
     background-color: lightgray;
 }
+textarea {
+    border: 1px solid black;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font: inherit;
+    resize: none;
+}
 table {
     margin: 1em 0;
 }
@@ -31,11 +38,14 @@ td {
 td.short {
     width: 4em;
 }
-td input {
+td input,
+td textarea {
     width: 100%;
 }
-table.alt tbody tr:nth-child(odd),
-table.alt tfoot tr {
+table.highlight-even tr:nth-child(even) {
+    background-color: #eee;
+}
+table.highlight-odd tr:nth-child(odd) {
     background-color: #eee;
 }
 .flex {
@@ -55,7 +65,8 @@ table.alt tfoot tr {
     flex: none;
     width: 4em;
 }
-.flex input {
+.flex input,
+.flex textarea {
     width: 100%;
 }
 .item {
@@ -150,6 +161,7 @@ table.alt tfoot tr {
 }
 #skills {
     position: relative;
+    width: 40em;
 }
 #skills td.skill-name {
     text-align: left;
@@ -165,4 +177,7 @@ table.alt tfoot tr {
 #max-ranks input {
     color: black;
     width: 6em;
+}
+#spells {
+    width: 40em;
 }

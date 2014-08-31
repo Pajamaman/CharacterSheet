@@ -168,17 +168,17 @@
             'gold': null,
             'platinum': null
         },
-        'spells': [
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null },
-            { 'name': null, 'level': null, 'page': null }
+        'spellLevels': [
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': 0, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
+            { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null }
         ],
         'spellSaveDifficultyClass': null,
         'arcaneSpellFailureChance': null,
@@ -253,12 +253,20 @@
     (function createSpellsTable() {
         var table = document.getElementById('spells');
         
-        for (var i = 0; i < character.spells.length; i++) {
+        for (var i = 0; i < character.spellLevels.length; i++) {
             var newRow = table.insertRow();
             
-            newRow.innerHTML = '<td><input data-mapping="spells.' + i + '.name" type="text" /></td>' +
-                               '<td><input data-mapping="spells.' + i + '.level" type="text" /></td>' +
-                               '<td><input data-mapping="spells.' + i + '.page" type="text" /></td>';
+            newRow.innerHTML = '<td>' + i + '</td>' +
+                               '<td><input data-mapping="spellLevels.' + i + '.spellSaveDifficultlyClass" type="text" /></td>' +
+                               '<td><input data-mapping="spellLevels.' + i + '.spellsPerDay" type="text" /></td>';
+            
+            if (i === 0) {
+                newRow.innerHTML += '<td><span data-mapping="spellLevels.' + i + '.bonusSpellsPerDay"></span></td>';
+            } else {
+                newRow.innerHTML += '<td><input data-mapping="spellLevels.' + i + '.bonusSpellsPerDay" type="text" /></td>';
+            }
+            
+            newRow.innerHTML += '<td><textarea data-mapping="spellLevels.' + i + '.spellList"></textarea></td>';
         }
     }());
     
