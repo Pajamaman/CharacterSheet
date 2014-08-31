@@ -807,6 +807,66 @@
                     </tr>
                 </tfoot>
             </table>
+            <table id="carrying-capacity">
+                <tr>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">Light Load</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Medium Load</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Heavy Load</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Lift Over Head</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Lift Off Ground</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">Push or Drag</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps large">Carrying Capacity</div>
+                    </td>
+                    <td><input data-mapping="carryingCapacity.lightLoad" type="text" /></td>
+                    <td><input data-mapping="carryingCapacity.mediumLoad" type="text" /></td>
+                    <td><input data-mapping="carryingCapacity.heavyLoad" type="text" /></td>
+                    <td><input data-mapping="carryingCapacity.liftOverHead" type="text" /></td>
+                    <td><input data-mapping="carryingCapacity.liftOffGround" type="text" /></td>
+                    <td><input data-mapping="carryingCapacity.pushOrDrag" type="text" /></td>
+                </tr>
+            </table>
+            <table id="money">
+                <tr>
+                    <td></td>
+                    <td class="short">
+                        <div class="caps small">CP</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">SP</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">GP</div>
+                    </td>
+                    <td class="short">
+                        <div class="caps small">PP</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label caps large">Money</div>
+                    </td>
+                    <td><input data-mapping="money.copper" type="text" /></td>
+                    <td><input data-mapping="money.silver" type="text" /></td>
+                    <td><input data-mapping="money.gold" type="text" /></td>
+                    <td><input data-mapping="money.platinum" type="text" /></td>
+                </tr>
+            </table>
             <div class="table-group">
                 <table id="feats">
                     <caption class="label caps large">Feats</caption>
@@ -877,66 +937,30 @@
                     ■ Denotes a skill that can be used untrained.<br />
                     * Armor check penalty, if any, applies. (Double penalty for Swim.)
                 </p>
-                <table id="carrying-capacity">
-                    <tr>
-                        <td></td>
-                        <td class="short">
-                            <div class="caps small">Light Load</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Medium Load</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Heavy Load</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Lift Over Head</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Lift Off Ground</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Push or Drag</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="label caps large">Carrying Capacity</div>
-                        </td>
-                        <td><input data-mapping="carryingCapacity.lightLoad" type="text" /></td>
-                        <td><input data-mapping="carryingCapacity.mediumLoad" type="text" /></td>
-                        <td><input data-mapping="carryingCapacity.heavyLoad" type="text" /></td>
-                        <td><input data-mapping="carryingCapacity.liftOverHead" type="text" /></td>
-                        <td><input data-mapping="carryingCapacity.liftOffGround" type="text" /></td>
-                        <td><input data-mapping="carryingCapacity.pushOrDrag" type="text" /></td>
-                    </tr>
-                </table>
-                <table id="money">
-                    <tr>
-                        <td></td>
-                        <td class="short">
-                            <div class="caps small">CP</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">SP</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">GP</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">PP</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="label caps large">Money</div>
-                        </td>
-                        <td><input data-mapping="money.copper" type="text" /></td>
-                        <td><input data-mapping="money.silver" type="text" /></td>
-                        <td><input data-mapping="money.gold" type="text" /></td>
-                        <td><input data-mapping="money.platinum" type="text" /></td>
-                    </tr>
-                </table>
+                <div class="table-group">
+                    <table id="spell-save-difficulty-class">
+                        <tr>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">Spell Save DC</div>
+                                    <div class="small">Modifier</div>
+                                </div>
+                            </td>
+                            <td class="short"><input data-mapping="spellSaveDifficultyClass" type="text" /></td>
+                        </tr>
+                    </table>
+                    <table id="arcane-spell-failure-chance">
+                        <tr>
+                            <td>
+                                <div class="label caps">
+                                    <div class="large">Arcane Spell</div>
+                                    <div class="small">Failure Chance</div>
+                                </div>
+                            </td>
+                            <td class="short"><input data-mapping="arcaneSpellFailureChance" type="text" /></td>
+                        </tr>
+                    </table>
+                </div>
                 <table class="highlight-even" id="spells">
                     <caption class="label caps large">Spells</caption>
                     <tr>
@@ -955,28 +979,6 @@
                         <td>
                             <div class="caps small">Spells Known/Prepared</div>
                         </td>
-                    </tr>
-                </table>
-                <table id="spell-save-difficulty-class">
-                    <tr>
-                        <td>
-                            <div class="label caps">
-                                <div class="large">Spell Save DC</div>
-                                <div class="small">Modifier</div>
-                            </div>
-                        </td>
-                        <td class="short"><input data-mapping="spellSaveDifficultyClass" type="text" /></td>
-                    </tr>
-                </table>
-                <table id="arcane-spell-failure-chance">
-                    <tr>
-                        <td>
-                            <div class="label caps">
-                                <div class="large">Arcane Spell</div>
-                                <div class="small">Failure Chance</div>
-                            </div>
-                        </td>
-                        <td class="short"><input data-mapping="arcaneSpellFailureChance" type="text" /></td>
                     </tr>
                 </table>
                 <table id="languages">
