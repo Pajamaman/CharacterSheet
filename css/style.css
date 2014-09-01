@@ -8,7 +8,7 @@
 }
 body {
     font-family: VerdanaProCondRegular, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 input {
     border: 1px solid black;
@@ -31,9 +31,18 @@ textarea {
 table {
     margin: 1em 0;
 }
+table.highlight-even tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+table.highlight-odd tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
 td {
     padding: 0.25em;
     text-align: center;
+}
+td.long {
+    width: 16em;
 }
 td.short {
     width: 4em;
@@ -41,12 +50,6 @@ td.short {
 td input,
 td textarea {
     width: 100%;
-}
-table.highlight-even tr:nth-child(even) {
-    background-color: #eee;
-}
-table.highlight-odd tr:nth-child(odd) {
-    background-color: #eee;
 }
 .flex {
     align-items: flex-end;
@@ -58,12 +61,10 @@ table.highlight-odd tr:nth-child(odd) {
     text-align: center;
 }
 .flex .cell.long {
-    flex: none;
-    width: 16em;
+    flex: 0 0 16em;
 }
 .flex .cell.short {
-    flex: none;
-    width: 4em;
+    flex: 0 0 4em;
 }
 .flex input,
 .flex textarea {
@@ -78,7 +79,7 @@ table.highlight-odd tr:nth-child(odd) {
     padding: 0;
 }
 .item .cell.short {
-    width: 6em;
+    flex-basis: 6em;
 }
 .label {
     background-color: black;
@@ -161,13 +162,12 @@ table.highlight-odd tr:nth-child(odd) {
 }
 #skills {
     position: relative;
-    width: 40em;
 }
 #skills td.skill-name {
     text-align: left;
 }
 #skills td.skill-name input {
-    width: 10em;
+    width: 8em;
 }
 #max-ranks {
     position: absolute;
@@ -177,7 +177,4 @@ table.highlight-odd tr:nth-child(odd) {
 #max-ranks input {
     color: black;
     width: 6em;
-}
-#spells {
-    width: 40em;
 }

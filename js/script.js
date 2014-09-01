@@ -244,8 +244,11 @@
                                '</td>' +
                                '<td>' + character.skills[i].keyAbility + '</td>' +
                                '<td><input data-mapping="skills.' + i + '.skillMod" type="text" readonly="readonly" /></td>' +
+                               '<td>=</td>' +
                                '<td><input data-mapping="skills.' + i + '.abilityMod" type="text" readonly="readonly" /></td>' +
+                               '<td>+</td>' +
                                '<td><input data-mapping="skills.' + i + '.ranks" type="text" /></td>' +
+                               '<td>+</td>' +
                                '<td><input data-mapping="skills.' + i + '.miscMod" type="text" /></td>';
         }
     }());
