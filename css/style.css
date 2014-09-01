@@ -28,6 +28,9 @@ textarea {
     font: inherit;
     resize: none;
 }
+textarea[readonly] {
+    background-color: lightgray;
+}
 table {
     margin: 1em 0;
 }
@@ -61,25 +64,14 @@ td textarea {
     text-align: center;
 }
 .flex .cell.long {
-    flex: 0 0 16em;
+    flex-basis: 26em;
 }
 .flex .cell.short {
-    flex: 0 0 4em;
+    flex-basis: 4em;
 }
 .flex input,
 .flex textarea {
     width: 100%;
-}
-.item {
-    margin: 1em 0;
-    padding: 0.25em;
-    width: 40em;
-}
-.item .cell {
-    padding: 0;
-}
-.item .cell.short {
-    flex-basis: 6em;
 }
 .label {
     background-color: black;
@@ -103,21 +95,6 @@ td textarea {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
-.table-group {
-    margin: 1em 0;
-}
-.table-group:after {
-    clear: both;
-    content: "";
-    display: block;
-}
-.table-group table {
-    float: left;
-    margin: 0 0 0 2em;
-}
-.table-group table:first-child {
-    margin-left: 0;
-}
 #container {
     margin: 0 auto;
     position: relative;
@@ -133,32 +110,17 @@ td textarea {
     margin: 1em 0;
     width: 60em;
 }
-#hit-points-etc {
-    position: absolute;
-    right: 0;
-    top: 6.8em;
-}
-#speed {
-    position: relative;
-    top: 3em;
-}
-#damage-reduction,
-#touch-armor-class,
-#flat-footed-armor-class {
-    position: relative;
-    top: 2.5em;
-}
-#other-possessions {
+#attacks,
+#gear {
     width: 40em;
 }
-#feats,
-#special-abilities {
-    width: 19em;
+#attacks .attack,
+#gear .item {
+    margin: 1em 0;
 }
-#skills-etc {
-    position: absolute;
-    right: 0;
-    top: 30em;
+#attacks .attack .cell,
+#gear .item .cell {
+    padding: 0;
 }
 #skills {
     position: relative;
