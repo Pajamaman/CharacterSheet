@@ -279,6 +279,32 @@
         }
     }());
     
+    // all of these must be numeric to validate
+    KO.validate(['armorClass.armorBonus', 'armorClass.shieldBonus', 'armorClass.sizeMod', 'armorClass.naturalArmor', 'armorClass.deflectionMod', 'armorClass.miscMod',
+                 'initiative.miscMod',
+                 'savingThrows.fortitude.baseSave', 'savingThrows.fortitude.magicMod', 'savingThrows.fortitude.miscMod', 'savingThrows.fortitude.tempMod',
+                 'savingThrows.reflex.baseSave', 'savingThrows.reflex.magicMod', 'savingThrows.reflex.miscMod', 'savingThrows.reflex.tempMod',
+                 'savingThrows.will.baseSave', 'savingThrows.will.magicMod', 'savingThrows.will.miscMod', 'savingThrows.will.tempMod',
+                 'baseAttackBonus', 'grapple.sizeMod', 'grapple.miscMod'], function (event) {
+        return !isNaN(event.target.value);
+    });
+    
+    KO.validate(/skills\.(.*)\.(ranks|miscMod)/, function (event) {
+        return !isNaN(event.target.value);
+    });
+    
+    KO.validate(/(?:gear|otherPossessions)\.\d+\.weight/, function (event, match) {
+        var newValue = parseInt(event.target.value);
+        
+        if (isNaN(newValue)) {
+            return false;
+        }
+        
+        event.target.value = newValue;
+        
+        return true;
+    });
+    
     KO.bind(character);
     
     KO.listen('abilities.strength.score', function (event) {
@@ -386,7 +412,7 @@
         });
     });
     
-    KO.listen(/(?:gear|otherPossessions)\.\d\.weight/, function (event, match) {
+    KO.listen(/(?:gear|otherPossessions)\.\d+\.weight/, function (event, match) {
         character.totalWeight = character.totalWeight - event.detail.oldValue + event.detail.newValue;
     });
     
