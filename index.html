@@ -170,9 +170,9 @@
                 <tr>
                     <td></td>
                     <td class="short">
-                        <div class="caps small">Max</div>
+                        <div class="caps small">Total</div>
                     </td>
-                    <td class="short">
+                    <td>
                         <div class="caps small">Current</div>
                     </td>
                     <td class="short">
@@ -186,7 +186,7 @@
                             <div class="small">Hit Points</div>
                         </div>
                     </td>
-                    <td><input data-mapping="hitPoints.max" type="text" /></td>
+                    <td><input data-mapping="hitPoints.total" type="text" /></td>
                     <td><input data-mapping="hitPoints.current" type="text" /></td>
                     <td><input data-mapping="hitPoints.nonlethalDamage" type="text" /></td>
                 </tr>
@@ -202,12 +202,9 @@
             <table id="damage-reduction">
                 <tr>
                     <td>
-                        <div class="label caps">
-                            <div class="large">Damage</div>
-                            <div class="small">Reduction</div>
-                        </div>
+                        <div class="label caps large">Damage Reduction</div>
                     </td>
-                    <td class="short"><input data-mapping="damageReduction" type="text" /></td>
+                    <td><input data-mapping="damageReduction" type="text" /></td>
                 </tr>
             </table>
             <table id="armor-class">
@@ -352,6 +349,9 @@
                     <td class="short">
                         <div class="caps small">Temp Modifier</div>
                     </td>
+                    <td style="width: 12em;">
+                        <div class="caps small">Conditional Modifiers</div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -371,6 +371,7 @@
                     <td><input data-mapping="savingThrows.fortitude.miscMod" type="text" /></td>
                     <td>+</td>
                     <td><input data-mapping="savingThrows.fortitude.tempMod" type="text" /></td>
+                    <td><textarea data-mapping="savingThrows.fortitude.conditionalMods"></textarea></td>
                 </tr>
                 <tr>
                     <td>
@@ -390,6 +391,7 @@
                     <td><input data-mapping="savingThrows.reflex.miscMod" type="text" /></td>
                     <td>+</td>
                     <td><input data-mapping="savingThrows.reflex.tempMod" type="text" /></td>
+                    <td><textarea data-mapping="savingThrows.reflex.conditionalMods"></textarea></td>
                 </tr>
                 <tr>
                     <td>
@@ -409,6 +411,7 @@
                     <td><input data-mapping="savingThrows.will.miscMod" type="text" /></td>
                     <td>+</td>
                     <td><input data-mapping="savingThrows.will.tempMod" type="text" /></td>
+                    <td><textarea data-mapping="savingThrows.will.conditionalMods"></textarea></td>
                 </tr>
             </table>
             <table id="base-attack-bonus">
@@ -770,7 +773,58 @@
                     </div>
                 </div>
             </div>
-            <table id="other-possessions">
+            <table class="highlight-odd" id="skills">
+                <caption class="label caps">
+                    <div class="large">Skills</div>
+                    <div class="small" id="max-ranks">
+                        Max Ranks <input data-binding="maxRanks" type="text" />
+                    </div>
+                </caption>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="caps small">Skill Name</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Key Ability</div>
+                        </td>
+                        <td class="short">
+                            <div class="caps small">Skill Modifier</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Ability Modifier</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Ranks</div>
+                        </td>
+                        <td></td>
+                        <td class="short">
+                            <div class="caps small">Misc Modifier</div>
+                        </td>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td class="right" colspan="7">
+                            <div class="caps small right">Total Ranks</div>
+                        </td>
+                        <td><input data-mapping="totalRanks" type="text" readonly="readonly" /></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left" colspan="10">
+                            □ Mark this box if the skill is a class skill for the character.<br />
+                            ■ Denotes a skill that can be used untrained.<br />
+                            * Armor check penalty, if any, applies. (Double penalty for Swim.)
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table class="highlight-odd" id="other-possessions">
                 <caption class="label caps large">Other Possessions</caption>
                 <thead>
                     <tr>
@@ -838,81 +892,18 @@
                 </tr>
             </table>
             <table id="money">
+                <caption class="label caps large">Money</caption>
                 <tr>
-                    <td></td>
-                    <td class="short">
-                        <div class="caps small">CP</div>
-                    </td>
-                    <td class="short">
-                        <div class="caps small">SP</div>
-                    </td>
-                    <td class="short">
-                        <div class="caps small">GP</div>
-                    </td>
-                    <td class="short">
-                        <div class="caps small">PP</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="label caps large">Money</div>
-                    </td>
-                    <td><input data-mapping="money.copper" type="text" /></td>
-                    <td><input data-mapping="money.silver" type="text" /></td>
-                    <td><input data-mapping="money.gold" type="text" /></td>
-                    <td><input data-mapping="money.platinum" type="text" /></td>
+                    <td><textarea data-mapping="money"></textarea></td>
                 </tr>
             </table>
-            <table class="highlight-odd" id="skills">
-                <caption class="label caps">
-                    <div class="large">Skills</div>
-                    <div class="small" id="max-ranks">
-                        Max Ranks <input data-binding="maxRanks" type="text" />
-                    </div>
-                </caption>
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="caps small">Skill Name</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Key Ability</div>
-                        </td>
-                        <td class="short">
-                            <div class="caps small">Skill Modifier</div>
-                        </td>
-                        <td></td>
-                        <td class="short">
-                            <div class="caps small">Ability Modifier</div>
-                        </td>
-                        <td></td>
-                        <td class="short">
-                            <div class="caps small">Ranks</div>
-                        </td>
-                        <td></td>
-                        <td class="short">
-                            <div class="caps small">Misc Modifier</div>
-                        </td>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <td colspan="7">
-                            <div class="caps small right">Total Ranks</div>
-                        </td>
-                        <td><input data-mapping="totalRanks" type="text" readonly="readonly" /></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
+            <table id="languages">
+                <caption class="label caps large">Languages</caption>
+                <tr>
+                    <td><textarea data-mapping="languages"></textarea></td>
+                </tr>
             </table>
-            <p>
-                □ Mark this box if the skill is a class skill for the character.<br />
-                ■ Denotes a skill that can be used untrained.<br />
-                * Armor check penalty, if any, applies. (Double penalty for Swim.)
-            </p>
-            <table id="feats">
+            <table class="highlight-even" id="feats">
                 <caption class="label caps large">Feats</caption>
                 <tr>
                     <td>
@@ -923,7 +914,7 @@
                     </td>
                 </tr>
             </table>
-            <table id="special-abilities">
+            <table class="highlight-even" id="special-abilities">
                 <caption class="label caps large">Special Abilities</caption>
                 <tr>
                     <td>
@@ -933,9 +924,6 @@
                         <div class="caps small">Page</div>
                     </td>
                 </tr>
-            </table>
-            <table id="languages">
-                <caption class="label caps large">Languages</caption>
             </table>
             <table class="highlight-even" id="spells">
                 <caption class="label caps large">Spells</caption>
@@ -957,7 +945,7 @@
                     </td>
                 </tr>
             </table>
-            <table id="spell-save-difficulty-class">
+            <table id="spell-save-difficulty-class-modifier">
                 <tr>
                     <td>
                         <div class="label caps">

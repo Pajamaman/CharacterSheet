@@ -32,7 +32,7 @@ textarea[readonly] {
     background-color: lightgray;
 }
 table {
-    margin: 1em 0;
+    margin: 2em 0;
 }
 table.highlight-even tbody tr:nth-child(even) {
     background-color: #eee;
@@ -50,8 +50,11 @@ td.long {
 td.short {
     width: 4em;
 }
-td input,
+td input {
+    width: 100%;
+}
 td textarea {
+    height: 100%;
     width: 100%;
 }
 .flex {
@@ -69,8 +72,11 @@ td textarea {
 .flex .cell.short {
     flex-basis: 4em;
 }
-.flex input,
+.flex input {
+    width: 100%;
+}
 .flex textarea {
+    height: 100%;
     width: 100%;
 }
 .label {
@@ -88,6 +94,9 @@ td textarea {
 .small {
     font-size: 10px;
 }
+.left {
+    text-align: left;
+}
 .right {
     text-align: right;
 }
@@ -98,32 +107,113 @@ td textarea {
 #container {
     margin: 0 auto;
     position: relative;
-    width: 82em;
+    width: 100em;
 }
 #logo {
     position: absolute;
     right: 0;
     top: 0;
-    width: 20em;
+    width: 26em;
 }
 #description {
-    margin: 1em 0;
-    width: 60em;
+    margin: 2em 0;
+    width: 70em;
 }
-#attacks,
-#gear {
+#abilities {
+    position: absolute;
+    left: 0;
+    top: 7.6em;
+    width: 26em;
+}
+#hit-points {
+    position: absolute;
+    left: 28em;
+    top: 7.6em;
+    width: 28em;
+}
+#speed {
+    position: absolute;
+    left: 58em;
+    top: 11em;
+    width: 10em;
+}
+#damage-reduction {
+    position: absolute;
+    left: 70em;
+    top: 11em;
+    width: 28em;
+}
+#armor-class {
+    position: absolute;
+    left: 28em;
+    top: 15.6em;
+}
+#touch-armor-class {
+    position: absolute;
+    left: 28em;
+    top: 23.8em;
+    width: 12em;
+}
+#flat-footed-armor-class {
+    position: absolute;
+    left: 42em;
+    top: 23.8em;
+    width: 14em;
+}
+#initiative-modifier {
+    position: absolute;
+    left: 28em;
+    top: 29em;
+    width: 28em;
+}
+#saving-throws {
+    position: absolute;
+    left: 0;
+    top: 37em;
+    width: 56em;
+}
+#base-attack-bonus {
+    position: absolute;
+    left: 0;
+    top: 55.2em;
+    width: 20em;
+}
+#spell-resistance {
+    position: absolute;
+    left: 22em;
+    top: 55.2em;
+    width: 18em;
+}
+#grapple-modifier {
+    position: absolute;
+    left: 0;
+    top: 59.4em;
     width: 40em;
+}
+#attacks {
+    position: absolute;
+    left: 0;
+    top: 69em;
+    width: 56em;
+}
+#gear {
+    position: absolute;
+    left: 0;
+    top: 119em;
+    width: 56em;
 }
 #attacks .attack,
 #gear .item {
-    margin: 1em 0;
+    margin: 2em 0;
 }
 #attacks .attack .cell,
 #gear .item .cell {
     padding: 0;
 }
 #skills {
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 24em;
 }
 #skills td.skill-name {
     text-align: left;
@@ -139,4 +229,58 @@ td textarea {
 #max-ranks input {
     color: black;
     width: 6em;
+}
+#other-possessions {
+    position: absolute;
+    left: 0;
+    top: 152.3em;
+    width: 42em;
+}
+#carrying-capacity {
+    position: absolute;
+    left: 0;
+    top: 197.6em;
+    width: 42em;
+}
+#money {
+    position: absolute;
+    left: 0;
+    top: 205.1em;
+    width: 20em;
+}
+#languages {
+    position: absolute;
+    left: 22em;
+    top: 205.1em;
+    width: 20em;
+}
+#feats {
+    position: absolute;
+    left: 44em;
+    top: 152.3em;
+    width: 18em;
+}
+#special-abilities {
+    position: absolute;
+    left: 44em;
+    top: 183.1em;
+    width: 18em;
+}
+#spells {
+    position: absolute;
+    right: 0;
+    top: 152.3em;
+    width: 36em;
+}
+#spell-save-difficulty-class-modifier {
+    position: absolute;
+    left: 64em;
+    top: 206.5em;
+    width: 17em;
+}
+#arcane-spell-failure-chance {
+    position: absolute;
+    left: 83em;
+    top: 206.5em;
+    width: 17em;
 }

@@ -23,7 +23,7 @@
             'wisdom': { 'score': null, 'mod': null, 'tempScore': null, 'tempMod': null },
             'charisma': { 'score': null, 'mod': null, 'tempScore': null, 'tempMod': null }
         },
-        'hitPoints': { 'max': null, 'current': null, 'nonlethalDamage': null },
+        'hitPoints': { 'total': null, 'current': null, 'nonlethalDamage': null },
         'speed': null,
         'damageReduction': null,
         'armorClass': {
@@ -36,12 +36,13 @@
             'deflectionMod': null,
             'miscMod': null,
             'touch': 10,
-            'flatFooted': 10 },
+            'flatFooted': 10
+        },
         'initiative': { 'total': null, 'miscMod': null },
         'savingThrows': {
-            'fortitude': { 'total': null, 'baseSave': null, 'magicMod': null, 'miscMod': null, 'tempMod': null },
-            'reflex': { 'total': null, 'baseSave': null, 'magicMod': null, 'miscMod': null, 'tempMod': null },
-            'will': { 'total': null, 'baseSave': null, 'magicMod': null, 'miscMod': null, 'tempMod': null }
+            'fortitude': { 'total': null, 'baseSave': null, 'magicMod': null, 'miscMod': null, 'tempMod': null, 'conditionalMods': null },
+            'reflex': { 'total': null, 'baseSave': null, 'magicMod': null, 'miscMod': null, 'tempMod': null, 'conditionalMods': null },
+            'will': { 'total': null, 'baseSave': null, 'magicMod': null, 'miscMod': null, 'tempMod': null, 'conditionalMods': null }
         },
         'baseAttackBonus': null,
         'spellResistance': null,
@@ -58,53 +59,6 @@
             { 'name': null, 'armorClassBonus': null, 'weight': null, 'checkPenalty': null, 'spellFailure': null, 'specialProperties': null },
             { 'name': null, 'armorClassBonus': null, 'weight': null, 'specialProperties': null },
             { 'name': null, 'armorClassBonus': null, 'weight': null, 'specialProperties': null }
-        ],
-        'otherPossessions': [
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null },
-            { 'name': null, 'page': null, 'weight': null }
-        ],
-        'totalWeight': null,
-        'feats': [
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null }
-        ],
-        'specialAbilities': [
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null },
-            { 'name': null, 'page': null }
         ],
         'skills': [
             { 'name': 'Appraise',                                'classSkill': null, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'INT', 'skillMod': null, 'abilityMod': null, 'ranks': null, 'miscMod': null },
@@ -154,6 +108,39 @@
         ],
         'maxRanks': null,
         'totalRanks': null,
+        'otherPossessions': [
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null },
+            { 'name': null, 'page': null, 'weight': null }
+        ],
+        'totalWeight': null,
         'carryingCapacity': {
             'lightLoad': null,
             'mediumLoad': null,
@@ -162,12 +149,32 @@
             'liftOffGround': null,
             'pushOrDrag': null
         },
-        'money': {
-            'copper': null,
-            'silver': null,
-            'gold': null,
-            'platinum': null
-        },
+        'money': null,
+        'languages': null,
+        'feats': [
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null }
+        ],
+        'specialAbilities': [
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null },
+            { 'name': null, 'page': null }
+        ],
         'spellLevels': [
             { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': 0, 'spellList': null },
             { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null },
@@ -181,13 +188,36 @@
             { 'spellSaveDifficultyClass': null, 'spellsPerDay': null, 'bonusSpellsPerDay': null, 'spellList': null }
         ],
         'spellSaveDifficultyClass': null,
-        'arcaneSpellFailureChance': null,
-        'languages': [null, null, null, null, null, null]
+        'arcaneSpellFailureChance': null
     };
     
     function getAbilityMod(score) {
         return Math.floor((score - 10) / 2);
     }
+    
+    (function createSkillsTable() {
+        var tbody = document.getElementById('skills').appendChild(document.createElement('tbody'));
+        
+        for (var i = 0; i < character.skills.length; i++) {
+            var newRow = tbody.insertRow();
+            
+            newRow.innerHTML = '<td><input data-mapping="skills.' + i + '.classSkill" type="checkbox" /></td>' +
+                               '<td class="skill-name">' +
+                                   character.skills[i].name +
+                                   (character.skills[i].description !== undefined ? ' <input data-mapping="skills.' + i + '.description" type="text" />' : '') +
+                                   (character.skills[i].useUntrained ? ' ■' : '') +
+                                   (character.skills[i].armorCheckPenalty ? ' *' : '') +
+                               '</td>' +
+                               '<td>' + character.skills[i].keyAbility + '</td>' +
+                               '<td><input data-mapping="skills.' + i + '.skillMod" type="text" readonly="readonly" /></td>' +
+                               '<td>=</td>' +
+                               '<td><input data-mapping="skills.' + i + '.abilityMod" type="text" readonly="readonly" /></td>' +
+                               '<td>+</td>' +
+                               '<td><input data-mapping="skills.' + i + '.ranks" type="text" /></td>' +
+                               '<td>+</td>' +
+                               '<td><input data-mapping="skills.' + i + '.miscMod" type="text" /></td>';
+        }
+    }());
     
     (function createOtherPossessionsTable() {
         var tbody = document.getElementById('other-possessions').appendChild(document.createElement('tbody'));
@@ -229,30 +259,6 @@
         }
     }());
     
-    (function createSkillsTable() {
-        var tbody = document.getElementById('skills').appendChild(document.createElement('tbody'));
-        
-        for (var i = 0; i < character.skills.length; i++) {
-            var newRow = tbody.insertRow();
-            
-            newRow.innerHTML = '<td><input data-mapping="skills.' + i + '.classSkill" type="checkbox" /></td>' +
-                               '<td class="skill-name">' +
-                                   character.skills[i].name +
-                                   (character.skills[i].description !== undefined ? ' <input data-mapping="skills.' + i + '.description" type="text" />' : '') +
-                                   (character.skills[i].useUntrained ? ' ■' : '') +
-                                   (character.skills[i].armorCheckPenalty ? ' *' : '') +
-                               '</td>' +
-                               '<td>' + character.skills[i].keyAbility + '</td>' +
-                               '<td><input data-mapping="skills.' + i + '.skillMod" type="text" readonly="readonly" /></td>' +
-                               '<td>=</td>' +
-                               '<td><input data-mapping="skills.' + i + '.abilityMod" type="text" readonly="readonly" /></td>' +
-                               '<td>+</td>' +
-                               '<td><input data-mapping="skills.' + i + '.ranks" type="text" /></td>' +
-                               '<td>+</td>' +
-                               '<td><input data-mapping="skills.' + i + '.miscMod" type="text" /></td>';
-        }
-    }());
-    
     (function createSpellsTable() {
         var table = document.getElementById('spells');
         
@@ -270,16 +276,6 @@
             }
             
             newRow.innerHTML += '<td><textarea data-mapping="spellLevels.' + i + '.spellList"></textarea></td>';
-        }
-    }());
-    
-    (function createLanguagesTable() {
-        var table = document.getElementById('languages');
-        
-        for (var i = 0; i < character.languages.length; i++) {
-            var newRow = table.insertRow();
-            
-            newRow.innerHTML = '<td><input data-mapping="languages.' + i + '" type="text" /></td>';
         }
     }());
     
@@ -369,10 +365,6 @@
         character.grapple.total = character.grapple.total - event.detail.oldValue + event.detail.newValue;
     });
     
-    KO.listen(/(?:gear|otherPossessions)\.\d\.weight/, function (event, match) {
-        character.totalWeight = character.totalWeight - event.detail.oldValue + event.detail.newValue;
-    });
-    
     KO.listen(/skills\.(.*)\.(abilityMod|ranks|miscMod)/, function (event, match) {
         var skill = match[1],
             prop = match[2];
@@ -392,6 +384,10 @@
                 character.skills[skill].abilityMod = event.detail.newValue;
             }
         });
+    });
+    
+    KO.listen(/(?:gear|otherPossessions)\.\d\.weight/, function (event, match) {
+        character.totalWeight = character.totalWeight - event.detail.oldValue + event.detail.newValue;
     });
     
     window.addEventListener('click', function (event) {
