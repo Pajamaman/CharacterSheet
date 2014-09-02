@@ -104,6 +104,24 @@ td textarea {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
+#controls {
+    background-color: black;
+    padding: 0.25em;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#controls i {
+    color: white;
+}
+#controls i:hover {
+    color: lightgray;
+    cursor: pointer;
+}
+#save-file,
+#load-file {
+    display: none;
+}
 #container {
     margin: 0 auto;
     position: relative;
