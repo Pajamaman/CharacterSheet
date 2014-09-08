@@ -220,7 +220,7 @@
             fileReader = new FileReader();
             
             fileReader.onerror = function () {
-                // handle error
+                alert('An error occurred while reading the file.');
             };
             
             fileReader.onload = function () {
@@ -231,7 +231,11 @@
                     
                     KO.bind(character);
                 } catch (exception) {
-                    // handle error
+                    if (exception instanceof SyntaxError) {
+                        alert('The file ' + file.name + ' is not valid.');
+                    }
+                    
+                    throw exception;
                 }
             };
             
