@@ -1,12 +1,19 @@
 (function () {
-    var character = new DD.Character({
-        'armorClass': {
-            'total': 10,
-            'baseArmor': 10,
-            'touch': 10,
-            'flatFooted': 10
-        }
-    });
+    var data = localStorage.getItem('character'),
+        character;
+    
+    if (data === null) {
+        character = new DD.Character({
+            'armorClass': {
+                'total': 10,
+                'baseArmor': 10,
+                'touch': 10,
+                'flatFooted': 10
+            }
+        });
+    } else {
+        character = new DD.Character(JSON.parse(data));
+    }
     
     (function createSkillsTable() {
         var tbody = document.getElementById('skills').appendChild(document.createElement('tbody'));
@@ -199,6 +206,7 @@
             saveFile = document.getElementById('save-file');
             saveFile.download = 'character.json';
             saveFile.href = 'data:text/json,' + JSON.stringify(character);
+            
             saveFile.click();
             
             return;
@@ -212,7 +220,7 @@
     });
     
     window.addEventListener('change', function (event) {
-        var data, file, fileReader;
+        var file, fileReader;
         
         if (event.target.id === 'load-file') {
             file = document.getElementById('load-file').files[0];
@@ -225,9 +233,11 @@
             
             fileReader.onload = function () {
                 try {
-                    data = JSON.parse(this.result);
+                    data = this.result;
                     
-                    character = new DD.Character(data);
+                    character = new DD.Character(JSON.parse(data));
+                    
+                    localStorage.setItem('character', JSON.stringify(character));
                     
                     KO.bind(character);
                 } catch (exception) {
@@ -243,5 +253,7 @@
             
             return;
         }
+        
+        localStorage.setItem('character', JSON.stringify(character));
     });
 }());
