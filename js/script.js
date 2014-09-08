@@ -21,10 +21,10 @@
                                    (DD.skills[i].useUntrained === true ? ' ■' : '') +
                                    (DD.skills[i].armorCheckPenalty === true ? ' *' : '') +
                                '</td>' +
-                               '<td>' + DD.skills[i].keyAbility + '</td>' +
+                               '<td>' + DD.skills[i].keyAbility.substr(0, 3).toUpperCase() + '</td>' +
                                '<td><input data-mapping="skills.' + i + '.skillMod" type="text" readonly="readonly" /></td>' +
                                '<td>=</td>' +
-                               '<td><input data-mapping="skills.' + i + '.abilityMod" type="text" readonly="readonly" /></td>' +
+                               '<td><input data-mapping="abilities.' + DD.skills[i].keyAbility + '.mod" type="text" readonly="readonly" /></td>' +
                                '<td>+</td>' +
                                '<td><input data-mapping="skills.' + i + '.ranks" type="text" /></td>' +
                                '<td>+</td>' +
@@ -167,7 +167,7 @@
         character.grapple.total = character.grapple.total - event.detail.oldValue + event.detail.newValue;
     });
     
-    KO.listen(/skills\.(.*)\.(abilityMod|ranks|miscMod)/, function (event, match) {
+    KO.listen(/skills\.(.*)\.(ranks|miscMod)/, function (event, match) {
         var skill = match[1],
             prop = match[2];
         
@@ -179,11 +179,11 @@
     });
     
     KO.listen(/abilities\.(.*)\.mod/, function (event, match) {
-        var ability = match[1].toUpperCase();
+        var ability = match[1];
         
         for (var i = 0; i < DD.skills.length; i++) {
-            if (ability.indexOf(DD.skills[i].keyAbility) === 0) {
-                character.skills[i].abilityMod = event.detail.newValue;
+            if (ability === DD.skills[i].keyAbility) {
+                character.skills[i].skillMod = character.skills[i].skillMod - event.detail.oldValue + event.detail.newValue;
             }
         }
     });
