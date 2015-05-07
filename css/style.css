@@ -15,7 +15,7 @@ input {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font: inherit;
-    padding: 0.25em;
+    padding: 3px;
     text-align: center;
 }
 input[readonly] {
@@ -32,7 +32,7 @@ textarea[readonly] {
     background-color: lightgray;
 }
 table {
-    margin: 2em 0;
+    margin: 24px 0;
 }
 table.highlight-even tbody tr:nth-child(even) {
     background-color: #eee;
@@ -41,14 +41,14 @@ table.highlight-odd tbody tr:nth-child(odd) {
     background-color: #eee;
 }
 td {
-    padding: 0.25em;
+    padding: 3px;
     text-align: center;
 }
 td.long {
-    width: 16em;
+    width: 192px;
 }
 td.short {
-    width: 4em;
+    width: 48px;
 }
 td input {
     width: 100%;
@@ -63,14 +63,14 @@ td textarea {
 }
 .flex .cell {
     flex: auto;
-    padding: 0.25em;
+    padding: 3px;
     text-align: center;
 }
 .flex .cell.long {
-    flex-basis: 26em;
+    flex-basis: 312px;
 }
 .flex .cell.short {
-    flex-basis: 4em;
+    flex-basis: 48px;
 }
 .flex input {
     width: 100%;
@@ -82,7 +82,7 @@ td textarea {
 .label {
     background-color: black;
     color: white;
-    padding: 0.25em;
+    padding: 3px;
 }
 .caps {
     text-transform: uppercase;
@@ -106,7 +106,7 @@ td textarea {
 }
 #controls {
     background-color: black;
-    padding: 0.25em;
+    padding: 3px;
     position: fixed;
     top: 0;
     left: 0;
@@ -126,104 +126,105 @@ td textarea {
 #container {
     margin: 0 auto;
     position: relative;
-    width: 100em;
+    width: 1200px;
 }
 #logo {
     position: absolute;
     right: 0;
     top: 0;
-    width: 26em;
+    width: 312px;
 }
 #description {
-    margin: 2em 0;
-    width: 70em;
+    margin: 24px 0;
+    width: 840px;
 }
 #abilities {
     position: absolute;
     left: 0;
-    top: 7.6em;
-    width: 26em;
+    top: 91.2px;
+    width: 312px;
 }
 #hit-points {
     position: absolute;
-    left: 28em;
-    top: 7.6em;
-    width: 28em;
+    left: 336px;
+    top: 91.2px;
+    width: 336px;
 }
 #speed {
     position: absolute;
-    left: 58em;
-    top: 11em;
-    width: 10em;
+    left: 696px;
+    top: 132px;
+    width: 120px;
 }
 #damage-reduction {
     position: absolute;
-    left: 70em;
-    top: 11em;
-    width: 28em;
+    left: 840px;
+    top: 132px;
+    width: 336px;
 }
 #armor-class {
     position: absolute;
-    left: 28em;
-    top: 15.6em;
+    left: 336px;
+    top: 187.2px;
+    width: 648px;
 }
 #touch-armor-class {
     position: absolute;
-    left: 28em;
-    top: 23.8em;
-    width: 12em;
+    left: 336px;
+    top: 285.6px;
+    width: 144px;
 }
 #flat-footed-armor-class {
     position: absolute;
-    left: 42em;
-    top: 23.8em;
-    width: 14em;
+    left: 504px;
+    top: 285.6px;
+    width: 168px;
 }
 #initiative-modifier {
     position: absolute;
-    left: 28em;
-    top: 29em;
-    width: 28em;
+    left: 336px;
+    top: 348px;
+    width: 336px;
 }
 #saving-throws {
     position: absolute;
     left: 0;
-    top: 37em;
-    width: 56em;
+    top: 444px;
+    width: 672px;
 }
 #base-attack-bonus {
     position: absolute;
     left: 0;
-    top: 55.2em;
-    width: 20em;
+    top: 662.4px;
+    width: 240px;
 }
 #spell-resistance {
     position: absolute;
-    left: 22em;
-    top: 55.2em;
-    width: 18em;
+    left: 264px;
+    top: 662.4px;
+    width: 216px;
 }
 #grapple-modifier {
     position: absolute;
     left: 0;
-    top: 59.4em;
-    width: 40em;
+    top: 712.8px;
+    width: 480px;
 }
 #attacks {
     position: absolute;
     left: 0;
-    top: 69em;
-    width: 56em;
+    top: 828px;
+    width: 672px;
 }
 #gear {
     position: absolute;
     left: 0;
-    top: 119em;
-    width: 56em;
+    top: 1428px;
+    width: 672px;
 }
 #attacks .attack,
 #gear .item {
-    margin: 2em 0;
+    margin: 24px 0;
 }
 #attacks .attack .cell,
 #gear .item .cell {
@@ -232,74 +233,75 @@ td textarea {
 #skills {
     position: absolute;
     right: 0;
-    top: 24em;
+    top: 288px;
+    width: 492px;
 }
 #skills td.skill-name {
     text-align: left;
 }
 #skills td.skill-name input {
-    width: 8em;
+    width: 96px;
 }
 #max-ranks {
     position: absolute;
-    right: 0.25em;
-    top: 0.25em;
+    right: 3px;
+    top: 3px;
 }
 #max-ranks input {
     color: black;
-    width: 6em;
+    width: 72px;
 }
 #other-possessions {
     position: absolute;
     left: 0;
-    top: 152.3em;
-    width: 42em;
+    top: 1827.6px;
+    width: 504px;
 }
 #carrying-capacity {
     position: absolute;
     left: 0;
-    top: 197.6em;
-    width: 42em;
+    top: 2371.2px;
+    width: 504px;
 }
 #money {
     position: absolute;
     left: 0;
-    top: 205.1em;
-    width: 20em;
+    top: 2461.2px;
+    width: 240px;
 }
 #languages {
     position: absolute;
-    left: 22em;
-    top: 205.1em;
-    width: 20em;
+    left: 264px;
+    top: 2461.2px;
+    width: 240px;
 }
 #feats {
     position: absolute;
-    left: 44em;
-    top: 152.3em;
-    width: 18em;
+    left: 528px;
+    top: 1827.6px;
+    width: 216px;
 }
 #special-abilities {
     position: absolute;
-    left: 44em;
-    top: 183.1em;
-    width: 18em;
+    left: 528px;
+    top: 2197.2px;
+    width: 216px;
 }
 #spells {
     position: absolute;
     right: 0;
-    top: 152.3em;
-    width: 36em;
+    top: 1827.6px;
+    width: 432px;
 }
 #spell-save-difficulty-class-modifier {
     position: absolute;
-    left: 64em;
-    top: 206.5em;
-    width: 17em;
+    left: 768px;
+    top: 2478px;
+    width: 204px;
 }
 #arcane-spell-failure-chance {
     position: absolute;
-    left: 83em;
-    top: 206.5em;
-    width: 17em;
+    left: 996px;
+    top: 2478px;
+    width: 204px;
 }
