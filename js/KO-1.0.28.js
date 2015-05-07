@@ -26,7 +26,7 @@ var KO = (function () {
             return setProperty(obj[props[0]], props.slice(1, props.length), newValue);
         }
 
-        if (typeof newValue !== 'boolean') {
+        if (typeof newValue === 'string') {
             newValue = newValue.trim();
         }
 
@@ -79,15 +79,10 @@ var KO = (function () {
         }
 
         Object.keys(obj).forEach(function (key) {
-            var descriptor = Object.getOwnPropertyDescriptor(obj, key),
-                currentValue = obj[key];
+            var currentValue = obj[key];
 
             function modelPropertyGetter() {
                 return currentValue;
-            }
-
-            function modelPropertyGetterOverride() {
-                return descriptor.get();
             }
 
             function modelPropertySetter(newValue) {
@@ -108,36 +103,9 @@ var KO = (function () {
                 }
             }
 
-            function modelPropertySetterOverride(newValue) {
-                descriptor.set(newValue);
+            defineGetter(obj, key, modelPropertyGetter);
 
-                modelPropertySetter(newValue);
-            }
-
-            Object.defineProperty(obj, key, {
-                get: (function () {
-                    if (descriptor.get === undefined) {
-                        return modelPropertyGetter;
-                    }
-
-                    if (descriptor.get.name !== 'modelPropertyGetter' && descriptor.get.name !== 'modelPropertyGetterOverride') {
-                        return modelPropertyGetterOverride;
-                    }
-
-                    return descriptor.get;
-                }()),
-                set: (function () {
-                    if (descriptor.set === undefined) {
-                        return modelPropertySetter;
-                    }
-
-                    if (descriptor.set.name !== 'modelPropertySetter' && descriptor.set.name !== 'modelPropertySetterOverride') {
-                        return modelPropertySetterOverride;
-                    }
-
-                    return descriptor.set;
-                }())
-            });
+            defineSetter(obj, key, modelPropertySetter);
 
             if (obj[key] instanceof Object) {
                 addGettersSetters(obj[key], prefix + key);
@@ -145,10 +113,49 @@ var KO = (function () {
         });
     }
 
+    function defineGetter(obj, key, getter) {
+        var descriptor = Object.getOwnPropertyDescriptor(obj, key);
+
+        Object.defineProperty(obj, key, {
+            get: (function () {
+                if (descriptor.get === undefined) {
+                    return getter;
+                }
+
+                return descriptor.get;
+            }())
+        });
+    }
+
+    function defineSetter(obj, key, setter) {
+        var descriptor = Object.getOwnPropertyDescriptor(obj, key);
+
+        function modelPropertySetterOverride(newValue) {
+            descriptor.set(newValue);
+
+            setter(newValue);
+        }
+
+        Object.defineProperty(obj, key, {
+            set: (function () {
+                if (descriptor.set === undefined) {
+                    return setter;
+                }
+
+                if (setter.name === 'modelPropertySetter'
+                    && descriptor.set.name !== 'modelPropertySetter'
+                    && descriptor.set.name !== 'modelPropertySetterOverride') {
+                    return modelPropertySetterOverride;
+                }
+
+                return descriptor.set;
+            }())
+        });
+    }
+
     function updateView(prefix) {
         var elements,
             i,
-            mapping,
             props;
 
         if (prefix === undefined) {
@@ -158,9 +165,7 @@ var KO = (function () {
         }
 
         for (i = 0; i < elements.length; i++) {
-            mapping = elements[i].dataset.mapping;
-
-            props = mapping.split('.');
+            props = elements[i].dataset.mapping.split('.');
 
             setElementValue(elements[i], getProperty(module.model, props));
         }
@@ -191,53 +196,6 @@ var KO = (function () {
         eventListenersAdded = true;
     }
 
-    module.validate = function (mappings, callback) {
-        if (mappings instanceof RegExp) {
-            window.addEventListener('change', function (event) {
-                var mapping = event.target.dataset.mapping,
-                    match,
-                    props;
-
-                if (mapping === undefined) {
-                    return;
-                }
-
-                match = mapping.match(mappings);
-
-                if (match === null || callback(event, match)) {
-                    return;
-                }
-
-                event.stopImmediatePropagation();
-
-                props = mapping.split('.');
-
-                setElementValue(event.target, getProperty(module.model, props));
-            });
-
-            return;
-        }
-
-        window.addEventListener('change', function (event) {
-            var mapping = event.target.dataset.mapping,
-                props;
-
-            if (mapping === undefined || mappings.indexOf(mapping) === -1) {
-                return;
-            }
-
-            if (callback(event)) {
-                return;
-            }
-
-            event.stopImmediatePropagation();
-
-            props = mapping.split('.');
-
-            setElementValue(event.target, getProperty(module.model, props));
-        });
-    };
-
     module.bind = function (model) {
         module.model = model;
 
@@ -264,6 +222,33 @@ var KO = (function () {
         window.addEventListener('modelPropertySet', function (event) {
             if (mappings.indexOf(event.detail.mapping) !== -1) {
                 callback(event);
+            }
+        });
+    };
+
+    module.validate = function (mappings, callback) {
+        if (mappings instanceof RegExp) {
+            window.addEventListener('modelPropertySet', function (event) {
+                var match = event.detail.mapping.match(mappings),
+                    props;
+
+                if (match !== null && !callback(event, match)) {
+                    props = event.detail.mapping.split('.');
+
+                    setProperty(module.model, props, event.detail.oldValue);
+                }
+            });
+
+            return;
+        }
+
+        window.addEventListener('modelPropertySet', function (event) {
+            var props;
+
+            if (mappings.indexOf(event.detail.mapping) !== -1 && !callback(event)) {
+                props = event.detail.mapping.split('.');
+
+                setProperty(module.model, props, event.detail.oldValue);
             }
         });
     };

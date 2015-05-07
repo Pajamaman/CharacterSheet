@@ -45,27 +45,27 @@ var DD = (function () {
         { 'name': 'Use Magic Device',   'description': false, 'useUntrained': false, 'armorCheckPenalty': false, 'keyAbility': 'charisma' },
         { 'name': 'Use Rope',           'description': false, 'useUntrained': true,  'armorCheckPenalty': false, 'keyAbility': 'dexterity' }
     ];
-    
+
     function Ability(params) {
         params = params || {};
-        
+
         this.score = params.score || null;
         this.mod = params.mod || null;
         this.tempScore = params.tempScore || null;
         this.tempMod = params.tempMod || null;
     }
-    
+
     Ability.prototype.computeMod = function () {
         this.mod = Math.floor((this.score - 10) / 2);
     };
-    
+
     Ability.prototype.computeTempMod = function () {
         this.tempMod = Math.floor((this.tempScore - 10) / 2);
     };
-    
+
     function ArmorClass(params) {
         params = params || {};
-        
+
         this.total = params.total || null;
         this.baseArmor = params.baseArmor || null;
         this.armorBonus = params.armorBonus || null;
@@ -77,10 +77,10 @@ var DD = (function () {
         this.touch = params.touch || null;
         this.flatFooted = params.flatFooted || null;
     }
-    
+
     function Attack(params) {
         params = params || {};
-        
+
         this.name = params.name || null;
         this.bonus = params.bonus || null;
         this.damage = params.damage || null;
@@ -90,10 +90,10 @@ var DD = (function () {
         this.ammunition = params.ammunition || null;
         this.notes = params.notes || null;
     }
-    
+
     function CarryingCapacity(params) {
         params = params || {};
-        
+
         this.lightLoad = params.lightLoad || null;
         this.mediumLoad = params.mediumLoad || null;
         this.heavyLoad = params.heavyLoad || null;
@@ -101,10 +101,10 @@ var DD = (function () {
         this.liftOffGround = params.liftOffGround || null;
         this.pushOrDrag = params.pushOrDrag || null;
     }
-    
+
     function Character(params) {
         var i;
-        
+
         params = params || {};
         params.abilities = params.abilities || {};
         params.savingThrows = params.savingThrows || {};
@@ -115,7 +115,7 @@ var DD = (function () {
         params.feats = params.feats || {};
         params.specialAbilities = params.specialAbilities || {};
         params.spellLevels = params.spellLevels || {};
-        
+
         this.name = params.name || null;
         this.player = params.player || null;
         this.class = params.class || null;
@@ -142,7 +142,7 @@ var DD = (function () {
         this.languages = params.languages || null;
         this.spellSaveDifficultyClass = params.spellSaveDifficultyClass || null;
         this.arcaneSpellFailureChance = params.arcaneSpellFailureChance || null;
-        
+
         this.abilities = {
             'strength': params.abilities.strength instanceof Ability ? params.abilities.strength : new Ability(params.abilities.strength),
             'dexterity': params.abilities.dexterity instanceof Ability ? params.abilities.dexterity : new Ability(params.abilities.dexterity),
@@ -151,19 +151,19 @@ var DD = (function () {
             'wisdom': params.abilities.wisdom instanceof Ability ? params.abilities.wisdom : new Ability(params.abilities.wisdom),
             'charisma': params.abilities.charisma instanceof Ability ? params.abilities.charisma : new Ability(params.abilities.charisma)
         };
-        
+
         this.savingThrows = {
             'fortitude': params.savingThrows.fortitude instanceof SavingThrow ? params.savingThrows.fortitude : new SavingThrow(params.savingThrows.fortitude),
             'reflex': params.savingThrows.reflex instanceof SavingThrow ? params.savingThrows.reflex : new SavingThrow(params.savingThrows.reflex),
             'will': params.savingThrows.will instanceof SavingThrow ? params.savingThrows.will : new SavingThrow(params.savingThrows.will)
         };
-        
+
         this.hitPoints = params.hitPoints instanceof HitPoints ? params.hitPoints : new HitPoints(params.hitPoints);
         this.armorClass = params.armorClass instanceof ArmorClass ? params.armorClass : new ArmorClass(params.armorClass);
         this.initiative = params.initiative instanceof InitiativeModifier ? params.initiative : new InitiativeModifier(params.initiative);
         this.grapple = params.grapple instanceof GrappleModifier ? params.grapple : new GrappleModifier(params.grapple);
         this.carryingCapacity = params.carryingCapacity instanceof CarryingCapacity ? params.carryingCapacity : new CarryingCapacity(params.carryingCapacity);
-        
+
         this.attacks = [
             params.attacks[0] instanceof Attack ? params.attacks[0] : new Attack(params.attacks[0]),
             params.attacks[1] instanceof Attack ? params.attacks[1] : new Attack(params.attacks[1]),
@@ -171,50 +171,50 @@ var DD = (function () {
             params.attacks[3] instanceof Attack ? params.attacks[3] : new Attack(params.attacks[3]),
             params.attacks[4] instanceof Attack ? params.attacks[4] : new Attack(params.attacks[4])
         ];
-        
+
         this.gear = [
             params.gear[0] instanceof Gear ? params.gear[0] : new Gear(params.gear[0]),
             params.gear[1] instanceof Gear ? params.gear[1] : new Gear(params.gear[1]),
             params.gear[2] instanceof Gear ? params.gear[2] : new Gear(params.gear[2]),
             params.gear[3] instanceof Gear ? params.gear[3] : new Gear(params.gear[3])
         ];
-        
+
         this.skills = [];
         for (i = 0; i < skills.length; i++) {
             this.skills.push(params.skills[i] instanceof Skill ? params.skills[i] : new Skill(params.skills[i]));
         }
-        
+
         this.otherPossessions = [];
         for (i = 0; i < 30; i++) {
             this.otherPossessions.push(params.otherPossessions[i] instanceof OtherPossession ? params.otherPossessions[i] : new OtherPossession(params.otherPossessions[i]));
         }
-        
+
         this.feats = [];
         for (i = 0; i < 10; i++) {
             this.feats.push(params.feats[i] instanceof Feat ? params.feats[i] : new Feat(params.feats[i]));
         }
-        
+
         this.specialAbilities = [];
         for (i = 0; i < 10; i++) {
             this.specialAbilities.push(params.specialAbilities[i] instanceof SpecialAbility ? params.specialAbilities[i] : new SpecialAbility(params.specialAbilities[i]));
         }
-        
+
         this.spellLevels = [];
         for (i = 0; i < 10; i++) {
             this.spellLevels.push(params.spellLevels[i] instanceof SpellLevel ? params.spellLevels[i] : new SpellLevel(params.spellLevels[i]));
         }
     }
-    
+
     function Feat(params) {
         params = params || {};
-        
+
         this.name = params.name || null;
         this.page = params.page || null;
     }
-    
+
     function Gear(params) {
         params = params || {};
-        
+
         this.name = params.name || null;
         this.type = params.type || null;
         this.armorClassBonus = params.armorClassBonus || null;
@@ -225,41 +225,41 @@ var DD = (function () {
         this.weight = params.weight || null;
         this.specialProperties = params.specialProperties || null;
     }
-    
+
     function GrappleModifier(params) {
         params = params || {};
-        
+
         this.total = params.total || null;
         this.sizeMod = params.sizeMod || null;
         this.miscMod = params.miscMod || null;
     }
-    
+
     function HitPoints(params) {
         params = params || {};
-        
+
         this.total = params.total || null;
         this.current = params.current || null;
         this.nonlethalDamage = params.nonlethalDamage || null;
     }
-    
+
     function InitiativeModifier(params) {
         params = params || {};
-        
+
         this.total = params.total || null;
         this.miscMod = params.miscMod || null;
     }
-    
+
     function OtherPossession(params) {
         params = params || {};
-        
+
         this.name = params.name || null;
         this.page = params.page || null;
         this.weight = params.weight || null;
     }
-    
+
     function SavingThrow(params) {
         params = params || {};
-        
+
         this.total = params.total || null;
         this.baseSave = params.baseSave || null;
         this.magicMod = params.magicMod || null;
@@ -267,33 +267,33 @@ var DD = (function () {
         this.tempMod = params.tempMod || null;
         this.conditionalMods = params.conditionalMods || null;
     }
-    
+
     function Skill(params) {
         params = params || {};
-        
+
         this.classSkill = params.classSkill || null;
         this.description = params.description || null;
         this.skillMod = params.skillMod || null;
         this.ranks = params.ranks || null;
         this.miscMod = params.miscMod || null;
     }
-    
+
     function SpecialAbility(params) {
         params = params || {};
-        
+
         this.name = params.name || null;
         this.page = params.page || null;
     }
-    
+
     function SpellLevel(params) {
         params = params || {};
-        
+
         this.spellSaveDifficultyClass = params.spellSaveDifficultyClass || null;
         this.spellsPerDay = params.spellsPerDay || null;
         this.bonusSpellsPerDay = params.bonusSpellsPerDay || null;
         this.spellList = params.spellList || null;
     }
-    
+
     return {
         'skills': skills,
         'Ability': Ability,
