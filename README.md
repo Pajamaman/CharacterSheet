@@ -10,3 +10,4 @@ To see an example, try [this file][3].
 [1]: https://github.com/dave-kennedy/Knockoff
 [2]: http://dave-kennedy.github.io/CharacterSheet
 [3]: http://dave-kennedy.github.io/CharacterSheet/character.json
+

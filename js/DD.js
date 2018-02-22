@@ -313,3 +313,4 @@ var DD = (function () {
         'SpellLevel': SpellLevel
     };
 }());
+

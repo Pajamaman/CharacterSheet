@@ -3,7 +3,7 @@ var KO = (function () {
     'use strict';
 
     var eventListenersAdded = false,
-        module = {};
+        model;
 
     function getProperty(obj, props) {
         if (props.length > 1) {
@@ -31,9 +31,7 @@ var KO = (function () {
         }
 
         if (/^\+?\-?\d+$/.test(newValue)) {
-            obj[props[0]] = parseInt(newValue);
-
-            return;
+            newValue = parseInt(newValue);
         }
 
         obj[props[0]] = newValue;
@@ -69,7 +67,7 @@ var KO = (function () {
 
     function addGettersSetters(obj, prefix) {
         if (obj === undefined) {
-            obj = module.model;
+            obj = model;
         }
 
         if (prefix === undefined) {
@@ -81,75 +79,44 @@ var KO = (function () {
         Object.keys(obj).forEach(function (key) {
             var currentValue = obj[key];
 
-            function modelPropertyGetter() {
-                return currentValue;
-            }
+            Object.defineProperty(obj, key, {
+                get() {
+                    return currentValue;
+                },
+                set(newValue) {
+                    var oldValue = currentValue,
+                        cancelled = !document.dispatchEvent(new CustomEvent('beforeModelPropertySet', {
+                            cancelable: true,
+                            detail: {
+                                mapping: prefix + key,
+                                newValue: newValue,
+                                oldValue: oldValue
+                            }
+                        }));
 
-            function modelPropertySetter(newValue) {
-                var oldValue = currentValue;
-
-                currentValue = newValue;
-
-                window.dispatchEvent(new CustomEvent('modelPropertySet', {
-                    detail: {
-                        mapping: prefix + key,
-                        newValue: newValue,
-                        oldValue: oldValue
+                    if (cancelled) {
+                        return;
                     }
-                }));
 
-                if (newValue instanceof Object) {
-                    addGettersSetters(newValue, prefix + key);
+                    currentValue = newValue;
+
+                    document.dispatchEvent(new CustomEvent('modelPropertySet', {
+                        detail: {
+                            mapping: prefix + key,
+                            newValue: newValue,
+                            oldValue: oldValue
+                        }
+                    }));
+
+                    if (newValue instanceof Object) {
+                        addGettersSetters(newValue, prefix + key);
+                    }
                 }
-            }
-
-            defineGetter(obj, key, modelPropertyGetter);
-
-            defineSetter(obj, key, modelPropertySetter);
+            });
 
             if (obj[key] instanceof Object) {
                 addGettersSetters(obj[key], prefix + key);
             }
-        });
-    }
-
-    function defineGetter(obj, key, getter) {
-        var descriptor = Object.getOwnPropertyDescriptor(obj, key);
-
-        Object.defineProperty(obj, key, {
-            get: (function () {
-                if (descriptor.get === undefined) {
-                    return getter;
-                }
-
-                return descriptor.get;
-            }())
-        });
-    }
-
-    function defineSetter(obj, key, setter) {
-        var descriptor = Object.getOwnPropertyDescriptor(obj, key);
-
-        function modelPropertySetterOverride(newValue) {
-            descriptor.set(newValue);
-
-            setter(newValue);
-        }
-
-        Object.defineProperty(obj, key, {
-            set: (function () {
-                if (descriptor.set === undefined) {
-                    return setter;
-                }
-
-                if (setter.name === 'modelPropertySetter'
-                    && descriptor.set.name !== 'modelPropertySetter'
-                    && descriptor.set.name !== 'modelPropertySetterOverride') {
-                    return modelPropertySetterOverride;
-                }
-
-                return descriptor.set;
-            }())
         });
     }
 
@@ -166,8 +133,7 @@ var KO = (function () {
 
         for (i = 0; i < elements.length; i++) {
             props = elements[i].dataset.mapping.split('.');
-
-            setElementValue(elements[i], getProperty(module.model, props));
+            setElementValue(elements[i], getProperty(model, props));
         }
     }
 
@@ -176,7 +142,7 @@ var KO = (function () {
             return;
         }
 
-        window.addEventListener('change', function (event) {
+        document.addEventListener('change', function (event) {
             var mapping = event.target.dataset.mapping,
                 props;
 
@@ -185,30 +151,26 @@ var KO = (function () {
             }
 
             props = mapping.split('.');
-
-            setProperty(module.model, props, getElementValue(event.target));
+            setProperty(model, props, getElementValue(event.target));
         });
 
-        window.addEventListener('modelPropertySet', function (event) {
+        document.addEventListener('modelPropertySet', function (event) {
             updateView(event.detail.mapping);
         });
 
         eventListenersAdded = true;
     }
 
-    module.bind = function (model) {
-        module.model = model;
-
+    function bind(obj) {
+        model = obj;
         addGettersSetters();
-
         updateView();
-
         addEventListeners();
-    };
+    }
 
-    module.listen = function (mappings, callback) {
+    function listen(mappings, callback) {
         if (mappings instanceof RegExp) {
-            window.addEventListener('modelPropertySet', function (event) {
+            document.addEventListener('modelPropertySet', function (event) {
                 var match = event.detail.mapping.match(mappings);
 
                 if (match !== null) {
@@ -219,39 +181,42 @@ var KO = (function () {
             return;
         }
 
-        window.addEventListener('modelPropertySet', function (event) {
+        document.addEventListener('modelPropertySet', function (event) {
             if (mappings.indexOf(event.detail.mapping) !== -1) {
                 callback(event);
             }
         });
-    };
+    }
 
-    module.validate = function (mappings, callback) {
+    function validate(mappings, callback) {
         if (mappings instanceof RegExp) {
-            window.addEventListener('modelPropertySet', function (event) {
+            document.addEventListener('beforeModelPropertySet', function (event) {
                 var match = event.detail.mapping.match(mappings),
                     props;
 
                 if (match !== null && !callback(event, match)) {
-                    props = event.detail.mapping.split('.');
-
-                    setProperty(module.model, props, event.detail.oldValue);
+                    event.preventDefault();
+                    updateView(event.detail.mapping);
                 }
             });
 
             return;
         }
 
-        window.addEventListener('modelPropertySet', function (event) {
+        document.addEventListener('beforeModelPropertySet', function (event) {
             var props;
 
             if (mappings.indexOf(event.detail.mapping) !== -1 && !callback(event)) {
-                props = event.detail.mapping.split('.');
-
-                setProperty(module.model, props, event.detail.oldValue);
+                event.preventDefault();
+                updateView(event.detail.mapping);
             }
         });
-    };
+    }
 
-    return module;
+    return {
+        bind: bind,
+        listen: listen,
+        validate: validate
+    };
 }());
+
